@@ -1,0 +1,84 @@
+/* Magnific Popup CSS */
+.mfp-bg {
+  background: @Bleu162E46;
+  opacity: 0.8;
+}
+.mfp-image-holder,
+.mfp-iframe-holder{
+    .mfp-close{
+      border-radius: none;
+      right: initial;
+      left: 0;
+      text-align: left;
+      .Height(45);
+      .Padding(0);
+      .Width(45);
+      opacity: 1;
+      &:hover,
+      &:focus{
+        opacity: 1;
+      }
+      i{
+        display: block;
+        &:before{
+          background-color: @White;
+          border-radius: none;
+          display: block;
+          color: @Bleu162E46;
+          .fontSize(18);
+          .lineHeight(45);
+          text-align: center;
+          width: 100%;
+        }
+        &:hover,
+        &:focus,
+        &:active,
+        &:visited{
+          background-color: @White;
+        }
+      }
+    } 
+}
+.mfp-arrow-left,
+.mfp-arrow-right{
+  &:before{
+    border: none;
+    .fontSize(24);
+    color: @White;
+    .Mify();
+  }
+  &:after{
+    border: none;
+    .fontSize(24);
+    color: @White;
+    .Mify();
+  }
+}
+.mfp-arrow-left{
+  &:before{
+    content:'\e64a';
+  }
+}
+.mfp-arrow-right{
+  &:before{
+    content:'\e649'; 
+  }
+}
+.mfp-figure{
+  background-color: @White;
+  .border-radius(@rad:4px);
+  .MarginTop(0);
+  padding:0;
+}
+.mfp-counter{
+  left: initial;
+  right: 0;
+}
+img.mfp-img{
+  .Padding(20);
+}
+.mfp-bottom-bar{
+  left: initial;
+  .MarginTop(-15);
+  .Right(15);
+}

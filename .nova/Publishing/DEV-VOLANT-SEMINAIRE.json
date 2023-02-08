@@ -1,0 +1,10 @@
+{
+  "identifier" : "E1A46575-2A6D-4865-ABF4-116161303E71",
+  "ignoredFilePatterns" : [
+    "config.codekit3"
+  ],
+  "localPath" : ".",
+  "remotePath" : "\/wp-content\/themes\/volant-seminaire",
+  "server" : "DEV-VOLANT-SEMINAIRE",
+  "usesPublishing" : true
+}

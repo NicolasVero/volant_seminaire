@@ -1,0 +1,247 @@
+
+.widget-tel{
+	background-color: @Bleu162E46;
+	border-color: @Bleu162E46;
+	color: @White;
+	.border-radius(@rad:20px);	
+}
+.site-widgets{
+	flex-direction: row;
+	div{
+		border: 1px solid;
+		border-right: 0;
+		.border-radius-top-left(@radtopl:20px);
+		.border-radius-bottom-left(@radbotl:20px);
+		.border-radius-top-right(@radtopr:0px);
+		.border-radius-bottom-right(@radbotr:0px);
+		.Height(40);
+		.Padding(0, 20);
+		text-align: left;
+	}
+	.container-widgets-social-search,
+	.container-widgets-contact,
+	.widget-medias-sociaux{
+		border: none;
+		padding: 0;
+	}
+}
+.widget-medias-sociaux{
+	.items-medias-sociaux{
+		height: 100%;
+		li{
+			a{
+				.fontSize(18);
+				.Padding(10);
+				span{
+					direction: ltr;
+					text-indent: -999em;
+					height: 0;
+				}
+			}
+		}
+	}
+}
+.site-widgets-header{
+	.MarginRight(-15);
+	//SEARCH
+	.widget-search{
+		border-color: @Bleu162E46;
+		.PaddingRight(40);
+		span{
+			.Height(0);
+			direction: ltr;
+			text-indent: -999em;
+		}
+	}
+	.widget-search.search-on{
+		button{
+			.ti-search{
+				&:before{
+					content: '\E646';
+				}
+			}
+		}
+	}
+	//CONTACT-SAV
+	.widget-contact{
+		background-color: @Bleu162E46;
+		border-color: @Bleu162E46;
+		.MarginLeft(-30);
+		.PaddingRight(45);
+		a{
+			color: @White;
+			.oswB();
+			text-transform: uppercase;
+		}
+	}
+	//TEL
+	.widget-tel{
+		background-color: @Bleu004B99;
+		border-color: @Bleu004B99;
+		.MarginLeft(-30);
+		.PaddingRight(20);
+		color: @White;
+		.oswB();
+		text-transform: uppercase;
+		i{
+			.MarginRight(10);
+		}
+	}
+}
+.search-form-container{
+	background-color: @BleuA5D1FF;
+	display: none;
+	.Height(60);
+	width: 100%;
+	.relative();
+	opacity: 0;
+	-webkit-animation: searchOff .5s ease-in-out;
+	-moz-animation: searchOff .5s ease-in-out;
+	-o-animation: searchOff .5s ease-in-out;
+	animation: searchOff .5s ease-in-out;
+	z-index: 1;
+	input[type='search'].search-field{
+		background: @BleuA5D1FF !important;
+		border: none;
+		border-radius: 0;
+		.placeholder();
+		.fontSize(30);
+		.Height(60);
+		.mtsR();
+		text-transform: none;
+		.Padding(5, 0);
+		&:hover,
+		&:focus{
+			border-color: transparent;
+		}
+	}
+	label{
+		color: @Bleu162E46 !important;
+		.fontSize(20);
+		.oswB();
+		text-transform: none;
+	}
+	button{
+		background: @Bleu004B99;
+		border-radius: 0;
+		color: @White;
+		display: block;
+		.Height(60);
+		.lineHeight(60);
+		padding: 0;
+		text-transform: uppercase;
+		margin: 0;
+		.MarginRight(-15);
+		.Width(75);
+		&:after{
+			content: "\e649";
+			.Mify();
+			.PaddingLeft(10);
+		}
+	}
+}
+.search-form-container.search-on{
+	display: block;
+	opacity: 1;
+	-webkit-animation: search .5s ease-in-out;
+	-moz-animation: search .5s ease-in-out;
+	-o-animation: search .5s ease-in-out;
+	animation: search .5s ease-in-out;
+}
+.widget-search.search-on{
+	a{
+		.ti-search{
+			&:before{
+				content: '\E646';
+			}
+		}
+	}
+}
+
+//ANIMATIONS
+@keyframes search{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 50%;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+@keyframes searchOff{
+	0%{
+		opacity: 100;
+	}
+	50%{
+		opacity: 50%;
+	}
+	100%{
+		opacity: 0%;
+	}
+}
+ 
+//OVERLAY
+.overlay{
+	background: @Overlay;
+	display: none;
+	height: 100vh;
+	left: 0;
+	opacity: 0;
+	.absolute();
+	.Top(175);
+	width: 100%;
+	-webkit-animation: searchOff .5s ease-in-out;
+	-moz-animation: searchOff .5s ease-in-out;
+	-o-animation: searchOff .5s ease-in-out;
+	animation: searchOff .5s ease-in-out;
+}
+.overlay.on{
+	display: block;
+	opacity: 1;
+}
+.container-details-single{
+	.MarginTop(15);
+}
+@media screen and (min-width : 576px){
+}
+@media screen and (min-width : 768px){
+	.site-widgets-header{
+		flex-direction: row;
+		.absolute();
+		top: 0;
+		right: 0;
+	}
+	.widget-tel{
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	// .widget-medias-sociaux{
+	// 	.items-medias-sociaux{
+	// 		.absolute();
+	// 		height: auto;
+	// 		top: 0;
+	// 		width: 100%;
+	// 	}
+	// }
+}
+@media screen and (min-width : 992px){
+	.container-details-single{
+		margin-top: 0;
+	}
+}
+@media screen and (min-width : 1200px){
+	.site-widgets-header{
+		flex-direction: column;
+		.relative();
+		top: initial;
+		.Right(15);
+	}
+}
+@media screen and (min-width : 1400px){
+	.site-widgets{
+		flex-direction: row;
+	}
+}

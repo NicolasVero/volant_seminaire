@@ -1,0 +1,35 @@
+/*------------------------------
+CLEARFIX
+--------------------------------*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}
+/*------------------------------
+STRUCTURE
+--------------------------------*/
+body.admin-bar:not(.custom-background-image)::before{
+	top: 0;
+}
+body:not(.custom-background-image)::before, body:not(.custom-background-image)::after{
+	background: none;
+}
+/*
+.site-main{
+	.PaddingTop(140);
+}
+*/
+.site{
+	background: none;
+	margin: 0;
+}
+.section-primary{
+	.relative();
+}

@@ -1,0 +1,143 @@
+//IMPORT FONT
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@200;400;500&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+//ICOMOON
+@font-face {
+  font-family: 'havre-caravano';
+  src:  url('../fonts/havre-caravano.eot?fj1tdl');
+  src:  url('../fonts/havre-caravano.eot?fj1tdl#iefix') format('embedded-opentype'),
+	url('../fonts/havre-caravano.ttf?fj1tdl') format('truetype'),
+	url('../fonts/havre-caravano.woff?fj1tdl') format('woff'),
+	url('../fonts/havre-caravano.svg?fj1tdl#havre-caravano') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*="icon-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'havre-caravano' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-icon-360:before {
+  content: "\e900";
+}
+.icon-icon-accessoire:before {
+  content: "\e901";
+}
+.icon-icon-achat-cash:before {
+  content: "\e902";
+}
+.icon-icon-atelier:before {
+  content: "\e903";
+}
+.icon-icon-depot-vente:before {
+  content: "\e904";
+}
+.icon-icon-vehicules-neufs:before {
+  content: "\e905";
+}
+.icon-icon-vehicules-occasion:before {
+  content: "\e906";
+}
+
+// THEMIFY
+@font-face {
+	font-family: 'themify';
+	src:url('../fonts/themify.eot?-fvbane');
+	src:url('../fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'),
+		url('../fonts/themify.woff?-fvbane') format('woff'),
+		url('../fonts/themify.ttf?-fvbane') format('truetype'),
+		url('../fonts/themify.svg?-fvbane#themify') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="ti-"], [class*="ti-"] {
+	font-family: 'themify';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+@import url('mify.less');
+
+//VARIABLES
+@Light: 200;
+@Book: 300;
+@Regular: 400;
+@SemiBold: 500;
+@Bold: 700;
+@XBold: 800;
+@Normal: normal;
+@Italic: italic;
+@FontAwesome: 'FontAwesome';
+@Mify: 'themify';
+@Icon: 'icomoon';
+@Montserrat: 'Montserrat', sans-serif;
+@Oswald: 'Oswald', sans-serif;
+@BaseSize: 16;
+//FONTAWESOME & MIFY
+.FontAwesome(){
+	font-family: @FontAwesome;
+}
+.Mify(){
+	font-family: @Mify;
+}
+.Icon(){
+	font-family: @Icon;
+}
+//FONT PROJET
+.mtsR(){
+	font-family: @Montserrat;
+	font-weight: @Regular;
+}
+.mtsB(){
+	font-family: @Montserrat;
+	font-weight: @Bold;
+}
+.oswL(){
+	font-family: @Oswald;
+	font-weight: @Light;
+}
+.oswR(){
+	font-family: @Oswald;
+	font-weight: @Regular;
+}
+.oswB(){
+	font-family: @Oswald;
+	font-weight: @SemiBold;
+}
+.FontGeneric(){
+	.mtsR();
+	.fontSize(16);
+}
+
+html{
+	font-size: 62.5%;
+}
+//SIZE FONT
+.fontSize(@size) {
+	@pxSize: (@BaseSize * 10);
+	@remSize: ((@size / @BaseSize) * 1.6);
+	@toRem: unit(@remSize, rem);
+	font-size: ~"@{size}px";
+	font-size: ~"@{toRem}";
+}

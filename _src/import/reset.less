@@ -1,0 +1,198 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+html{
+	font-size:100%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a {
+	text-decoration: none;
+	color: @Rose;
+	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+	&:hover,
+	&:focus,
+	&:active{
+		color: @Black;
+	}
+}
+p{
+	.fontSize(18);
+	.lineHeight(24);
+	strong{
+		.fontSize(20);
+		.lineHeight(26);
+		.NeutraBld();
+	}
+	a{
+		text-decoration: underline;
+	}
+}
+button,
+.button{
+	background-color: @White;
+	border-radius: 0px;
+	text-shadow: none;
+	text-decoration: none;
+	color: @Black;
+	display: inline-block;
+	.NeutraBld();
+	.fontSize(16);
+	.Height(40);
+	.lineHeight(40);
+	.PaddingRight(10);
+	text-transform: uppercase;
+	width: auto;
+	&:hover,
+	&:focus,
+	&:active{
+		text-shadow: none;
+		text-decoration: none;
+		background-color: @Rose;
+		outline-offset: 0;
+	}
+	i{
+		background-color: @Black;
+		color: @White;
+	}
+	i,
+	span{
+		.lineHeight(40);
+	}
+}
+.button-file-to-upload{
+	&:hover,
+	&:focus,
+	&:active{
+		background-color: @Black;
+		color: @White;
+	}
+}
+.site-main{
+	margin: 0;
+}
+.site-inner{
+	margin: 0 auto;
+}
+*:focus {
+outline: none;
+}
+
+*::-moz-focus-inner {
+border: none;
+}
+* {
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.home{
+	.site-main > :last-child{
+	.MarginBottom(0);
+}
+}
+.site-main > :last-child{
+	.MarginBottom(0);
+}
+img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+/*------------------------------
+GLOBAL
+--------------------------------*/
+*,
+*:after,
+*:before {
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+body {
+	background-color: @White ;
+    overflow-x: hidden;
+    .fontSize(16);
+    .NeutraReg();
+    color: @Black;
+    position: relative;
+    text-align: left;
+}
+
+/*------------------------------
+CLEARFIX
+--------------------------------*/
+
+ /*
+* Clearfix: contain floats
+*/
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+
+.clearfix {
+    *zoom: 1;
+}
+
+/*------------------------------
+STRUCTURE
+--------------------------------*/
+body.admin-bar:not(.custom-background-image)::before{
+	top: 0;
+}
+body:not(.custom-background-image)::before, body:not(.custom-background-image)::after{
+	background: none;
+}

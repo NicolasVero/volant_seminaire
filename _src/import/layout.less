@@ -1,0 +1,144 @@
+.WidthHeader() {
+	width: ~"calc(100% - @{WidthNavD})";
+}
+
+.lineHeight(@size) {
+	line-height: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	line-height: ~"@{remSize}rem";
+}
+.Height(@size) {
+	height: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	height: ~"@{remSize}rem";
+}
+.MaxHeight(@size) {
+	max-height: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	max-height: ~"@{remSize}rem";
+}
+.MinHeight(@size) {
+	min-height: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	min-height: ~"@{remSize}rem";
+}
+.Bottom(@size) {
+	bottom: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	bottom: ~"@{remSize}rem";
+}
+.Top(@size) {
+	top: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	top: ~"@{remSize}rem";
+}
+.Right(@size) {
+	right: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	right: ~"@{remSize}rem";
+}
+.Left(@size) {
+	left: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	left: ~"@{remSize}rem";
+}
+.Margin(@t, @r, @b, @l){
+	margin: ~"@{t}px @{r}px @{b}px @{l}px";
+	@remt: ((@t/@BaseSize) * 1.6);
+	@remr: ((@r/@BaseSize) * 1.6);
+	@remb: ((@b/@BaseSize) * 1.6);
+	@reml: ((@l/@BaseSize) * 1.6);
+	margin: ~"@{remt}rem @{remr}rem @{remb}rem @{reml}rem";
+}
+.Margin(@tb, @lr){
+	margin: ~"@{tb}px @{lr}px";
+	@remtb: ((@tb/@BaseSize) * 1.6);
+	@remlr: ((@lr/@BaseSize) * 1.6);
+	margin: ~"@{remtb}rem @{remlr}rem";
+}
+.Margin(@size) {
+	margin: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	margin: ~"@{remSize}rem";
+}
+.MarginTop(@size) {
+	margin-top: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	margin-top: ~"@{remSize}rem";
+}
+.MarginBottom(@size) {
+	margin-bottom: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	margin-bottom: ~"@{remSize}rem";
+}
+.MarginLeft(@size) {
+	margin-left: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	margin-left: ~"@{remSize}rem";
+}
+.MarginRight(@size) {
+	margin-right: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	margin-right: ~"@{remSize}rem";
+}
+.Padding(@t, @r, @b, @l){
+	padding: ~"@{t}px @{r}px @{b}px @{l}px";
+	@remt: ((@t/@BaseSize) * 1.6);
+	@remr: ((@r/@BaseSize) * 1.6);
+	@remb: ((@b/@BaseSize) * 1.6);
+	@reml: ((@l/@BaseSize) * 1.6);
+	padding: ~"@{remt}rem @{remr}rem @{remb}rem @{reml}rem";
+}
+.Padding(@tb, @lr){
+	padding: ~"@{tb}px @{lr}px";
+	@remtb: ((@tb/@BaseSize) * 1.6);
+	@remlr: ((@lr/@BaseSize) * 1.6);
+	padding: ~"@{remtb}rem @{remlr}rem";
+}
+.Padding(@size) {
+	padding: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	padding: ~"@{remSize}rem";
+}
+.PaddingBottom(@size) {
+	padding-bottom: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	padding-bottom: ~"@{remSize}rem";
+}
+.PaddingLeft(@size) {
+	padding-left: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	padding-left: ~"@{remSize}rem";
+}
+.PaddingRight(@size) {
+	padding-right: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	padding-right: ~"@{remSize}rem";
+}
+.PaddingTop(@size) {
+	padding-top: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	padding-top: ~"@{remSize}rem";
+}
+.Width(@size) {
+	width: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	width: ~"@{remSize}rem";
+}
+.MaxWidth(@size) {
+	max-width: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	max-width: ~"@{remSize}rem";
+}
+.absolute(){
+	position:absolute;
+}
+.fixed(){
+	position: fixed;
+}
+.relative(){
+	position: relative;
+}
+.static(){
+	position: static;
+}

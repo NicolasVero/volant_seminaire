@@ -1,0 +1,342 @@
+.container-page-tax{
+	h1{
+		.mtsB();
+		.fontSize(28);
+	}
+	.top-intro-tax{
+		background-color: @White;
+		.Padding(15);
+		p{
+			a{
+				color: @Bleu0059B5;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.container-page-list-tax{
+	.block-content-list-tax{
+		background-color: @White;
+	}
+}
+.article-vehicule{
+	display: flex;
+	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+}
+.article-vehicule.hidden{
+	display: none;
+}
+.sidebar-filters{
+	h3,
+	span.title-filtre{
+		.fontSize(16);
+		color: @Bleu0059B5;
+		.MarginBottom(10);
+	}
+	span.title-filtre{
+		.oswB();
+	}
+}
+.content-search-tax{
+	.MarginBottom(15);
+	.widget-filter-type{
+		border-top: 1px solid @Bleu0059B5;
+		.MarginTop(15);
+		.PaddingTop(15);
+	}
+	li{
+		border-bottom: 1px solid @Grey-3;
+		a{
+			text-transform: uppercase;
+		}
+		a.current-tax{
+			color: @Bleu0059B5;
+		}
+	}
+	.search-form-sidebar{
+		.submit-search{
+			.relative();
+			.border-radius(@rad:4px);
+			.border-radius-top-right(@radtopr:50%);
+			.border-radius-bottom-right(@radbotr:50%);
+			z-index: 1;
+		}
+		.search-field{
+			display: flex;
+			.border-radius(@rad:4px);
+			.fontSize(14);
+			.Height(36);
+			.absolute();
+			.Padding(5);
+			padding-left: 15%;
+			width: ~"calc(100% - 10%)";
+		}
+	}
+}
+.content-sidebar-filters{
+	border: 1px solid @Bleu0059B5;
+	.Padding(10);
+	.widget-filter{
+		.MarginTop(15);
+	}
+	
+	.widget-filter-chambers{
+		label{
+			.fontSize(16);
+			.relative();
+				&:hover{
+					cursor: pointer;
+				}
+				&:before{
+					background-color: @White;
+					border: 2px solid @Bleu0059B5;
+					.border-radius(@rad:4px);
+					content:'\e64c';
+					color: @White;
+					display: inline-block;
+					.Mify();
+					.Height(18);
+					.lineHeight(14);
+					.MarginRight(5);
+					.relative();
+					text-align: center;
+					.Width(18);
+					z-index: 1;
+				}
+			input{
+				.absolute();
+				.Left(5);
+				height: 0px;
+				.Top(5);
+				width: 0px;
+			}
+		}
+		label.on{
+			&:before{
+				background-color: @Bleu162E46;
+				border: 2px solid @Bleu162E46;
+				content:'\e64c';
+				color: @White;
+				.Mify();
+				.fontSize(14);
+				display: inline-block;
+				.Height(18);
+				.lineHeight(14);
+				.MarginRight(5);
+				.relative();
+				text-align: center;
+				.Width(18);
+				z-index: 1;
+			}
+		}
+		span.count-chamber{
+			color: @Bleu0059B5;
+			display: inline-block;
+			.fontSize(16);
+			.PaddingLeft(5);
+		}
+	}
+	.item-filter{
+		display: inline-block;
+		.Margin(8);
+		&:first-child{
+			.MarginLeft(0);
+		}
+		&:last-child{
+			.MarginRight(0);
+		}
+		a{
+			border: 1px solid;
+			.border-radius(@rad:4px);
+			color:@Bleu697A84;
+			display: inline-block;
+			.mtsB();
+			.fontSize(12);
+			.Padding(5, 10);
+			text-transform: uppercase;
+		}
+		a.actif{
+			background-color: @Bleu162E46;
+			border-color: @Bleu162E46;
+			color: @White;
+			i{
+				&:before{
+					color: inherit;
+				}
+			}
+		}
+	}
+	.dropdown{
+		background-color: @Bleu0059B5;
+		color: @White;
+		display: block;
+		.absolute();
+		right: 0;
+		.Height(38);
+		.lineHeight(38);
+		text-align: center;
+		.Width(38);
+		z-index: 1;
+		&:hover{
+			cursor: pointer;
+		}
+		&:before{
+			display: block;
+			.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+		}
+	}
+	.dropdown.actif{
+		&:before{
+			.transformR(@r:180deg);
+		}
+	}
+	.list-items-dropdown{
+		.relative();
+		li{
+			.Padding(5);
+			a{
+				color: @Bleu162E46;
+				display: inline-block;
+				.fontSize(16);
+				line-height: 1;
+				.Padding(5);
+			}
+			a.actif{
+				background-color: @Bleu162E46;
+				.border-radius(@rad:4px);
+				color: @White;
+				&:before{
+					content:'\e64c';
+					color: inherit;
+					.Mify();
+					.PaddingRight(5);
+				}
+			}
+		}
+		li.filter-item-first{
+			border: 1px solid @Bleu697A84;
+		}
+		.sub-menu-dropdown{
+			background-color: @White;
+			display: none;
+			.absolute();
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			
+		}
+	}
+	.list-items-dropdown.on > .sub-menu-dropdown{
+			display: block;
+			.static();
+			opacity: 1;
+			.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+			overflow: auto;
+			z-index: 1;
+	}
+}
+.widget-filter-price{
+	.amount{
+		.fontSize(14);
+	}
+	.ui-slider-horizontal{
+		.Height(10);
+	}
+	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus{
+		background: @Bleu162E46;
+		border: none;
+		.border-radius(@rad:100%);
+		color: @Bleu162E46;
+		
+	}
+	.ui-state-active{
+		background: @Bleu0059B5;
+		border: none;
+	}
+	.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+		.border-radius(@rad:4px);
+	}
+	.ui-slider-handle.ui-corner-all{
+		background: @Bleu162E46;
+		border: none;
+		.border-radius(@rad:100%);
+		color: @Bleu162E46;
+	}
+	.ui-widget-content{
+		background: @Grey-3;
+		border: none;
+		.border-radius(@rad:10px);
+		color: @Bleu162E46;
+		margin-left:5%;
+		width: ~"calc(100% - 10%)";
+	}
+	.ui-widget-header{
+		background: @Bleu162E46;
+		color: @Bleu162E46;
+	}
+}
+.paginate{
+	.MarginTop(25);
+	.page-numbers{
+		.oswB();
+		color: @Grey-3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.Height(30);
+		.Width(30);
+	}
+	.page-numbers.current,
+	.next.page-numbers,
+	.prev.page-numbers{
+		border: 1px solid;
+		color: @Bleu0059B5;
+	}
+	.next.page-numbers,
+	.prev.page-numbers{
+		i{
+			&:before{
+				.fontSize(14);
+			}
+		}
+	}
+}
+@media screen and (min-width : 576px){
+}
+@media screen and (min-width : 768px){
+	.container-page-tax{
+		h1{
+			.mtsR();
+			.fontSize(40);
+		}
+		.top-intro-tax{
+		}
+	}
+}
+@media screen and (min-width : 992px){
+	.container-page-tax{
+		h1{
+			.fontSize(75);
+		}
+		.top-intro-tax{
+		}
+	}
+	.article-vehicule{
+		&:nth-child(2n){
+			figure{
+				order: 2;
+			}
+		}
+	}
+}
+@media screen and (min-width : 1200px){
+}
+@media screen and (min-width : 1400px){
+	.container-page-tax{
+		h1{
+			.fontSize(75);
+		}
+		.top-intro-tax{
+		}
+	}
+}

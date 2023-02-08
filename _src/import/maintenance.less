@@ -1,0 +1,72 @@
+/*------------------------------
+MAINTENANCE
+--------------------------------*/
+body{
+	background: @Black url('../img/login/lanimea-landing-page.jpg') no-repeat;
+	/**/
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: 100%;
+	box-shadow: none;
+	height: 100vh;
+}
+#error-page{
+	align-items: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 0;
+	.PaddingBottom(40);
+	margin: 0 auto;
+	max-width: 100%;
+	width: 100%;
+}
+#error-page p{
+	background: none;
+	border: none;
+	color: @rose;
+	.fontSize(30);
+	.lineHeight(35);
+	margin: 0;
+}
+.text-maintenance{
+	.PaddingTop(80);
+
+}
+@media screen and (max-width : 1366px){
+	.content-elements-maintenance{
+		.Width(500);
+	}
+}
+@media screen and (max-width : 1024px){
+	body{
+		background: @Black url('../img/login/lanimea-landing-page-Tablette-1024X768.jpg') no-repeat;
+	}
+}
+@media screen and (max-width : 768px){
+	body{
+		background: @Black url('../img/login/lanimea-landing-page-Tablette-768X1024.jpg') no-repeat;
+	}
+	#error-page{
+		.PaddingBottom(265);
+	}
+}
+@media screen and (max-width : 600px){
+	body{
+		background: @Black url('../img/login/lanimea-landing-page-mobileMobile-375X667.jpg') no-repeat;
+		.backgroundcover();
+	}
+	#error-page{
+		p{
+			.fontSize(28);
+			.lineHeight(30);
+		}
+		.PaddingBottom(100);
+	}
+	.content-elements-maintenance{
+		.Width(340);
+	}
+}

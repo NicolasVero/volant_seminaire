@@ -1,0 +1,310 @@
+.article-vehicule{
+	text-transform: uppercase;
+	.MarginTop(40);
+	&:first-child{
+		margin-top: 0;
+	}
+}
+.etiquette-vehicule{
+	// .absolute();
+	// .Top(15);
+	// .Left(30);
+	color: @Bleu162E46;
+	background-color: @Neuf;
+	.Padding(0, 10);
+	.border-radius(@rad:4px)
+}
+.etiquette-vehicule.vehicule-promo{
+	background-color: @Bleu0059B5;
+	color: @White;
+}
+.brand-vehicule{
+	.mtsR();
+	.fontSize(30);
+	.lineHeight(37)
+}
+.title-vehicule{
+	.mtsB();
+	.fontSize(35);
+	line-height: 1;
+}
+.details-single{
+	overflow: hidden;
+	.absolute();
+	top: 0;
+	right: 0;
+	width: 100%;
+	p{
+		margin: 0;
+	}
+}
+.details-single-tax{
+	.price-vehicule{
+		margin: 0;
+	}
+}
+.price-vehicule{
+	.relative();
+	.fontSize(30);
+	.Padding(0, 25);
+	.PaddingRight(35);
+	height: 100%;
+	&:before{
+		content: '';
+		.absolute();
+		left: 0;
+		display : inline-block;
+		height : 0;
+		width : 0;
+		border-top : 30px solid transparent;
+		border-bottom : 30px solid transparent;
+		border-left : 10px solid @White
+	}
+}
+.more-vehicule{
+	background-color: @Bleu162E46;
+	color: @White;
+	.oswR();
+	.Height(50);
+	.border-radius(@rad:25px);
+	.Padding(0, 15);
+	.MarginLeft(-25);
+	.relative();
+	&:hover{
+		color: @White;
+	}
+	i{
+		.PaddingLeft(15);
+	}
+}
+.container-page-list-tax-vehicules-neufs{
+	.price-vehicule{
+		background-color:@Neuf;
+	}
+	.article-vehicule-promo{
+		.price-vehicule{
+			background-color: @Bleu0059B5;
+			color: @White;
+		}
+	}
+}
+.container-page-list-tax-vehicules-occasions{
+	.price-vehicule,
+	.etiquette-vehicule{
+		background-color:@Occasion;
+	}
+	.article-vehicule-promo{
+		.price-vehicule,
+		.etiquette-vehicule{
+			background-color: @Bleu0059B5;
+			color: @White;
+		}
+	}
+}
+.container-page-list-tax{
+	.MarginBottom(60);
+}
+.article-vehicule-promo{
+	.promo-price-vehicule{
+		text-decoration: line-through;
+	}
+}
+.contact-taxo{
+	display: inline-block;
+	margin-top: 20px;
+}
+.sticky-vehicules-container{
+	background-color: @Bleu162E46;
+	.PaddingBottom(115);
+	.PaddingTop(45);
+	line-height: 1;
+	h3{
+		color: @White;
+		.fontSize(30);
+		.mtsR();
+		text-align: center;
+		text-transform: uppercase;
+		.MarginBottom(35);
+	}
+	ul.carousel-sticky{
+		.relative;
+		.slick-list{
+			overflow: hidden;
+		}
+		.slick-track{
+			margin: 0 auto;
+		}
+		button.slick-arrow{
+			border: 1px solid @White;
+			.border-radius(@rad:100%);
+			.absolute();
+			left:50%;
+			.Bottom(-80);
+			.Height(50);
+			.Width(50);
+			i{
+				color: @White;
+				&:before{
+					.fontSize(25);
+					color: inherit;
+				}
+			}
+		}
+		button.slick-prev{
+			.MarginLeft(-75);
+		}
+		button.slick-next{
+			.MarginLeft(25);
+		}
+	}
+	li.content-sticky{
+		a{
+			background-color: @White;
+			.Padding(15);
+			.relative();
+			text-align: center;
+			i{
+				.MarginTop(15);
+			}
+		}
+		h4{
+			background-color: @Bleu162E46;
+			color: @Grey-3;
+			.mtsB();
+			.fontSize(14);
+			.lineHeight(18);
+			.Padding(5, 0);
+			.MarginBottom(15);
+			text-transform: uppercase;
+		}
+		.promo-price-vehicule,
+		.price-vehicule{
+			color: @Bleu0059B5;
+			margin: 0;
+			padding: 0;
+			&:before,
+			&:after{
+				display: none;
+			}
+		}
+		.promo-price-vehicule{
+			.fontSize(18);
+			text-decoration: line-through;
+			.PaddingRight(15);
+		}
+		.price-vehicule{
+			.fontSize(24);
+		}
+		i{
+		}
+		.etiquette-vehicule {
+			.absolute();
+			.Top(5);
+			margin: 0 auto;
+			text-transform: uppercase;
+			left: 50%;
+			.MarginLeft(-37);
+			.oswR();
+			.Height(25);
+			.lineHeight(25);
+		}
+	}
+}
+@media screen and (min-width : 576px){
+}
+@media screen and (min-width : 768px){
+	.details-single{
+		position: initial;
+		top: initial;
+		right: initial;
+		width: auto;
+	}
+	.sticky-vehicules-container{
+		li.content-sticky{
+			.Padding(0, 15);
+		}
+	}
+}
+@media screen and (min-width : 992px){
+	.article-vehicule{
+		.MarginTop(60);
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+}
+@media screen and (min-width : 1200px){
+	.article-vehicule{
+		.brand-vehicule{
+			.fontSize(30);
+			.lineHeight(37)
+		}
+		.title-vehicule{
+			.fontSize(35);
+			.lineHeight(43);
+		}	
+	}
+	.title-vehicule{
+		line-height: initial;
+	}
+	.price-vehicule{
+		.fontSize(40);
+		.PaddingRight(50);
+	}
+	.more-vehicule{
+		.MarginLeft(-40);
+		.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+		&:hover{
+			.transformX(@x:15px);
+		}
+		&:focus{
+			color: @White;
+		}
+	}
+	.sticky-vehicules-container{
+		.PaddingBottom(45);
+		h3{
+			.fontSize(45);
+			.MarginBottom(60);
+		}
+		ul.carousel-sticky{
+			button.slick-arrow{
+				margin: 0;
+				top: 50%;
+				left: initial;
+			}
+			button.slick-prev{
+				margin: 0;
+				.MarginTop(-25);
+				.Left(-100);
+			}
+			button.slick-next{
+				left: initial;
+				margin: 0;
+				.MarginTop(-25);
+				.Right(-100);
+			}
+		}
+		li.content-sticky{
+			a{
+				&:hover,
+				&:focus{
+					i{
+						opacity:1;
+						.transformX(@x:0);
+					}
+				}
+			}
+			i{
+				opacity: 0;
+				.transformX(@x:-10px);
+				.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+			}
+		}
+	}
+}
+@media screen and (min-width : 1400px){
+	.article-vehicule{
+			
+		}
+}

@@ -1,0 +1,151 @@
+.post-news{
+	a{
+		&:hover{
+			button{
+				i{
+					display: block;
+					&:before{
+						opacity: 1;
+						.transition(@prop:all, @duration:0.5s, @ease:ease-in-out);
+						.transformX(@x:0);
+					}
+				}
+			}	
+		}
+		button{
+			background-color: transparent; 
+			border: 2px solid @Bleu0059B5;
+			display: flex;
+			i{
+				.relative();
+				.MarginLeft(15);
+				display: none;
+				overflow: hidden;
+				&:before{
+					display: block;
+					opacity: 0;
+					.transformX(@x:-15px);
+					.Width(15);
+				}
+			}
+		}	
+	}
+}
+.entry-news-title{
+	.fontSize(35);
+	line-height: 1;
+}
+.entry-news-cat{
+	text-transform: uppercase;
+	.MarginBottom(25);
+}
+.news-date{
+	.fontSize(14);
+	.oswL();
+	text-transform: uppercase;
+}
+.post-news-sticky{
+	background-color: @Bleu162E46;
+	h2,h3{
+		color: @White;
+	}
+	a{
+		.Padding(15);
+		h2.entry-news-title{
+			.fontSize(50);
+		}
+	}
+	p{
+		color: @BleuDBEDFF;
+	}
+	.news-date{
+		color: @BleuA5D1FF;
+		.MarginTop(50);
+		.PaddingTop(10);
+		border-top: 1px solid @BleuA5D1FF;
+	}
+}
+.item-news-vignette{
+	a{
+		text-align: center;		
+		button{
+			color: @Bleu0059B5;
+		}
+		figure{
+			.relative();
+			h3{
+				background-color: @OverlayNews;
+				color: @White;
+				.Padding(10, 0);
+				.absolute();
+				width: 100%;
+				.Bottom(0);
+			}
+		}
+		.entry-news-cat{
+			margin: 0;
+		}
+	}
+}
+.list-item-news{
+	.MarginTop(15);
+}
+.main-page{
+	.container-article-page{
+		.item-news-vignette{
+			p.excerpt-article{
+				.fontSize(16);
+			}
+		}
+	}
+}
+.container-page-single-post{
+	.MarginBottom(60);
+	margin-top: -28vh;
+	.PaddingBottom(60);
+	.relative();
+	.content-news{
+		background-color: @White;
+	}
+	.entry-news-title{
+		.fontSize(60);
+	}
+	.entry-news-cat{
+		margin: 0;
+	}
+	figure{
+		.MaxHeight(600);
+		overflow: hidden;
+	}
+}
+@media screen and (min-width : 576px){
+}
+@media screen and (min-width : 768px){
+	.container-page-single-post{
+		margin-top: -40vh;
+	}
+}
+@media screen and (min-width : 992px){
+	.container-page-single-post{
+		figure{
+			.MaxHeight(400);
+			img{
+				.MarginTop(-180);
+			}
+		}
+	}
+}
+@media screen and (min-width : 1200px){
+	
+}
+@media screen and (min-width : 1400px){
+	.container-page-single-post{
+		margin-top: -75vh;
+		figure{
+			.MaxHeight(600);
+			img{
+				margin: 0;
+			}
+		}
+	}
+}
