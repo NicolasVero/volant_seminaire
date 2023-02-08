@@ -1,0 +1,91 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": "1",
+        "color": {
+            "custom": "1",
+            "customGradient": "",
+            "link": "1",
+            "palette": [
+                {
+                    "name": "orange",
+                    "slug": "orange",
+                    "color": "#ff4e00"
+                },
+                {
+                    "name": "white",
+                    "slug": "white",
+                    "color": "#ffffff"
+                },
+                {
+                    "name": "black",
+                    "slug": "black",
+                    "color": "#333333"
+                },
+                {
+                    "name": "grey light",
+                    "slug": "grey-light",
+                    "color": "#f7f7f7"
+                },
+                {
+                    "name": "grey dark",
+                    "slug": "grey-dark",
+                    "color": "#dbdbdb"
+                },
+                {
+                    "name": "grey middle",
+                    "slug": "grey-middle",
+                    "color": "#707070"
+                }
+            ],
+            "duotone": [
+                {
+                    "colors": [
+                        "#000000",
+                        "#000000"
+                    ]
+                }
+            ],
+            "gradients": [
+                {
+                    "gradient": "linear-gradient(#000000, 0%, #000000, 100%)"
+                }
+            ]
+        },
+        "spacing": {
+            "padding": "",
+            "margin": "",
+            "units": [
+                "rem"
+            ]
+        },
+        "typography": {
+            "customFontSize": "1",
+            "customLineHeight": "1",
+            "dropCap": "",
+            "fontFamilies": [
+                {
+                    "name": "acumin pro",
+                    "slug": "acumin-pro",
+                    "family": "acumin-pro"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "name": "regular",
+                    "slug": "regular",
+                    "size": "14px"
+                },
+                {
+                    "name": "biggest",
+                    "slug": "biggest",
+                    "size": "21px"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "1082px",
+            "wideSize": "1920px"
+        }
+    }
+}

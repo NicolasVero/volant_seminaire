@@ -1,7 +1,16 @@
+:root{
+	--overlaye-color: rgba(11,6,2,0.7);
+	--back-color: rgba(255,255,255,1);
+	--before-color: #0B0602;
+}
+
+html{
+	overflow-x: hidden; 
+}
+
 .WidthHeader() {
 	width: ~"calc(100% - @{WidthNavD})";
 }
-
 .lineHeight(@size) {
 	line-height: ~"@{size}px";
 	@remSize: ((@size / @BaseSize) * 1.6);
@@ -11,6 +20,9 @@
 	height: ~"@{size}px";
 	@remSize: ((@size / @BaseSize) * 1.6);
 	height: ~"@{remSize}rem";
+}
+.HeightP(@size) {
+	height: ~"@{size}%";
 }
 .MaxHeight(@size) {
 	max-height: ~"@{size}px";
@@ -125,10 +137,18 @@
 	@remSize: ((@size / @BaseSize) * 1.6);
 	width: ~"@{remSize}rem";
 }
+.WidthP(@size) {
+	width: ~"@{size}%";
+}
 .MaxWidth(@size) {
 	max-width: ~"@{size}px";
 	@remSize: ((@size / @BaseSize) * 1.6);
 	max-width: ~"@{remSize}rem";
+}
+.MinWidth(@size) {
+	min-width: ~"@{size}px";
+	@remSize: ((@size / @BaseSize) * 1.6);
+	min-width: ~"@{remSize}rem";
 }
 .absolute(){
 	position:absolute;
@@ -141,4 +161,10 @@
 }
 .static(){
 	position: static;
+}
+
+@media screen and (min-width : 576px){
+	html{
+		overflow-x: unset; 
+	}
 }

@@ -11,26 +11,26 @@
 	&:-ms-input-placeholder{
 		color: @Placeholder;
 	}
-	.oswR();
+	.FR();
 }
 .Input(){
 	background: none;
-	border: 1px solid @Bleu0059B5;
+	border: 1px solid @O;
 	.border-radius(@rad:6px);
 	box-shadow: none;
 	color: @Black;
-	.mtsR();
+	.FR();
 	.fontSize(18);
 	.Padding(10);
 	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
 }
 .Textearea(){
 	background: none;
-	border: 1px solid @Bleu0059B5;
+	border: 1px solid @O;
 	.border-radius(@rad:6px);
 	box-shadow: none;
 	color: @Black;
-	.mtsR();
+	.FR();
 	.fontSize(18);
 	.MinHeight(250);
 	.Padding(10);
@@ -38,12 +38,12 @@
 	width: 100%;
 }
 .InputSubmit(){
-	background-color: @Bleu0059B5;
+	background-color: @O;
 	border: none;
 	.border-radius(@rad:0);
 	color: @White;
 	text-align: center;
-	.mtsB();
+	.FB();
 	.Height(50);
 	.lineHeight(50);
 	.MarginTop(0);
@@ -53,9 +53,9 @@
 	.relative();
 }
 .InputSubmitHover(){
-    background-color: @Bleu162E46;
+    background-color: @O;
 	border: none;
-	.mtsB();
+	.FB();
 	.Height(50);
 	.lineHeight(50);
 	.MarginTop(0);
@@ -67,15 +67,15 @@
     .InputSubmitHover()
 }
 .FormHover(){
-	color: @Bleu162E46;
-	border-color: @Bleu162E46;
-	.BoxShadow(1, 1, 11, -4, @Bleu004B99);
+	color: @O;
+	border-color: @O;
+	.BoxShadow(1, 1, 11, -4, @Orange);
 }
 .selectDropdown(){
-	.mtsR();
+	.FR();
 	color: @Placeholder;
 	background: transparent;
-	border: 1px solid @Bleu0059B5;
+	border: 1px solid @O;
 	.border-radius(@rad:6px);
 	cursor: pointer;
 	display: inline-block;
@@ -262,7 +262,7 @@ input[type="submit"][disabled]{
 	opacity: .6;
 }
 .submit-content{
-	background-color: @Bleu0059B5;
+	background-color: @O;
 	.MarginTop(15);
 	.PaddingRight(20);
 	width: min-content;
@@ -325,7 +325,7 @@ span.wpcf7-not-valid-tip,
 div.wpcf7-mail-sent-ok{
     color: @White !important;
     border: none !important;
-    .mtsB();
+    .FB();
     .fontSize(14) !important;
     text-transform: uppercase;
     .PaddingLeft(5);
@@ -429,19 +429,19 @@ SELECT
 	padding: 0;
 	//text-transform: uppercase;
 	.ui-menu-item-wrapper{
-		.mtsR();
+		.FR();
 		border: none;
 		color: @Black;
 		.Padding(10);
 	}
 	.ui-state-active{
-		background-color: @Bleu0059B5;
+		background-color: @O;
 		border: none;
 		color: @White;
 	}
 }
 .ui-menu > li:hover{
-	background-color: @Bleu0059B5;
+	background-color: @O;
 	border: none;
 	cursor: pointer;
 }
@@ -548,7 +548,7 @@ BOUTON RADIO
 		}
 		input[type="radio"]:not(:checked) + span:after,
 		input[type="radio"]:checked + span:after{
-			background-color: @Green;
+			background-color: @Grey-4;
 			content: '';
 			.Height(10);
 			left: 50%;
@@ -566,7 +566,7 @@ BOUTON RADIO
 	}
 }
 .label-active{
-	color: @Green;
+	color: @Grey-4;
 }
 /*------------------------------
 CHECKBOX
@@ -604,7 +604,7 @@ CHECKBOX
 	}
 	input[type="checkbox"]:not(:checked) + span:after,
 	input[type="checkbox"]:checked + span:after{
-		background-color: @Green;
+		background-color: @Grey-4;
 		content: '';
 		.Height(10);
 		.Left(5);
@@ -635,7 +635,7 @@ FICHIERS
 	.Height(50);
 	display: block;
 	padding: 0;
-	background: @Green;
+	background: @Grey-4;
 	color: @White;
 	.fontSize(16);
 	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
@@ -692,12 +692,12 @@ input[type="file"]{
 }
 .add-file{
 	i{
-		background-color: @Green;
+		background-color: @Grey-4;
 	}
 }
 .del-file{
 	i{
-		background-color: @Orange;
+		background-color: @O;
 	}
 }
 //DYNAMIC TEXT

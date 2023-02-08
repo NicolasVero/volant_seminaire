@@ -1,6 +1,5 @@
 //IMPORT FONT
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@200;400;500&display=swap');
+@import url("https://use.typekit.net/nrt2gml.css");
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
@@ -91,8 +90,7 @@
 @FontAwesome: 'FontAwesome';
 @Mify: 'themify';
 @Icon: 'icomoon';
-@Montserrat: 'Montserrat', sans-serif;
-@Oswald: 'Oswald', sans-serif;
+@FontFirst: "acumin-pro", sans-serif;;
 @BaseSize: 16;
 //FONTAWESOME & MIFY
 .FontAwesome(){
@@ -105,31 +103,18 @@
 	font-family: @Icon;
 }
 //FONT PROJET
-.mtsR(){
-	font-family: @Montserrat;
+.FR(){
+	font-family: @FontFirst;
 	font-weight: @Regular;
 }
-.mtsB(){
-	font-family: @Montserrat;
+.FB(){
+	font-family: @FontFirst;
 	font-weight: @Bold;
 }
-.oswL(){
-	font-family: @Oswald;
-	font-weight: @Light;
-}
-.oswR(){
-	font-family: @Oswald;
-	font-weight: @Regular;
-}
-.oswB(){
-	font-family: @Oswald;
-	font-weight: @SemiBold;
-}
 .FontGeneric(){
-	.mtsR();
+	.FR();
 	.fontSize(16);
 }
-
 html{
 	font-size: 62.5%;
 }
