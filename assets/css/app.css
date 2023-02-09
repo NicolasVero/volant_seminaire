@@ -1,5 +1,11 @@
 /*------------------------------
-VARIABLES
+VARIABLES CHEMIN
+--------------------------------*/
+/*------------------------------
+VARIABLES IMAGES
+--------------------------------*/
+/*------------------------------
+IMPORT BASE
 --------------------------------*/
 /*------------------------------
 VARIABLES COULEURS GÉNÉRIQUES
@@ -17,15 +23,6 @@ VARIABLES COULEURS PROJETS
 .has-white-color {
   color: #FFFFFF;
 }
-/*------------------------------
-VARIABLES CHEMIN
---------------------------------*/
-/*------------------------------
-VARIABLES IMAGES
---------------------------------*/
-/*------------------------------
-IMPORT BASE
---------------------------------*/
 @font-face {
   font-family: 'havre-caravano';
   src: url('../fonts/havre-caravano.eot?fj1tdl');

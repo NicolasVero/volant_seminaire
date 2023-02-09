@@ -2,7 +2,10 @@
   "identifier" : "E1A46575-2A6D-4865-ABF4-116161303E71",
   "ignoredFilePatterns" : [
     "config.codekit3",
-    "_src"
+    "_src",
+    "node_modules",
+    "package-lock.json",
+    "package.json"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",
