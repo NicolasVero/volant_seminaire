@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 function custom_post()
 {
@@ -7,7 +7,7 @@ function custom_post()
 
     $labels = array(
         'name'                => _x('Les activités', 'Post Type General Name'),
-        'singular_name'       => _x('activité', 'Post Type Singular Name'),
+        'singular_name'       => _x('Activité', 'Post Type Singular Name'),
         'menu_name'           => __('Les activités'),
         'all_items'           => __('Toutes les activités'),
         'view_item'           => __('Voir les activités'),
@@ -57,7 +57,7 @@ function custom_post()
 		'label'               => __( 'Services'),
 		'description'         => __( 'Toute l\'Service de Lanimea'),
 		'labels'              => $labels,
-		'menu_icon'           => 'dashicons-media-spreadsheet',
+		'menu_icon'           => 'dashicons-admin-tools',
 		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'custom-fields', 'menu' ),
 		'hierarchical'        => false,
 		'public'              => true,

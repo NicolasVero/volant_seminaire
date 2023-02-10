@@ -1,7 +1,10 @@
 <?php
+
 if (! defined('ABSPATH')) {
     exit;
 }
+
+$urlTemplate = get_stylesheet_directory();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -19,17 +22,18 @@ if (! defined('ABSPATH')) {
 
 <body <?php body_class(); ?>>
     <header id="main-header" class="main-header header-site" role="banner">
-        <div class="container-fluid main-header-container d-flex flex-column flex-md-row justify-content-md-between align-items-lg-center">
+        <div class="container-fluid main-header-container container d-flex flex-column flex-md-row justify-content-md-between align-items-lg-center">
             <?php
             get_template_part('template-parts/navigation/nav', 'header-brand');
-            get_template_part('template-parts/navigation/nav', 'header');
             get_template_part('template-parts/navigation/nav', 'widgets');
+            get_template_part('template-parts/navigation/nav', 'header');
+         
         ?>
         </div>
-        <div class="search-form-container container-fluid">
-            <?php include 'inc/searchform.php';?>
-        </div>
-        <div class="overlay"></div>
+        <!-- <div class="search-form-container container-fluid">
+            <?php //include 'inc/searchform.php';?>
+        </div> -->
+        <!-- <div class="overlay"></div> -->
     </header>
     <?php if (is_front_page()):?>
     <main id="main-site" class="main-site main-home">
