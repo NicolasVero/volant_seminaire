@@ -5,7 +5,8 @@
     "_src",
     "node_modules",
     "package-lock.json",
-    "package.json"
+    "package.json",
+    "inc\/base-formulaire.php"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",

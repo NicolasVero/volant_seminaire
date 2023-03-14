@@ -47,21 +47,24 @@ require_once('inc/custom-post.php');
 //TAXONOMIES
 require_once('inc/custom-taxonomy.php');
 
+//ACTIVITES
+require_once('inc/activities.php');
+
 //BREADCRUMB
-require_once('inc/breadcrumb.php');
+//require_once('inc/breadcrumb.php');
 
 //GOOGLE MAPS
-require_once('inc/google-map.php');
+//require_once('inc/google-map.php');
 
 // GESTION GUTEMBERG ET ACF
 require_once('inc/register-blocks-acf.php');
 // require_once('inc/custom-blocks-callback.php');
 
 //STICKY CUSTOM POST TYPE
-require_once('inc/sticky-custom-posts-type.php');
+//require_once('inc/sticky-custom-posts-type.php');
 
 //RANGE
-require_once('inc/range-field.php');
+//require_once('inc/range-field.php');
 // GESTION WP GRID BUILDER
 
 // require_once('inc/grid_builder.php');

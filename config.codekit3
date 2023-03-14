@@ -1650,6 +1650,38 @@
       "oAP" : "\/header.php",
       "oF" : 0
     },
+    "\/inc\/activities-ajout-1.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities-ajout-1.php",
+      "oF" : 0
+    },
+    "\/inc\/activities-test1.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities-test1.php",
+      "oF" : 0
+    },
+    "\/inc\/activities.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities.php",
+      "oF" : 0
+    },
+    "\/inc\/base-formulaire.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/base-formulaire.php",
+      "oF" : 0
+    },
     "\/inc\/blocks\/acf-event.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1736,6 +1768,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/datas\/data-navigation.php",
+      "oF" : 0
+    },
+    "\/inc\/datas\/datas-activites.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/datas\/datas-activites.php",
+      "oF" : 0
+    },
+    "\/inc\/datas\/datas-common.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/datas\/datas-common.php",
       "oF" : 0
     },
     "\/inc\/formating-content.php" : {
@@ -1993,18 +2041,6 @@
       "oAP" : "\/single.php",
       "oF" : 0
     },
-    "\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/style-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -2033,20 +2069,28 @@
       "oAP" : "\/template-pages\/data\/data-news.php",
       "oF" : 0
     },
-    "\/template-pages\/page-blog.php" : {
+    "\/template-pages\/template-blog.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-pages\/page-blog.php",
+      "oAP" : "\/template-pages\/template-blog.php",
       "oF" : 0
     },
-    "\/template-pages\/page-content.php" : {
+    "\/template-pages\/template-content.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-pages\/page-content.php",
+      "oAP" : "\/template-pages\/template-content.php",
+      "oF" : 0
+    },
+    "\/template-pages\/template-devis.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-pages\/template-devis.php",
       "oF" : 0
     },
     "\/template-parts\/content-archive.php" : {
@@ -2121,12 +2165,12 @@
       "oAP" : "\/template-parts\/content-single-post.php",
       "oF" : 0
     },
-    "\/template-parts\/content-single-tax-vehicules.php" : {
+    "\/template-parts\/content-single-tax-activites.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-parts\/content-single-tax-vehicules.php",
+      "oAP" : "\/template-parts\/content-single-tax-activites.php",
       "oF" : 0
     },
     "\/template-parts\/content-slider-gallery.php" : {

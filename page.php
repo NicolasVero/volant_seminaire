@@ -5,14 +5,11 @@ if (! defined('ABSPATH')) {
 }
 get_header();
 
-    if (is_page('lactualite') || is_page(49) ) {
-        get_template_part('template-pages/page', 'blog');   
-    }elseif( is_page(300)){
-        get_template_part('template-pages/page', 'vehicules');      
+    if ( is_page('actualite') ) {
+        get_template_part('template-pages/template', 'blog');         
     }else {
-        while (have_posts()) : the_post();
-        get_template_part('template-pages/page', 'content');
+        while ( have_posts()) : the_post();
+        get_template_part('template-pages/template', 'content');
         endwhile;
     }
-
 get_footer();

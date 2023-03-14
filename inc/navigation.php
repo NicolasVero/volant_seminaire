@@ -1,11 +1,11 @@
 <?php
 // AJOUT MENU
 register_nav_menus( array(
+	'menu-header' => __( 'Menu header' ),
+	'menu-footer' => __( 'Menu footer' ),
 	'menu-copyright' => __( 'Menu copyright' ),
 	'menu-widgets' => __( 'Menu widgets' ),
-	'menu-medias-sociaux' => __( 'Menu medias sociaux' ),
-	'menu-footer' => __( 'Menu footer' ),
-	'menu-pages' => __( 'Menu pages et singles' )
+	'menu-medias-sociaux' => __( 'Menu medias sociaux' )
 ) );
 
 //AJOUTER CLASSE SUR LI MENU
