@@ -6,4 +6,4 @@
 
 
 
-le code  wp_redirect( home_url( '/demander-un-devis/' ) ); dans la fonction function add_to_devis(); ne marche pas, corrige-le
+le code  wp_redirect( home_url( '/demander-un-devis/' ) ); dans la fonction function add_to_devis(); ne marche pas, corrige-leide
