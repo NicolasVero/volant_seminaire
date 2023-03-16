@@ -53,89 +53,38 @@ function display_devis_form() {
 						<p><?= esc_html( $activite->post_excerpt ) ?></p>
 					</div>
 					<div class="devis-item-form">
-						<div class="content-form">
-							<label for="nombre-personnes">Nombre de personnes</label>
-							<input type="number" name="nombre-personnes" id="nombre-personnes" value="<?php echo isset($_POST['nombre-personnes']) ? $_POST['nombre-personnes'] : ''; ?>">
-						</div>
-						<div class="content-form">
-							<label for="date-activite">Date de l'activité</label>
-							<input type="date" name="date-activite" id="date-activite" value="<?php echo isset($_POST['date-activite']) ? $_POST['date-activite'] : ''; ?>">
-						</div>
-						<div class="content-form">
-							<label for="adresse-seminaire">Adresse du séminaire</label>
-							<input type="text" name="adresse-seminaire" id="adresse-seminaire" value="<?php echo isset($_POST['adresse-seminaire']) ? $_POST['adresse-seminaire'] : ''; ?>">
-						</div>
-						<div class="content-form">
-							<label for="horaires-heures">Horaires</label>
-							<span>de</span>
-								<select name="horaires-heures" id="horaires-heures">
-									<option value="00">00</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>							
-								</select>
-								<span>h</span>
-								<select name="horaires-minutes" id="horaires-minutes">
-									<option value="00">00</option>
-									<option value="15">15</option>
-									<option value="30">30</option>
-									<option value="45">45</option>
-								</select>
-								<span>à</span>
-								<select name="horaires-a-heures" id="horaires-a-heures">
-									<option value="00">00</option>
-									<option value="01">01</option>
-									<option value="02">02</option>
-									<option value="03">03</option>
-									<option value="04">04</option>
-									<option value="05">05</option>
-									<option value="06">06</option>
-									<option value="07">07</option>
-									<option value="08">08</option>
-									<option value="09">09</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option>
-									<option value="13">13</option>
-									<option value="14">14</option>
-									<option value="15">15</option>
-									<option value="16">16</option>
-									<option value="17">17</option>
-									<option value="18">18</option>
-									<option value="19">19</option>
-									<option value="20">20</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>							
-								</select>
-								<span>h</span>
-								<select name="horaires-a-minutes" id="horaires-a-minutes">
-									<option value="00">00</option>
-									<option value="15">15</option>
-									<option value="30">30</option>
-									<option value="45">45</option>
-								</select>
-						</div>
+						<label>Nombre de personnes</label>
+						<input type="number" name="nombre_personnes" value="" />
+						<label>Date de l'activité</label>
+						<input type="date" name="date_activite_<?php echo $devis_item; ?>" value="" />
+						<label>Adresse du séminaire</label>
+						<input type="text" name="adresse_seminaire_<?php echo $devis_item; ?>" value="" />
+						<label>Horaires de l'activité</label>
+						<select name="horaires_heure_debut_<?php echo $devis_item; ?>">
+							<?php for ( $i = 00; $i <= 23; $i++ ) : ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endfor; ?>
+						</select>
+						h
+						<select name="horaires_minute_debut_<?php echo $devis_item; ?>">
+							<option value="00">00</option>
+							<option value="15">15</option>
+							<option value="30">30</option>
+							<option value="45">45</option>
+						</select>
+						à
+						<select name="horaires_heure_fin_<?php echo $devis_item; ?>">
+							<?php for ( $i = 00; $i <= 23; $i++ ) : ?>
+								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+							<?php endfor; ?>
+						</select>
+						h
+						<select name="horaires_minute_fin_<?php echo $devis_item; ?>">
+							<option value="00">00</option>
+							<option value="15">15</option>
+							<option value="30">30</option>
+							<option value="45">45</option>
+						</select>
 					</div>					
 				</div>
 			<?php endforeach; ?>
@@ -146,29 +95,97 @@ function display_devis_form() {
 }
 add_shortcode( 'display_devis_form', 'display_devis_form' );
 
-// Ajouter les champs personnalisés au mail
-function add_custom_fields_to_mail( $template, $prop ) {
-	if ( $prop === 'mail' ) {
-		global $wpdb;
-		$submission = WPCF7_Submission::get_instance();
-		if ( $submission ) {
-			$form_data = $submission->get_posted_data();
-			$devis_items = isset( $form_data['devis_items'] ) ? $form_data['devis_items'] : '';
-			$devis_items_array = explode( ',', $devis_items );
-			$activites = array();
-			foreach ( $devis_items_array as $devis_item ) {
-				$activite = get_post( $devis_item );
-				$activites[] = array(
-					'titre' => $activite->post_title,
-					'nombre_personnes' => isset( $form_data['nombre-personnes'] ) ? sanitize_text_field( $form_data['nombre-personnes'] ) : '',
-					'date_activite' => isset( $form_data['date-activite'] ) ? sanitize_text_field( $form_data['date-activite'] ) : '',
-					'adresse_seminaire' => isset( $form_data['adresse-seminaire'] ) ? sanitize_text_field( $form_data['adresse-seminaire'] ) : '',
-					'horaires' => isset( $form_data['horaires-heures'] ) ? sanitize_text_field( $form_data['horaires-heures'] ) . ':' . sanitize_text_field( $form_data['horaires-minutes'] ) . ' - ' . sanitize_text_field( $form_data['horaires-a-heures'] ) . ':' . sanitize_text_field( $form_data['horaires-a-minutes'] ) : '',
-				);
-			}
-			$template = str_replace( '[activites]', json_encode( $activites ), $template );
+// Ajouter les champs personnalisés au formulaire de devis
+function add_custom_devis_fields() {
+	wpcf7_add_form_tag( 'nombre_personnes', 'custom_nombre_personnes_field_handler', array( 'name-attr' => true ) );
+	wpcf7_add_form_tag( 'date_activite', 'custom_date_activite_field_handler', array( 'name-attr' => true ) );
+	wpcf7_add_form_tag( 'adresse_seminaire', 'custom_adresse_seminaire_field_handler', array( 'name-attr' => true ) );
+	wpcf7_add_form_tag( 'horaires', 'custom_horaires_field_handler', array( 'name-attr' => true ) );
+	wpcf7_add_form_tag( 'titre_activite', 'custom_titre_activite_field_handler', array( 'name-attr' => true ) );
+}
+add_action( 'wpcf7_init', 'add_custom_devis_fields' );
+
+// Gestionnaire pour le champ nombre_personnes
+function custom_nombre_personnes_field_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
+	$html .= '<input type="number" name="' . esc_attr( $tag->name ) . '" value="' . esc_attr( $tag->get_default_option( 'value', '1' ) ) . '" />';
+	return $html;
+}
+
+// Gestionnaire pour le champ date_activite
+function custom_date_activite_field_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
+	$html .= '<input type="date" name="' . esc_attr( $tag->name ) . '" value="' . esc_attr( $tag->get_default_option( 'value' ) ) . '" />';
+	return $html;
+}
+
+// Gestionnaire pour le champ adresse_seminaire
+function custom_adresse_seminaire_field_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
+	$html .= '<textarea name="' . esc_attr( $tag->name ) . '">' . esc_html( $tag->get_default_option( 'value' ) ) . '</textarea>';
+	return $html;
+}
+
+// Gestionnaire pour le champ horaires
+function custom_horaires_field_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
+	$html .= '<select name="' . esc_attr( $tag->name ) . '">';
+	$options = $tag->get_option( 'options', '' );
+	if ( $options ) {
+		foreach ( $options as $option ) {
+			$html .= '<option value="' . esc_attr( $option ) . '">' . esc_html( $option ) . '</option>';
 		}
 	}
-	return $template;
+	$html .= '</select>';
+	return $html;
 }
-add_filter( 'wpcf7_special_mail_tags', 'add_custom_fields_to_mail', 10, 2 );
+
+// Gestionnaire pour le champ titre_activite
+function custom_titre_activite_field_handler( $tag ) {
+	$tag = new WPCF7_FormTag( $tag );
+	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
+	$html .= '<input type="text" name="' . esc_attr( $tag->name ) . '" value="' . esc_attr( $tag->get_default_option( 'value' ) ) . '" />';
+	return $html;
+}
+
+// Modifie le contenu du message de l'email envoyé depuis le formulaire de contact 7
+function customize_devis_mail_body( $body, $form ) {
+	if($form->id == 4){
+		
+		$datas = $form->posted_data;
+				
+		$fields = $form->scan_form_tags();
+		$nombre_personnes = '';
+		$date_activite = '';
+		$adresse_seminaire = '';
+		$horaires = '';
+		$titre_activite = '';
+		
+		foreach ( $fields as $field ) {
+			if ( 'nombre_personnes' == $field['type'] ) {
+				$nombre_personnes = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
+				$body = str_replace( '[nombre-personnes]', $nombre_personnes, $body );
+			} elseif ( 'date_activite' == $field['type'] ) {
+				$date_activite = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
+				$body = str_replace( '[date-activite]', $date_activite, $body );
+			} elseif ( 'adresse_seminaire' == $field['type'] ) {
+				$adresse_seminaire = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
+				$body = str_replace( '[adresse-seminaire]', $adresse_seminaire, $body );
+			} elseif ( 'horaires' == $field['type'] ) {
+				$horaires = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
+				$body = str_replace( '[horaires]', $horaires, $body );
+			} elseif ( 'titre_activite' == $field['type'] ) {
+				$titre_activite = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
+				$body = str_replace( '[titre-activite]', $titre_activite, $body );
+			}
+		}
+		
+		return $body;
+	
+	}
+}
+add_filter( 'wpcf7_mail_components', 'customize_devis_mail_body', 10, 2 );
