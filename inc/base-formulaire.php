@@ -164,3 +164,49 @@ function add_custom_fields_to_mail( $template, $prop ) {
 	return $template;
 }
 add_filter( 'wpcf7_special_mail_tags', 'add_custom_fields_to_mail', 10, 2 );
+
+
+
+// Ajouter des champs dynamiques pour le devis
+function add_custom_devis_fields() {
+	$post_id = isset( $_GET['add_to_devis'] ) ? intval( $_GET['add_to_devis'] ) : 0;
+	if ( $post_id ) {
+		$activite = get_post( $post_id );
+		?>
+		<div class="custom-devis-fields">
+			<input type="hidden" name="devis_items" value="<?php echo esc_attr( $post_id ); ?>" />
+			<p>
+				<label>Titre de l'activité</label>
+				<span class="wpcf7-form-control-wrap titre-activite">
+					<input type="text" name="titre-activite" value="<?php echo esc_attr( $activite->post_title ); ?>" size="40" readonly="readonly" />
+				</span>
+			</p>
+			<p>
+				<label>Nombre de personnes</label>
+				<span class="wpcf7-form-control-wrap nombre-personnes">
+					<input type="text" name="nombre-personnes" value="" size="40" />
+				</span>
+			</p>
+			<p>
+				<label>Date de l'activité</label>
+				<span class="wpcf7-form-control-wrap date-activite">
+					<input type="date" name="date-activite" value="" size="40" />
+				</span>
+			</p>
+			<p>
+				<label>Adresse du séminaire</label>
+				<span class="wpcf7-form-control-wrap adresse-seminaire">
+					<textarea name="adresse-seminaire" cols="40" rows="10"></textarea>
+				</span>
+			</p>
+			<p>
+				<label>Horaires</label>
+				<span class="wpcf7-form-control-wrap horaires">
+					De <input type="time" name="horaires-debut" value="" size="10" /> à <input type="time" name="horaires-fin" value="" size="10" />
+				</span>
+			</p>
+		</div>
+		<?php
+	}
+}
+add_action( 'woocommerce_single_product_summary', 'add_custom_devis_fields' );

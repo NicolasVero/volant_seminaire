@@ -7,7 +7,9 @@
     "package-lock.json",
     "package.json",
     "inc\/base-formulaire.php",
-    "base-code-devis.php"
+    "base-code-devis.php",
+    "assets\/css\/devis-contact-form.css",
+    "assets\/css\/devis-contact-form.css.map"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",

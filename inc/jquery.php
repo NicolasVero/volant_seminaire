@@ -11,10 +11,12 @@
 		//wp_register_script( 'map', $js_directory . 'google-map.js', 'jquery', '1.0');
 		//wp_register_script( 'cookies', $js_directory . 'Tag_google_analytics.js', 'jquery', '1.0');
 		wp_register_script( 'easing', $js_directory . 'jquery.easing.1.3.js', 'jquery', '1.0');
+		wp_register_script( 'contact', $js_directory . 'contact-form.js', 'jquery', '1.0');
 		
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'jquery-ui' );
 		//wp_enqueue_script( 'map' );
+		wp_enqueue_script( 'contact');
 		wp_enqueue_script( 'app');
 		//wp_enqueue_script( 'slick');
 		//wp_enqueue_script( 'popup');
