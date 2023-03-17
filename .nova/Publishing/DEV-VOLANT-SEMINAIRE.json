@@ -2,7 +2,14 @@
   "identifier" : "E1A46575-2A6D-4865-ABF4-116161303E71",
   "ignoredFilePatterns" : [
     "config.codekit3",
-    "_src"
+    "_src",
+    "node_modules",
+    "package-lock.json",
+    "package.json",
+    "inc\/base-formulaire.php",
+    "base-code-devis.php",
+    "assets\/css\/devis-contact-form.css",
+    "assets\/css\/devis-contact-form.css.map"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",

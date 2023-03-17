@@ -1,12 +1,11 @@
 .main-header{
 	background-color: @White;
-	.fixed();
-	.PaddingTop(13);
 	width: 100vw;
+	.fixed();
+	bottom: 0;
 	z-index: 3;
 }
 .main-header-container{
-	background-color: @White;
 	.Padding(15, 0);
 	.PaddingTop(0);
 	.relative();
@@ -19,70 +18,40 @@
 	}
 }
 .site-branding{
-	.Height(105);
+	background-image: @logoS;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	direction: ltr;
+	display: block;
+	height: inherit;
+	position: relative;
+	text-indent: -999em;
+	.Width(33);
+	.Height(33);
 	position: relative;
 	margin: 0;
 	.MarginTop(15);
 	z-index: 4;
-	a{
-		background-image: @logoS;
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		direction: ltr;
-		display: block;
-		height: inherit;
-		position: relative;
-		text-indent: -999em;
-		.Width(105);
-	}
 }
 @media screen and (min-width : 576px){
 
 }
 @media screen and (min-width : 768px){
 	.main-header{
-		.Height(100);
-		&:after{
-			.Height(80);
-		}
-	}
-	.main-header-container{
-		.Padding(20, 15);
-		padding-bottom: 0;
-		.Height(120);
-		.static();
+		.relative();
+		.bgBlack();
 	}
 	.site-branding{
-		.Height(90);
+		background: @logoL;
+		.Height(33);
 		margin: 0;
-		.Width(105);
+		.Width(139);
 	}
 }
 @media screen and (min-width : 992px){
 }
 @media screen and (min-width : 1200px){
-	.main-header{
-		padding-top: 0;
-		.Height(100);
-		&:after{
-			.Height(100);
-		}
-	}
-	.site-branding{
-		.Height(90);
-		margin: 0;
-		.Width(230);
-		a{
-			background: @logoL;
-			width: inherit;		
-		}
-	}
 }
 @media screen and (min-width : 1400px){
-	.main-header{
-		&:after{
-			.Height(175);
-		}
-	}
 }

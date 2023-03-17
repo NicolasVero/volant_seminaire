@@ -1,73 +1,73 @@
-<?php
+ <?php
 
 function custom_post()
 {
 
-    //LES VÉHICULES
+    //LES ACTVITÉS
 
     $labels = array(
-        'name'                => _x('Les véhicules', 'Post Type General Name'),
-        'singular_name'       => _x('Véhicule', 'Post Type Singular Name'),
-        'menu_name'           => __('Les véhicules'),
-        'all_items'           => __('Tous les véhicules'),
-        'view_item'           => __('Voir les véhicules'),
-        'add_new_item'        => __('Ajouter un nouveau véhicule'),
+        'name'                => _x('Les activités', 'Post Type General Name'),
+        'singular_name'       => _x('Activité', 'Post Type Singular Name'),
+        'menu_name'           => __('Les activités'),
+        'all_items'           => __('Toutes les activités'),
+        'view_item'           => __('Voir les activités'),
+        'add_new_item'        => __('Ajouter une nouvelle activité'),
         'add_new'             => __('Ajouter'),
-        'edit_item'           => __('Editer un véhicule'),
-        'update_item'         => __('Modifier le véhicule'),
+        'edit_item'           => __('Editer une activité'),
+        'update_item'         => __('Modifier l\'activité'),
         'search_items'        => __('Rechercher'),
-        'not_found'           => __('Non trouvé'),
-        'not_found_in_trash'  => __('Non trouvé dans la corbeille'),
+        'not_found'           => __('Non trouvée'),
+        'not_found_in_trash'  => __('Non trouvée dans la corbeille'),
     );
 
     $args = array(
-        'label'               => __('Les véhicules'),
-        'description'         => __('Les véhicules neufs et d\'occasions vendus par le Havre Caravano'),
+        'label'               => __('Les activités'),
+        'description'         => __('Les activités neufs et d\'occasions vendus par le Havre Caravano'),
         'labels'              => $labels,
         'menu_icon'           => 'dashicons-car',
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', 'menu' ),
         'hierarchical'        => false,
         'public'              => true,
         'has_archive'         => true,
-        'rewrite'			  => array( 'slug' => 'vehicules'),
+        'rewrite'			  => array( 'slug' => 'les-activites'),
         'show_in_rest'        => false,
 
     );
 
-    register_post_type('vehicules', $args);
+    register_post_type('activites', $args);
 
-    // 	//ACTUALITÉS
-//
-// 	$labels = array(
-// 		'name'                => _x( 'Actualités', 'Post Type General Name'),
-// 		'singular_name'       => _x( 'Actualité', 'Post Type Singular Name'),
-// 		'menu_name'           => __( 'Actualités'),
-// 		'all_items'           => __( 'Toutes les actualités'),
-// 		'view_item'           => __( 'Voir l\'actualité'),
-// 		'add_new_item'        => __( 'Ajouter une nouvelle actualité'),
-// 		'add_new'             => __( 'Ajouter'),
-// 		'edit_item'           => __( 'Editer une actualité'),
-// 		'update_item'         => __( 'Modifier l\'actualité'),
-// 		'search_items'        => __( 'Rechercher'),
-// 		'not_found'           => __( 'Non trouvée'),
-// 		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
-// 	);
-//
-// 	$args = array(
-// 		'label'               => __( 'Actualités'),
-// 		'description'         => __( 'Toute l\'actualité de Lanimea'),
-// 		'labels'              => $labels,
-// 		'menu_icon'           => 'dashicons-media-spreadsheet',
-// 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
-// 		'hierarchical'        => false,
-// 		'public'              => true,
-// 		'has_archive'         => true,
-// 		'rewrite'			  => array( 'slug' => 'actualites'),
-// 		'show_in_rest'        => true,
-//
-// 	);
-//
-// 	register_post_type( 'actualites', $args );
+    	//SERVICES
+
+	$labels = array(
+		'name'                => _x( 'Services', 'Post Type General Name'),
+		'singular_name'       => _x( 'Service', 'Post Type Singular Name'),
+		'menu_name'           => __( 'Services'),
+		'all_items'           => __( 'Tous les Services'),
+		'view_item'           => __( 'Voir le ervice'),
+		'add_new_item'        => __( 'Ajouter une nouvelle Service'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer un service'),
+		'update_item'         => __( 'Modifier le service'),
+		'search_items'        => __( 'Rechercher'),
+		'not_found'           => __( 'Non trouvé'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+
+	$args = array(
+		'label'               => __( 'Services'),
+		'description'         => __( 'Toute l\'Service de Lanimea'),
+		'labels'              => $labels,
+		'menu_icon'           => 'dashicons-admin-tools',
+		'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'custom-fields', 'menu' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'les-services'),
+		'show_in_rest'        => true,
+
+	);
+
+	register_post_type( 'services', $args );
 }
 
 add_action('init', 'custom_post', 0);

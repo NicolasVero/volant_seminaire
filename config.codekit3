@@ -55,7 +55,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/animate.css",
+      "oAP" : "\/assets\/css\/animate.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -73,7 +73,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/bootstrap-grid.min.css",
+      "oAP" : "\/assets\/css\/bootstrap-grid.min.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -91,7 +91,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/bootstrap-spacing.css",
+      "oAP" : "\/assets\/css\/bootstrap-spacing.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -109,7 +109,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/border.css",
+      "oAP" : "\/assets\/css\/border.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -127,7 +127,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/button.css",
+      "oAP" : "\/assets\/css\/button.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -145,7 +145,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/carousel-products.css",
+      "oAP" : "\/assets\/css\/carousel-products.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -163,7 +163,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/carousel.css",
+      "oAP" : "\/assets\/css\/carousel.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -181,7 +181,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/catalogue.css",
+      "oAP" : "\/assets\/css\/catalogue.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -199,7 +199,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/clearfix.css",
+      "oAP" : "\/assets\/css\/clearfix.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -217,7 +217,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/colors.css",
+      "oAP" : "\/assets\/css\/colors.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -235,7 +235,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/cookies.css",
+      "oAP" : "\/assets\/css\/cookies.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -243,7 +243,7 @@
       "sI" : 0,
       "sU" : 0
     },
-    "\/_src\/import\/couleurs.less" : {
+    "\/_src\/import\/devis-contact-form.less" : {
       "aP" : 0,
       "bl" : 0,
       "co" : 0,
@@ -253,7 +253,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/couleurs.css",
+      "oAP" : "\/assets\/css\/devis-contact-form.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -271,7 +271,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/elements.css",
+      "oAP" : "\/assets\/css\/elements.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -289,7 +289,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_animated.css",
+      "oAP" : "\/assets\/css\/_animated.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -307,7 +307,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_bordered-pulled.css",
+      "oAP" : "\/assets\/css\/_bordered-pulled.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -325,7 +325,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_core.css",
+      "oAP" : "\/assets\/css\/_core.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -343,7 +343,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_fixed-width.css",
+      "oAP" : "\/assets\/css\/_fixed-width.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -361,7 +361,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_icons.css",
+      "oAP" : "\/assets\/css\/_icons.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -379,7 +379,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_larger.css",
+      "oAP" : "\/assets\/css\/_larger.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -397,7 +397,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_list.css",
+      "oAP" : "\/assets\/css\/_list.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -415,7 +415,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_mixins.css",
+      "oAP" : "\/assets\/css\/_mixins.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -433,7 +433,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_rotated-flipped.css",
+      "oAP" : "\/assets\/css\/_rotated-flipped.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -451,7 +451,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_screen-reader.css",
+      "oAP" : "\/assets\/css\/_screen-reader.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -469,7 +469,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_shims.css",
+      "oAP" : "\/assets\/css\/_shims.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -487,7 +487,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_stacked.css",
+      "oAP" : "\/assets\/css\/_stacked.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -505,7 +505,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/import\/assets\/css\/_variables.css",
+      "oAP" : "\/assets\/css\/_variables.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -543,7 +543,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/import\/assets\/css\/brands.css",
+      "oAP" : "\/assets\/css\/brands.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -581,21 +581,13 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/import\/assets\/css\/fontawesome.css",
+      "oAP" : "\/assets\/css\/fontawesome.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
       "rwU" : 0,
       "sI" : 0,
       "sU" : 0
-    },
-    "\/_src\/import\/fontawesome\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/_src\/import\/fontawesome\/Icon\r",
-      "oF" : 0
     },
     "\/_src\/import\/fontawesome\/regular.css" : {
       "aP" : 1,
@@ -627,7 +619,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/import\/assets\/css\/regular.css",
+      "oAP" : "\/assets\/css\/regular.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -665,7 +657,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/import\/assets\/css\/solid.css",
+      "oAP" : "\/assets\/css\/solid.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -703,7 +695,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/import\/assets\/css\/v4-shims.css",
+      "oAP" : "\/assets\/css\/v4-shims.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -721,7 +713,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/fonts.css",
+      "oAP" : "\/assets\/css\/fonts.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -739,7 +731,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/footer.css",
+      "oAP" : "\/assets\/css\/footer.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -757,7 +749,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/formulaires.css",
+      "oAP" : "\/assets\/css\/formulaires.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -775,7 +767,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/header.css",
+      "oAP" : "\/assets\/css\/header.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -793,7 +785,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/images.css",
+      "oAP" : "\/assets\/css\/images.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -811,7 +803,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/layout.css",
+      "oAP" : "\/assets\/css\/layout.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -829,7 +821,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/magnific-popup.css",
+      "oAP" : "\/assets\/css\/magnific-popup.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -847,7 +839,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/main.css",
+      "oAP" : "\/assets\/css\/main.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -865,7 +857,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/maintenance.css",
+      "oAP" : "\/assets\/css\/maintenance.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -883,7 +875,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/mify.css",
+      "oAP" : "\/assets\/css\/mify.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -901,7 +893,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/navigation.css",
+      "oAP" : "\/assets\/css\/navigation.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -919,25 +911,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/news.css",
-      "oF" : 0,
-      "oS" : 1,
-      "pg" : 0,
-      "rwU" : 0,
-      "sI" : 0,
-      "sU" : 0
-    },
-    "\/_src\/import\/page.less" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "eJ" : 0,
-      "ft" : 1,
-      "iI" : 0,
-      "ma" : 1,
-      "mS" : 0,
-      "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/page.css",
+      "oAP" : "\/assets\/css\/news.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -955,7 +929,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/pages.css",
+      "oAP" : "\/assets\/css\/pages.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -973,43 +947,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/posts.css",
-      "oF" : 0,
-      "oS" : 1,
-      "pg" : 0,
-      "rwU" : 0,
-      "sI" : 0,
-      "sU" : 0
-    },
-    "\/_src\/import\/produits-singles.less" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "eJ" : 0,
-      "ft" : 1,
-      "iI" : 0,
-      "ma" : 1,
-      "mS" : 0,
-      "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/produits-singles.css",
-      "oF" : 0,
-      "oS" : 1,
-      "pg" : 0,
-      "rwU" : 0,
-      "sI" : 0,
-      "sU" : 0
-    },
-    "\/_src\/import\/produits.less" : {
-      "aP" : 0,
-      "bl" : 0,
-      "co" : 0,
-      "eJ" : 0,
-      "ft" : 1,
-      "iI" : 0,
-      "ma" : 1,
-      "mS" : 0,
-      "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/produits.css",
+      "oAP" : "\/assets\/css\/posts.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1027,7 +965,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/reset.css",
+      "oAP" : "\/assets\/css\/reset.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1045,7 +983,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/slick.css",
+      "oAP" : "\/assets\/css\/slick.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1063,7 +1001,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/slider.css",
+      "oAP" : "\/assets\/css\/slider.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1081,7 +1019,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/structure.css",
+      "oAP" : "\/assets\/css\/structure.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1099,7 +1037,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 0,
-      "oAP" : "\/_src\/assets\/css\/testimonial.css",
+      "oAP" : "\/assets\/css\/testimonial.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1117,7 +1055,7 @@
       "ma" : 1,
       "mS" : 0,
       "oA" : 1,
-      "oAP" : "\/_src\/assets\/css\/widgets.css",
+      "oAP" : "\/assets\/css\/widgets.css",
       "oF" : 0,
       "oS" : 1,
       "pg" : 0,
@@ -1181,26 +1119,6 @@
       "oAP" : "\/archive.php",
       "oF" : 0
     },
-    "\/assets\/app.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/assets\/app-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/assets\/app.css.map" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/app.css.map",
-      "oF" : 0
-    },
     "\/assets\/css\/admin.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -1241,12 +1159,44 @@
       "oAP" : "\/assets\/css\/app.css.map",
       "oF" : 0
     },
-    "\/assets\/css\/Icon\r" : {
+    "\/assets\/css\/devis-contact-form.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/devis-contact-form-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/css\/devis-contact-form.css.map" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/assets\/css\/Icon\r",
+      "oAP" : "\/assets\/css\/devis-contact-form.css.map",
+      "oF" : 0
+    },
+    "\/assets\/css\/posts.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/posts-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/css\/posts.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/posts.css.map",
       "oF" : 0
     },
     "\/assets\/fonts\/fa-brands-400.eot" : {
@@ -1493,14 +1443,6 @@
       "oAP" : "\/assets\/fonts\/icomoon.woff",
       "oF" : 0
     },
-    "\/assets\/fonts\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/fonts\/Icon\r",
-      "oF" : 0
-    },
     "\/assets\/fonts\/themify.eot" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1535,22 +1477,6 @@
       "oAP" : "\/assets\/fonts\/themify.woff",
       "oF" : 0
     },
-    "\/assets\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/Icon\r",
-      "oF" : 0
-    },
-    "\/assets\/images\/gif\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/images\/gif\/Icon\r",
-      "oF" : 0
-    },
     "\/assets\/images\/gif\/loader.gif" : {
       "ft" : 4194304,
       "iS" : 17989,
@@ -1561,13 +1487,15 @@
       "ou" : "lpckwebp-none",
       "rq" : 75
     },
-    "\/assets\/images\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
+    "\/assets\/images\/gif\/loading.gif" : {
+      "ft" : 4194304,
+      "iS" : 1279,
       "oA" : 0,
-      "oAP" : "\/assets\/images\/Icon\r",
-      "oF" : 0
+      "oAP" : "\/assets\/images\/gif\/loading.gif",
+      "oF" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "rq" : 75
     },
     "\/assets\/images\/login\/avatar-grib-negatif.png" : {
       "ft" : 32768,
@@ -1605,14 +1533,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/images\/login\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/images\/login\/Icon\r",
-      "oF" : 0
-    },
     "\/assets\/images\/png\/degrad-w-t.png" : {
       "ft" : 32768,
       "iS" : 1111,
@@ -1625,14 +1545,6 @@
       "ou" : "lpckwebp-none",
       "q" : 100,
       "rq" : 75
-    },
-    "\/assets\/images\/png\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/images\/png\/Icon\r",
-      "oF" : 0
     },
     "\/assets\/images\/png\/mark-google.png" : {
       "ft" : 32768,
@@ -1688,6 +1600,17 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/assets\/scripts\/contact-form.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scripts\/contact-form-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/assets\/scripts\/google-map.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1720,14 +1643,6 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
-    },
-    "\/assets\/scripts\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/scripts\/Icon\r",
-      "oF" : 0
     },
     "\/assets\/scripts\/jquery.easing.1.3.js" : {
       "bF" : 0,
@@ -1762,6 +1677,14 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/base-code-devis.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/base-code-devis.php",
+      "oF" : 0
+    },
     "\/footer.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1794,6 +1717,46 @@
       "oAP" : "\/header.php",
       "oF" : 0
     },
+    "\/inc\/activities-ajout-1.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities-ajout-1.php",
+      "oF" : 0
+    },
+    "\/inc\/activities-test1.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities-test1.php",
+      "oF" : 0
+    },
+    "\/inc\/activities.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/activities.php",
+      "oF" : 0
+    },
+    "\/inc\/base-finale-agarder-formulaire.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/base-finale-agarder-formulaire.php",
+      "oF" : 0
+    },
+    "\/inc\/base-formulaire.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/base-formulaire.php",
+      "oF" : 0
+    },
     "\/inc\/blocks\/acf-event.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1824,14 +1787,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/blocks\/acf-sticky-vehicules.php",
-      "oF" : 0
-    },
-    "\/inc\/blocks\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/blocks\/Icon\r",
       "oF" : 0
     },
     "\/inc\/blocks\/slider.php" : {
@@ -1882,20 +1837,28 @@
       "oAP" : "\/inc\/dashboard.php",
       "oF" : 0
     },
-    "\/inc\/data\/data-vehicules.php" : {
+    "\/inc\/datas\/data-navigation.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/inc\/data\/data-vehicules.php",
+      "oAP" : "\/inc\/datas\/data-navigation.php",
       "oF" : 0
     },
-    "\/inc\/data\/Icon\r" : {
+    "\/inc\/datas\/datas-activites.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/inc\/data\/Icon\r",
+      "oAP" : "\/inc\/datas\/datas-activites.php",
+      "oF" : 0
+    },
+    "\/inc\/datas\/datas-common.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/datas\/datas-common.php",
       "oF" : 0
     },
     "\/inc\/formating-content.php" : {
@@ -1920,14 +1883,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/grid_builder.php",
-      "oF" : 0
-    },
-    "\/inc\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/Icon\r",
       "oF" : 0
     },
     "\/inc\/images.php" : {
@@ -2090,6 +2045,28 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
+    "\/node_modules" : {
+      "ft" : 65536,
+      "oA" : 2,
+      "oAP" : "\/node_modules",
+      "oF" : 0
+    },
+    "\/package-lock.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/package-lock-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/package.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/package-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2139,18 +2116,6 @@
       "oAP" : "\/single.php",
       "oF" : 0
     },
-    "\/style-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/style-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -2179,36 +2144,28 @@
       "oAP" : "\/template-pages\/data\/data-news.php",
       "oF" : 0
     },
-    "\/template-pages\/data\/Icon\r" : {
+    "\/template-pages\/template-blog.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-pages\/data\/Icon\r",
+      "oAP" : "\/template-pages\/template-blog.php",
       "oF" : 0
     },
-    "\/template-pages\/Icon\r" : {
+    "\/template-pages\/template-content.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-pages\/Icon\r",
+      "oAP" : "\/template-pages\/template-content.php",
       "oF" : 0
     },
-    "\/template-pages\/page-blog.php" : {
+    "\/template-pages\/template-devis.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-pages\/page-blog.php",
-      "oF" : 0
-    },
-    "\/template-pages\/page-content.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-pages\/page-content.php",
+      "oAP" : "\/template-pages\/template-devis.php",
       "oF" : 0
     },
     "\/template-parts\/content-archive.php" : {
@@ -2283,12 +2240,12 @@
       "oAP" : "\/template-parts\/content-single-post.php",
       "oF" : 0
     },
-    "\/template-parts\/content-single-tax-vehicules.php" : {
+    "\/template-parts\/content-single-tax-activites.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/template-parts\/content-single-tax-vehicules.php",
+      "oAP" : "\/template-parts\/content-single-tax-activites.php",
       "oF" : 0
     },
     "\/template-parts\/content-slider-gallery.php" : {
@@ -2345,30 +2302,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-parts\/data\/data-vehicules.php",
-      "oF" : 0
-    },
-    "\/template-parts\/data\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/data\/Icon\r",
-      "oF" : 0
-    },
-    "\/template-parts\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/Icon\r",
-      "oF" : 0
-    },
-    "\/template-parts\/items\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/items\/Icon\r",
       "oF" : 0
     },
     "\/template-parts\/items\/items-breadcrumb.php" : {
@@ -2441,14 +2374,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-parts\/navigation\/nav-widgets.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/Icon\r" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/Icon\r",
       "oF" : 0
     },
     "\/template-parts\/widgets-filters\/widget-filtre-carte.php" : {
@@ -3924,7 +3849,7 @@
       "autoOutputPathRelativePath" : "..\/assets\/css",
       "autoOutputPathReplace1" : "less",
       "autoOutputPathReplace2" : "css",
-      "autoOutputPathStyle" : 2,
+      "autoOutputPathStyle" : 1,
       "cssoStyle" : 0,
       "enableJavascript" : 0,
       "mathStyle" : 0,

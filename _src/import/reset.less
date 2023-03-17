@@ -45,12 +45,12 @@ table {
 }
 a {
 	text-decoration: none;
-	color: @O;
+	color: @Orange;
 	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
 	&:hover,
 	&:focus,
 	&:active{
-		color: @Black;
+		.fBlack();
 	}
 }
 p{
@@ -67,11 +67,11 @@ p{
 }
 button,
 .button{
-	background-color: @White;
+	.bgWhite();
 	border-radius: 0px;
 	text-shadow: none;
 	text-decoration: none;
-	color: @Black;
+	.fBlack();
 	display: inline-block;
 	.FB();
 	.fontSize(16);
@@ -85,12 +85,12 @@ button,
 	&:active{
 		text-shadow: none;
 		text-decoration: none;
-		background-color: @O;
+		.bgOrange();
 		outline-offset: 0;
 	}
 	i{
-		background-color: @Black;
-		color: @White;
+		.bgBlack();
+		.fWhite();
 	}
 	i,
 	span{
@@ -101,8 +101,8 @@ button,
 	&:hover,
 	&:focus,
 	&:active{
-		background-color: @Black;
-		color: @White;
+		.bgBlack();
+		.fWhite();
 	}
 }
 .site-main{
@@ -114,14 +114,13 @@ button,
 *:focus {
 outline: none;
 }
-
-*::-moz-focus-inner {
+*::-moz-focus-inner{
 border: none;
 }
 * {
 	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -152,12 +151,12 @@ GLOBAL
 }
 body {
 	background-color: @White ;
-    overflow-x: hidden;
-    .fontSize(16);
-    .FR();
-    color: @Black;
-    position: relative;
-    text-align: left;
+	overflow-x: hidden;
+	.fontSize(16);
+	.FR();
+	color: @Black;
+	position: relative;
+	text-align: left;
 }
 
 /*------------------------------
@@ -170,12 +169,12 @@ CLEARFIX
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 /*
@@ -184,7 +183,7 @@ CLEARFIX
 */
 
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
 }
 
 /*------------------------------
