@@ -10,7 +10,9 @@ $urlTemplate = get_stylesheet_directory();
 // Ajouter le bouton "Ajouter à la liste de devis"
 function add_to_devis_list_button() {
 	if ( is_singular( 'activites' ) ) {
+		global $post;
 		$current_post_id = get_the_ID();
+		$current_post_slug = $post->post_name;
 		echo '<a href="' . esc_url( add_query_arg( 'devis_item', $current_post_id, site_url( '/demander-un-devis/' ) ) ) . '" class="button">Ajouter</a>';
 
 	}
@@ -20,250 +22,154 @@ add_action( 'genesis_entry_content', 'add_to_devis_list_button' );
 
 
 // Ajouter activité au devis
-function add_to_devis($devis_url) {
-	$devis_items = isset( $_GET['devis_items'] ) ? $_GET['devis_items'] : '';
-	$activite_id = isset( $_GET['devis_item'] ) ? intval( $_GET['devis_item'] ) : 0;
-	if ( $activite_id ) {
-		if ( !empty( $devis_items ) ) {
+function add_to_devis( $current_post_slug ) {
+	$devis_item = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+	$activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+	
+	var_dump($devis_item);
+	
+	if ( ctype_digit($activite_id) && $activite_id ) {
+		if ( ! empty( $devis_item ) ) {
 			$devis_items .= ',';
 		}
-		$devis_items .= $activite_id;
+		$devis_item .= $activite_id;
 	}
-	wp_safe_redirect( home_url( '/demander-un-devis/?devis_item=' . $devis_items ) );
+	
+	if ( empty( $devis_item ) ) {
+		wp_safe_redirect( home_url( '/demander-un-devis/' ) );
+		exit;
+	}
+
+	$nonce_url = wp_nonce_url( home_url( '/demander-un-devis/?devis_item=' . $devis_item ), 'add_to_devis' );
+	wp_safe_redirect( $nonce_url );
 	exit;
 }
-
 add_action( 'admin_post_add_to_devis', 'add_to_devis' );
 
-// Afficher le formulaire de demande de devis avec les items ajoutés
+
+
 function display_devis_form() {
-	$devis_items = isset( $_GET['devis_item'] ) ? $_GET['devis_item'] : '';
-	$devis_items_array = explode( ',', $devis_items );
-	?>
-	<div class="devis-form-container">
-		
-		<div class="devis-items-container">
-			<?php foreach ( $devis_items_array as $devis_item ) :
-				$activite = get_post( $devis_item );
-				$image_url = get_the_post_thumbnail_url( $activite->ID, 'medium' );
-				?>
-				<div class="devis-item">
-					<div class="devis-item-image">
-						<img src="<?= esc_url( $image_url ) ?>" />
-					</div>
-					<div class="devis-item-content">
-						<h3><?= esc_html( $activite->post_title ) ?></h3>
-						<p><?= esc_html( $activite->post_excerpt ) ?></p>
-					</div>
-					<div class="devis-item-form">
-						<label>Nombre de personnes</label>
-						<input type="number" name="nombre_personnes" value="" />
-						<label>Date de l'activité</label>
-						<input type="date" name="date_activite_<?php echo $devis_item; ?>" value="" />
-						<label>Adresse du séminaire</label>
-						<input type="text" name="adresse_seminaire_<?php echo $devis_item; ?>" value="" />
-						<label>Horaires de l'activité</label>
-						<select name="horaires_heure_debut_<?php echo $devis_item; ?>">
-							<?php for ( $i = 00; $i <= 23; $i++ ) : ?>
-								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-							<?php endfor; ?>
-						</select>
-						h
-						<select name="horaires_minute_debut_<?php echo $devis_item; ?>">
-							<option value="00">00</option>
-							<option value="15">15</option>
-							<option value="30">30</option>
-							<option value="45">45</option>
-						</select>
-						à
-						<select name="horaires_heure_fin_<?php echo $devis_item; ?>">
-							<?php for ( $i = 00; $i <= 23; $i++ ) : ?>
-								<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-							<?php endfor; ?>
-						</select>
-						h
-						<select name="horaires_minute_fin_<?php echo $devis_item; ?>">
-							<option value="00">00</option>
-							<option value="15">15</option>
-							<option value="30">30</option>
-							<option value="45">45</option>
-						</select>
-					</div>					
+	
+$devis_items = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+$devis_items_array = explode( ',', $devis_items );
+
+?>
+<div class="devis-form-container">
+	
+	<div class="devis-items-container">
+		<?php foreach ( $devis_items_array as $devis_item ) :
+			$activite = get_post( $devis_item );
+			$image_url = get_the_post_thumbnail_url( $activite->ID, 'medium' );
+			?>
+			<div class="devis-item">
+				<div class="devis-item-image">
+					<img src="<?= esc_url( $image_url ) ?>" />
 				</div>
-			<?php endforeach; ?>
-			<?php echo do_shortcode( '[contact-form-7 id="4" title="Formulaire de demande de devis"]' ); ?>
+				<div class="devis-item-content">
+					<h3><?= esc_html( $activite->post_title ) ?></h3>
+					<p><?= esc_html( $activite->post_excerpt ) ?></p>
+				</div>
+				
+	<?php endforeach; ?>
+				<?php echo do_shortcode( '[contact-form-7 id="4" title="Formulaire de demande de devis"]' ); ?>
+			</div>
 		</div>
-	</div>
-	<?php
+		<?php
+	}
+	add_shortcode( 'display_devis_form', 'display_devis_form' );				
+				
+
+
+
+//Création de nouveaux champs personnalisés
+function register_cf7_titre_activite_tag() {
+	wpcf7_add_form_tag(
+		[ 'titre_activite', 'titre_activite*' ],
+		__NAMESPACE__ . '\\output_cf7_titre_activite_tag',
+		[ 'name-attr' => true ]
+	);
 }
-add_shortcode( 'display_devis_form', 'display_devis_form' );
+add_action( 'wpcf7_init', __NAMESPACE__ . '\\register_cf7_titre_activite_tag', 10, 0 );
 
-
-
-
-// Ajouter les champs personnalisés au formulaire de devis
-function add_custom_devis_fields( $devis_item ) {
-	
-	wpcf7_add_form_tag( 'titre_activite_' . $devis_item, 'custom_titre_activite_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'nombre_personnes_' . $devis_item, 'custom_nombre_personnes_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'date_activite_' . $devis_item, 'custom_date_activite_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'adresse_seminaire_' . $devis_item, 'custom_adresse_seminaire_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'horaires_heure_debut_' . $devis_item, 'custom_horaires_heure_debut_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'horaires_minute_debut_' . $devis_item, 'custom_horaires_minute_debut_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'horaires_heure_fin_' . $devis_item, 'custom_horaires_heure_fin_field_handler', array( 'name-attr' => true ) );
-	wpcf7_add_form_tag( 'horaires_minute_fin_' . $devis_item, 'custom_horaires_minute_fin_field_handler', array( 'name-attr' => true ) );	
-}
-add_action( 'wpcf7_init', 'add_custom_devis_fields' );
-
-// Gestionnaire pour le champ titre_activite
-function custom_titre_activite_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
-	$html = '<div class="form-group">'.
-				'<label for="' . $tag->name . '">Titre de l\'activité</label>'.
-				'<input type="text" name="' . $tag->name . '" value="' . $tag->get_default_option( 'value' ) . '">'.
-			'</div>';
-
-	return $html;
-}
-
-// Gestionnaire pour le champ nombre_personnes
-function custom_nombre_personnes_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
-	$html .= '<input type="number" name="' . esc_attr( $tag->name ) . '" value="' . esc_attr( $tag->get_default_option( 'value', '1' ) ) . '" />';
-	return $html;
-}
-
-// Gestionnaire pour le champ date_activite
-function custom_date_activite_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
-	$html .= '<input type="date" name="' . esc_attr( $tag->name ) . '" value="' . esc_attr( $tag->get_default_option( 'value' ) ) . '" />';
-	return $html;
-}
-
-// Gestionnaire pour le champ adresse_seminaire
-function custom_adresse_seminaire_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-	$html = '<label>' . esc_html( $tag->name ) . '</label><br />';
-	$html .= '<textarea name="' . esc_attr( $tag->name ) . '">' . esc_html( $tag->get_default_option( 'value' ) ) . '</textarea>';
-	return $html;
-}
-
-// Gestionnaire pour le champ horaires
-function ccustom_horaires_heure_debut_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
-	$html = '<div class="form-group">'.
-				'<label for="' . $tag->name . '">Horaires</label>'.
-				'<input type="text" name="' . $tag->name . '">' . $tag->get_default_option( 'value' ) . '">';
-
-	return $html;
-}
-
-function custom_horaires_minute_debut_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
-	$html = '<input type="text" name="' . $tag->name . '">' . $tag->get_default_option( 'value' ) . '">';
-
-	return $html;
-}
-
-function custom_horaires_heure_fin_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
-	$html = '<input type="text" name="' . $tag->name . '">' . $tag->get_default_option( 'value' ) . '">';
-
-	return $html;
-}
-
-function custom_horaires_minute_fin_field_handler( $tag ) {
-	$tag = new WPCF7_FormTag( $tag );
-
-	$html = '<input type="text" name="' . $tag->name . '">' . $tag->get_default_option( 'value' ) . '">'.
-			'</div>';
-
-	return $html;
-}
-
-// Modifie le contenu du message de l'email envoyé depuis le formulaire de contact 7
-function customize_devis_mail_body( $body, $form ) {
-		
-		$fields = $form->scan_form_tags();
-		$nombre_personnes = '';
-		$date_activite = '';
-		$adresse_seminaire = '';
-		$horaires = '';
-		$titre_activite = '';
-		
-		foreach ( $fields as $field ) {
-			if ( 'nombre_personnes' == $field['type'] ) {
-				$nombre_personnes = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
-				$body = str_replace( '[nombre-personnes]', $nombre_personnes, $body );
-			} elseif ( 'date_activite' == $field['type'] ) {
-				$date_activite = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
-				$body = str_replace( '[date-activite]', $date_activite, $body );
-			} elseif ( 'adresse_seminaire' == $field['type'] ) {
-				$adresse_seminaire = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
-				$body = str_replace( '[adresse-seminaire]', $adresse_seminaire, $body );
-			} elseif ( 'horaires' == $field['type'] ) {
-				$horaires = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
-				$body = str_replace( '[horaires]', $horaires, $body );
-			} elseif ( 'titre_activite' == $field['type'] ) {
-				$titre_activite = isset( $_POST[ $field['name'] ] ) ? sanitize_text_field( $_POST[ $field['name'] ] ) : '';
-				$body = str_replace( '[titre-activite]', $titre_activite, $body );
-			}
-		}
-		//error_log(print_r($form->get_posted_data(), true));
-
-		return $body;
-		
-		var_dump($body);
-
-}
-add_filter( 'wpcf7_mail_components', 'customize_devis_mail_body', 10, 2 );
-
-function send_devis_form( $cf7 ) {
-	
-	
-	// Check si c'est bien le formulaire ID 4
-	if ( $cf7->id() != 4 ) {
-		return;
+function output_cf7_titre_activite_tag( $tag ) {
+	if ( empty( $tag->name ) ) {
+		return '';
 	}
 
-	// récupère les datas du formulaire
-	$submission = WPCF7_Submission::get_instance();
-	if ( $submission ) {
-		$posted_data = $submission->get_posted_data();
+	$validation_error = wpcf7_get_validation_error( $tag->name );
+	$class            = wpcf7_form_controls_class( $tag->type, 'wpcf7-activite' );
+	$atts             = [];
+	$value            = (string) reset( $tag->values );
 
-
-		// Get the recipient email address from the Contact Form 7 form
-		$mail = $cf7->prop( 'mail' );
-		$to = $mail['recipient'];
-
-		// Set the email subject
-		$subject = 'Nouvelle demande de devis : ' . $posted_data['titre_activite'];
-
-		// Customize the email body
-		$body = customize_devis_mail_body( '', $cf7 );
-
-		// Add the form data to the email body
-		$body .= "\n\nVoici les informations de la demande de devis :\n\n";
-		$body .= "Titre de l'activité : " . $posted_data['titre_activite'] . "\n";
-		$body .= "Nombre de personnes : " . $posted_data['nombre_personnes'] . "\n";
-		$body .= "Date de l'activité : " . $posted_data['date_activite'] . "\n";
-		$body .= "Adresse du séminaire : " . $posted_data['adresse_seminaire'] . "\n";
-		$body .= "Horaires : " . $posted_data['horaires'] . "\n";
-
-		// Set the email headers
-		$headers = array(
-			'Content-Type: text/plain; charset=utf-8',
-			'From: ' . $mail['sender']
-		);
-
-		// Send the email
-		wp_mail( $to, $subject, $body, $headers );
+	if ( $validation_error ) {
+		$class .= ' wpcf7-not-valid';
 	}
+
+	$atts['type']          = 'text';
+	$atts['name']          = $tag->name;
+	$atts['class']         = $tag->get_class_option( $class );
+	$atts['id']            = $tag->get_id_option();
+	$atts['tabindex']      = $tag->get_option( 'tabindex', 'signed_int', true );
+	$atts['autocomplete']  = $tag->get_option( 'autocomplete', '[-0-9a-zA-Z]+', true );
+	$atts['aria-invalid']  = $validation_error ? 'true' : 'false';
+	$atts['size']          = $tag->get_size_option( '10' );
+	$atts['maxlength']     = $tag->get_maxlength_option();
+	$atts['minlength']     = $tag->get_minlength_option();
+
+	if ( $tag->has_option( 'readonly' ) ) {
+		$atts['readonly'] = 'readonly';
+	}
+
+	if ( $tag->is_required() ) {
+		$atts['aria-required'] = 'true';
+	}
+
+	if ( $tag->has_option( 'placeholder' ) || $tag->has_option( 'watermark' ) ) {
+		$atts['placeholder'] = $value;
+		$value               = '';
+	}
+
+	$value = $tag->get_default_option( $value );
+	$value = wpcf7_get_hangover( $tag->name, $value );
+
+	if ( isset( $_GET['titre_activite' ] ) && ! empty( $_GET['titre_activite' ]) ) {
+		$value = (int) $_GET['titre_activite' ];
+	}
+
+	$atts['value'] = $value;
+	$atts          = wpcf7_format_atts( $atts );
+
+	$html = sprintf(
+		'<span class="wpcf7-form-control-wrap %1$s"><input %2$s />%3$s</span>',
+		sanitize_html_class( $tag->name ),
+		$atts,
+		$validation_error
+	);
+
+	return $html;
 }
-add_action( 'wpcf7_mail_sent', 'send_devis_form' );
+
+function validate_titre_activite_input_value( $result, $tag ) {
+	$name = $tag->name;
+
+	if ( $tag->basetype !== 'titre_activite' ) {
+		return $result;
+	}
+
+	$value = isset( $_POST[ $name ] ) ? trim( wp_unslash( strtr( (string) $_POST[$name], "\n", ' ' ) ) ) : '';
+	$value = strtoupper( $value );
+
+	// Check if value is empty?
+	if ( $tag->is_required() && empty( $value ) ) {
+		$result->invalidate( $tag, wpcf7_get_message( 'activite_field_required' ) );
+	}
+
+	// Check if we're dealing with a correct WooCommerce Order?
+	if ( ! $order = wc_get_order( $value ) ) {
+		$result->invalidate( $tag, wpcf7_get_message( 'activite_field_invalid' ) );
+	}
+
+	return $result;
+}
+add_filter( 'wpcf7_validate_activite', __NAMESPACE__ . '\\validate_titre_activite_input_value', 10, 2 );
+add_filter( 'wpcf7_validate_activite*', __NAMESPACE__ . '\\validate_titre_activite_input_value', 10, 2 );
