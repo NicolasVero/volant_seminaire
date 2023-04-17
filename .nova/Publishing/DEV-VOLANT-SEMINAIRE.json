@@ -9,7 +9,8 @@
     "inc\/base-formulaire.php",
     "base-code-devis.php",
     "assets\/css\/devis-contact-form.css",
-    "assets\/css\/devis-contact-form.css.map"
+    "assets\/css\/devis-contact-form.css.map",
+    "inc\/base-form.php"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",
