@@ -17,8 +17,6 @@ get_header();?>
 	<div class="container-article-page container-article-page-<?= $ID ?>">
 				
 				<?php
-				
-				the_title( '<h1 class="title-article-page">', '</h1>' );
 					echo do_shortcode( '[display_devis_form]' );
 				?>
 				

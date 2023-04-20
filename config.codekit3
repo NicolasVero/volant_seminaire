@@ -1003,24 +1003,6 @@
 		"oAP": "/archive.php",
 		"oF": 0
 		},
-	"/assets/css/admin.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/css/admin-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/assets/css/admin.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/css/admin.css.map",
-		"oF": 0
-		},
 	"/assets/css/app.css": {
 		"aP": 1,
 		"bl": 0,
@@ -1037,42 +1019,6 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/assets/css/app.css.map",
-		"oF": 0
-		},
-	"/assets/css/devis-contact-form.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/css/devis-contact-form-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/assets/css/devis-contact-form.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/css/devis-contact-form.css.map",
-		"oF": 0
-		},
-	"/assets/css/posts.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 1,
-		"oAP": "/assets/css/posts-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"/assets/css/posts.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/css/posts.css.map",
 		"oF": 0
 		},
 	"/assets/fonts/fa-brands-400.eot": {
@@ -1605,6 +1551,14 @@
 		"oAP": "/inc/activities.php",
 		"oF": 0
 		},
+	"/inc/add-to-devis-CF7.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/inc/add-to-devis-CF7.php",
+		"oF": 0
+		},
 	"/inc/base-finale-agarder-formulaire.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -2048,6 +2002,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/template-pages/template-devis.php",
+		"oF": 0
+		},
+	"/template-pages/template-estimate.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/template-pages/template-estimate.php",
 		"oF": 0
 		},
 	"/template-parts/content-archive.php": {

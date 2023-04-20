@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: Devis
-*/
+
 
 if (! defined('ABSPATH')) {
 	exit;
