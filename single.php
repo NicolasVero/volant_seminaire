@@ -8,7 +8,7 @@ if (! defined('ABSPATH')) {
     $post_type= 'activites';
 
     if (is_singular($post_type)) {
-        get_template_part('template-parts/content', 'single-tax-activites');
+        get_template_part('template-parts/content', 'single-activites');
     } else {
         get_template_part('template-parts/content', 'single-post');
     }

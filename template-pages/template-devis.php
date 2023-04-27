@@ -15,9 +15,10 @@ get_header();?>
 
 	<div class="container container-article-page container-article-page-<?= $ID ?>">
 
-		<?php //echo do_shortcode( '[display_devis_form]' );
+		<?php 
+		echo do_shortcode( '[devis_form_CF7]' );
 		
-		echo do_shortcode('[display_devis_form]');
+		//echo do_shortcode('[devis_form]');
 		?>
 
 	</div>

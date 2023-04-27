@@ -1,8 +1,30 @@
-<?php 
+<?php
+
+if (! defined('ABSPATH')) {
+	exit;
+}
+
+$urlTemplate = get_stylesheet_directory();
+
+
+// Ajouter le bouton "Ajouter à la liste de devis"
+function add_to_devis_list_button() {
+	if ( is_singular( 'activites' ) ) {
+		global $post;
+		// var_dump($post);
+		$current_post_id = get_the_ID();
+		$current_post_slug = $post->post_name;
+		$current_post_title = $post->post_title;
+		echo '<a href="' . esc_url( add_query_arg( 'devis_item', $current_post_slug, site_url( '/demander-un-devis' ) ) ) . '" class="button">Ajouter</a>';
+
+	}
+}
+add_action( 'genesis_entry_content', 'add_to_devis_list_button' );
+
+
 // Ajouter activité au devis
 function add_to_devis( $current_post_slug ) {
-	$devis_item = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
-	$activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+	$devis_item = $activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
 	
 	var_dump($devis_item);
 	
@@ -44,7 +66,7 @@ function add_to_devis( $current_post_slug ) {
 add_action( 'admin_post_add_to_devis', 'add_to_devis' );
 
 
-function display_devis_form() {
+function devis_form_CF7() {
 	
 $devis_items = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
 $devis_items_array = explode( ',', $devis_items );
@@ -110,6 +132,6 @@ $args = array(
 		</div>
 		<?php
 	}
-	add_shortcode( 'display_devis_form', 'display_devis_form' );
+	add_shortcode( 'devis_form_CF7', 'devis_form_CF7' );
 
 ?>

@@ -23,8 +23,8 @@ add_action( 'genesis_entry_content', 'add_to_devis_list_button' );
 
 
 function add_to_devis( $current_post_slug ) {
-	$devis_item = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
-	$activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+	$devis_item = $activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+
 	$devis_items = '';
 
 	if ( ctype_digit($activite_id) && $activite_id ) {
