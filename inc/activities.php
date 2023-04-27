@@ -22,142 +22,117 @@ function add_to_devis_list_button() {
 add_action( 'genesis_entry_content', 'add_to_devis_list_button' );
 
 
+// Ajouter activité au devis
 function add_to_devis( $current_post_slug ) {
 	$devis_item = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
 	$activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
-	$devis_items = '';
-
+	
+	var_dump($devis_item);
+	
 	if ( ctype_digit($activite_id) && $activite_id ) {
 		if ( ! empty( $devis_item ) ) {
 			$devis_items .= ',';
 		}
 		$devis_item .= $activite_id;
 	}
-
+	
 	if ( empty( $devis_item ) ) {
 		wp_safe_redirect( home_url( '/demander-un-devis/' ) );
 		exit;
 	}
 
-	// Créer un tableau de données pour l'activité
-	$activity_data = array(
-		'title' => get_the_title($activite_id),
-		'slug' => $current_post_slug,
-		'number_of_people' => '',
-		'activity_date' => '',
-		'location' => '',
-		'time_range' => '',
-	);
-
-	// Stocker le tableau de données dans la session
-	session_start();
-	$_SESSION['activity_data'] = $activity_data;
-
 	$nonce_url = wp_nonce_url( home_url( '/demander-un-devis/?devis_item=' . $devis_item ), 'add_to_devis' );
 	wp_safe_redirect( $nonce_url );
 	exit;
+	
+	
+	// Ajouter la valeur de la variable $devis_item à un champ caché [hidden] du formulaire Contact Form 7
+	$additional_post = array(
+		'devis_item' => $devis_item,
+	);
+	$_POST = array_merge($_POST, $additional_post);
+	
+	// Soumettre le formulaire de contact 7 avec les données post supplémentaires
+	$submission = WPCF7_Submission::get_instance();
+	$submission->set_posted_data($_POST);
+	$result = WPCF7_Submission::get_instance()->submit();
+	if ( $result->is_ok() ) {
+		wp_safe_redirect( home_url( '/demander-un-devis/' ) );
+	} else {
+		echo "Le formulaire de contact n'a pas été soumis correctement.";
+	}
+	exit;
+	
 }
+add_action( 'admin_post_add_to_devis', 'add_to_devis' );
 
 
 function display_devis_form() {
-	$activite_id = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
 	
-	// Vérifiez si l'ID de l'activité est un nombre entier
-	if ( ctype_digit($activite_id) && $activite_id ) {
-		// Obtenez les données de l'activité à partir de son ID
-		$activite = get_post( $activite_id );
-		$activite_title = $activite->post_title;
-		$activite_description = $activite->post_content;
-		$activite_price = get_post_meta( $activite_id, 'prix', true );
-	} else {
-		// Si l'ID de l'activité n'est pas valide, redirigez l'utilisateur vers la page de demande de devis
-		wp_safe_redirect( home_url( '/demander-un-devis/' ) );
-		exit;
-	}
-	
-	?>
-	<form method="post" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>">
-		<input type="hidden" name="action" value="submit_devis">
-		<input type="hidden" name="activite_id" value="<?php echo esc_attr( $activite_id ); ?>">
-		
-		<h2><?php echo esc_html( $activite_title ); ?></h2>
-		<p><?php echo esc_html( $activite_description ); ?></p>
-		<p>Prix : <?php echo esc_html( $activite_price ); ?> €</p>
-		
-		<label for="nombre_personnes">Nombre de personnes :</label>
-		<input type="number" name="nombre_personnes" required>
-		
-		<label for="date_activite">Date de l'activité :</label>
-		<input type="date" name="date_activite" required>
-		
-		<label for="lieu_seminaire">Lieu du séminaire :</label>
-		<input type="text" name="lieu_seminaire" required>
-		
-		<label for="horaires">Horaires :</label>
-		<input type="text" name="horaires" placeholder="ex: de 9h à 17h" required>
-		
-		<label for="email">Votre adresse e-mail :</label>
-		<input type="email" name="email" required>
-		
-		<input type="submit" value="Envoyer">
-	</form>
-	<?php
-}
+$devis_items = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+$devis_items_array = explode( ',', $devis_items );
 
-add_shortcode( 'devis_form', 'display_devis_form' );
+$args = array(
+		'page_id' => 108,
+	);
+	$query = new WP_Query($args);
 
-function submit_devis() {
-	if ( isset( $_POST['nombre_personnes'] ) && isset( $_POST['date_activite'] ) && isset( $_POST['lieu_seminaire'] ) && isset( $_POST['horaires'] ) ) {
-		
-		// Récupérer les valeurs des champs du formulaire
-		$activite_id = sanitize_text_field( $_POST['activite_id'] );
-		$nombre_personnes = sanitize_text_field( $_POST['nombre_personnes'] );
-		$date_activite = sanitize_text_field( $_POST['date_activite'] );
-		$lieu_seminaire = sanitize_text_field( $_POST['lieu_seminaire'] );
-		$horaires = sanitize_text_field( $_POST['horaires'] );
-		
-		// Ajouter les données dans la base de données
-		global $wpdb;
-		
-		$table_name = $wpdb->prefix . 'devis';
-		
-		$data = array(
-			'activite_id' => $activite_id,
-			'nombre_personnes' => $nombre_personnes,
-			'date_activite' => $date_activite,
-			'lieu_seminaire' => $lieu_seminaire,
-			'horaires' => $horaires,
-		);
-		
-		$format = array(
-			'%d',
-			'%d',
-			'%s',
-			'%s',
-			'%s',
-		);
-		
-		$wpdb->insert( $table_name, $data, $format );
-		
-		// Envoyer un email à l'adresse personnalisée et à l'adresse de l'internaute qui a rempli le formulaire
-		$to = 'webmaster@gribouillenet.fr'; // Adresse personnalisée
-		$subject = 'Nouvelle demande de devis pour l\'activité ' . get_the_title( $activite_id );
-		$message = 'Nombre de personnes : ' . $nombre_personnes . "\n" .
-				   'Date de l\'activité : ' . $date_activite . "\n" .
-				   'Lieu du séminaire : ' . $lieu_seminaire . "\n" .
-				   'Horaires : ' . $horaires;
-		$headers = 'From: ' . get_bloginfo( 'name' ) . ' <' . get_option( 'admin_email' ) . '>' . "\r\n";
-		$headers .= 'Reply-To: ' . get_option( 'admin_email' ) . "\r\n";
-		$headers .= 'CC: ' . sanitize_email( $_POST['email'] ) . "\r\n"; // Adresse de l'internaute
-		
-		wp_mail( $to, $subject, $message, $headers );
-		
-		// Rediriger l'utilisateur vers la page de confirmation de demande de devis
-		wp_safe_redirect( home_url( '/confirmation-de-demande-de-devis/' ) );
-		exit;
-	} else {
-		// Si des champs sont manquants, rediriger l'utilisateur vers la page de demande de devis
-		wp_safe_redirect( home_url( '/demander-un-devis/' ) );
-		exit;
+		if($query->have_posts()) : while($query->have_posts()) : $query-> the_post();
+			the_title( '<h1 class="title-article-page">', '</h1>' );
+		endwhile; endif; wp_reset_query();
+?>
+
+<div class="devis-form-container">
+	<div class="devis-items-container">
+		<?php foreach ( $devis_items_array as $devis_item ) :
+			$activite = get_post( $devis_item );
+			$image_url = get_the_post_thumbnail_url( $activite->ID, 'medium' );
+			
+			if(!is_page(108) ){?> 
+				<div class="devis-item">
+					<figure class="devis-item-image">
+						<img src="<?= esc_url( $image_url ) ?>" />
+					</figure>
+					<div class="devis-item-content">
+						
+						<h3><?= esc_html( $activite->post_title ) ?></h3>
+						<p><?= esc_html( $activite->post_excerpt ) ?></p>
+						
+					</div>
+				</div>
+			<?php } 
+			
+			endforeach; 
+				
+				function add_devis_item_to_cf7( $hidden_fields ) {
+					$devis_item = isset( $_GET['devis_item'] ) ? sanitize_text_field( $_GET['devis_item'] ) : '';
+					if ( $devis_item ) {
+						$hidden_fields[] = array(
+							'name' => 'devis_item',
+							'value' => $devis_item,
+							'is_hidden' => true
+						);
+					}
+					return $hidden_fields;
+				}
+				add_filter( 'wpcf7_form_hidden_fields', 'add_devis_item_to_cf7' );
+				
+				//Créer une nouvelle balise de formulaire pour ajouter $devis_item
+				function devis_item_form_tag_func( $devis_item, $tag ) {
+					if ( 'devis_item' == $tag['name'] ) {
+						$tag['values'] = $devis_item;
+					}
+					return $tag;
+					//var_dump($tag);
+				}
+				wpcf7_add_form_tag( 'devis_item', 'devis_item_form_tag_func', array( 'name-attr' => true ) );
+				
+				// Utiliser la balise de formulaire pour ajouter $devis_item
+				echo do_shortcode( '[contact-form-7 id="4" title="Formulaire de demande de devis" devis_item="' . $devis_item . '"]' );
+				?> 
+		</div>
+		<?php
 	}
-}
+	add_shortcode( 'display_devis_form', 'display_devis_form' );
+
+?>

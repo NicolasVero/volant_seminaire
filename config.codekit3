@@ -1559,6 +1559,14 @@
 		"oAP": "/inc/add-to-devis-CF7.php",
 		"oF": 0
 		},
+	"/inc/add-to-devis-formulaire.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/inc/add-to-devis-formulaire.php",
+		"oF": 0
+		},
 	"/inc/base-finale-agarder-formulaire.php": {
 		"cB": 0,
 		"ft": 8192,

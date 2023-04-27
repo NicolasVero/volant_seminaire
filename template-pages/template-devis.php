@@ -17,7 +17,7 @@ get_header();?>
 
 		<?php //echo do_shortcode( '[display_devis_form]' );
 		
-		echo do_shortcode('[devis_form]');
+		echo do_shortcode('[display_devis_form]');
 		?>
 
 	</div>
