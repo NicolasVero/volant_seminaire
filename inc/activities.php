@@ -101,8 +101,9 @@ $args = array(
 					<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
 					<input value="Elbeuf" type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
 					
-					<label for="horaires-<?= $activiteID ?>">Horaires :</label>
-					<input value="9h à 17h" type="text" name="horaires-<?= $activiteID ?>" placeholder="ex: de 9h à 17h" required>
+					<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
+					<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
+					à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
 					<button><i class="ti-trash"></i></button>
 				</div>
 			<?php
@@ -139,8 +140,9 @@ $args = array(
 				<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
 				<input value="Thuit de l'Oison" type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
 				
-				<label for="horaires-<?= $activiteID ?>">Horaires :</label>
-				<input value="8h à 16h" type="text" name="horaires-<?= $activiteID ?>" placeholder="ex: de 9h à 17h" required>
+				<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
+				<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
+				à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
 				<button><i class="ti-trash"></i></button>
 			</div>
 			
@@ -172,11 +174,14 @@ function submit_devis( $activitiesID ) {
 			$nombre_personnes 	= htmlspecialchars( sanitize_text_field( $_POST['nombre_personnes-' . $activiteID ] ) );
 			$date_activite 		= htmlspecialchars( sanitize_text_field( $_POST['date_activite-' . $activiteID ] ) );
 			$lieu_seminaire 	= htmlspecialchars( sanitize_text_field( $_POST['lieu_seminaire-' . $activiteID ] ) );
-			$horaires 			= htmlspecialchars( sanitize_text_field( $_POST['horaires-' . $activiteID ] ) );
+			$horaires_debut		= htmlspecialchars( sanitize_text_field( $_POST['horaires_debut-' . $activiteID ] ) );
+			$horaires_fin		= htmlspecialchars( sanitize_text_field( $_POST['horaires_fin-' . $activiteID ] ) );
 			
-			$all_activities[] = array($activite_title, $nombre_personnes, $date_activite, $lieu_seminaire, $horaires);
+			$all_activities[] = array($activite_title, $nombre_personnes, $date_activite, $lieu_seminaire, $horaires_debut, $horaires_fin);
 			
 			}
+			
+			var_dump( $all_activities );
 			
 			to_db( $all_activities );
 			send_mail( $all_activities );
@@ -187,7 +192,11 @@ function submit_devis( $activitiesID ) {
 function send_mail( $all_activities ){
 	// Envoyer un email à l'adresse personnalisée et à l'adresse de l'internaute qui a rempli le formulaire
 		$to = 'webmaster@gribouillenet.fr'; // Adresse personnalisée
-		$subject = 'Nouvelle demande de devis pour l\'activité ' . get_the_title( $activiteID );
+		
+		if(count($all_activities) == 1 )
+			$subject = 'Nouvelle demande de devis pour l\'activité ' . get_the_title( $all_activities[0][1] );
+		else 
+			$subject = 'Nouvelle demande de devis pour plusieurs activités';
 		
 		$message = '';
 		
@@ -197,7 +206,8 @@ function send_mail( $all_activities ){
 						'Nombre de personnes : ' 	. $all_activities[$i][1] . "\n" .
 						'Date de l\'activité : ' 	. $all_activities[$i][2] . "\n" .
 						'Lieu du séminaire : ' 		. $all_activities[$i][3] . "\n" .
-						'Horaires : ' 				. $all_activities[$i][4] . "\r\n\n";
+						'Horaires : de ' 			. $all_activities[$i][4] . " à " .
+													  $all_activities[$i][5] . "\r\n\n";
 		
 		}
 		$headers = 'From: ' . get_bloginfo( 'name' ) . ' <' . get_option( 'admin_email' ) . '>' . "\r\n";
@@ -207,8 +217,8 @@ function send_mail( $all_activities ){
 		wp_mail( $to, $subject, $message, $headers );
 		
 		// Rediriger l'utilisateur vers la page de confirmation de demande de devis
-		wp_safe_redirect( home_url( '/confirmation-de-demande-de-devis/' ) );
-		exit;
+		// wp_safe_redirect( home_url( '/confirmation-de-demande-de-devis/' ) );
+		// exit;
 }
 
 function to_db( $all_activities ){
