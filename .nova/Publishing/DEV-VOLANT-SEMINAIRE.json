@@ -11,7 +11,8 @@
     "assets\/css\/devis-contact-form.css",
     "assets\/css\/devis-contact-form.css.map",
     "inc\/base-form.php",
-    "inc\/ADDTODEVIS-TESTS"
+    "inc\/ADDTODEVIS-TESTS",
+    "inc\/TESTS"
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",

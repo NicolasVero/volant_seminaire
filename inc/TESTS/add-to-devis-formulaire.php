@@ -82,7 +82,7 @@ function display_devis_form() {
 		
 		<h2><?php echo esc_html( $activite_title ); ?></h2>
 		<p><?php echo esc_html( $activite_description ); ?></p>
-		<p>Prix : <?php echo esc_html( $activite_price ); ?> €</p>
+		
 		
 		<label for="nombre_personnes">Nombre de personnes :</label>
 		<input type="number" name="nombre_personnes" required>
