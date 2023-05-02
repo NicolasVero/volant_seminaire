@@ -217,8 +217,8 @@ function send_mail( $all_activities ){
 		wp_mail( $to, $subject, $message, $headers );
 		
 		// Rediriger l'utilisateur vers la page de confirmation de demande de devis
-		// wp_safe_redirect( home_url( '/confirmation-de-demande-de-devis/' ) );
-		// exit;
+		wp_safe_redirect( home_url( '/confirmation-de-demande-de-devis/' ) );
+		exit;
 }
 
 function to_db( $all_activities ){
