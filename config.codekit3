@@ -1993,6 +1993,14 @@
       "oAP" : "\/inc\/TESTS\/base-formulaire.php",
       "oF" : 0
     },
+    "\/inc\/TESTS\/script-in-php.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/TESTS\/script-in-php.php",
+      "oF" : 0
+    },
     "\/inc\/TESTS\/test-form-cpt.php" : {
       "cB" : 0,
       "ft" : 8192,

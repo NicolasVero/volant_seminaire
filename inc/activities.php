@@ -66,22 +66,20 @@ $args = array(
 
 <div class="devis-form-container">
 	<div class="devis-items-container">
-		<form method="post">
+		<form id="form-devis" method="post">
 		<?php foreach ( $devis_items_array as $devis_item ) :
 			
 			$activiteID =  get_the_ID();
 			$activite = get_post( $activiteID );
 			$activite_title = esc_html($activite->post_title);
 			$activite_description = esc_html($activite->post_excerpt);
-			
-			// var_dump($activiteID);
-			$image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
+			$activite_image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
 
 			?>
 			 
-				<div id="titre_activite-<?= $activiteID ?>" class="devis-item">
+				<article id="titre_activite-<?= $activiteID ?>" class="devis-item">
 					<figure class="devis-item-image">
-						<img src="<?= esc_url( $image_url ) ?>" />
+						<img src="<?= esc_url( $activite_image_url ) ?>" />
 					</figure>
 					<div class="devis-item-content">
 						
@@ -93,59 +91,25 @@ $args = array(
 					<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
 					
 					<label for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes :</label>
-					<input value="80" type="number" name="nombre_personnes-<?= $activiteID ?>" required>
+					<input type="number" name="nombre_personnes-<?= $activiteID ?>" required>
 					
 					<label for="date_activite-<?= $activiteID ?>">Date de l'activité :</label>
-					<input value="2023-10-10" type="date" name="date_activite-<?= $activiteID ?>" required>
+					<input type="date" name="date_activite-<?= $activiteID ?>" required>
 					
 					<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
-					<input value="Elbeuf" type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
+					<input type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
 					
 					<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
 					<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
 					à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
 					<button><i class="ti-trash"></i></button>
-				</div>
+				</article>
 			<?php
-			
+			$activitiesID[] = $activiteID;
+
 			endforeach;
-			
-			$activitiesID = array('56', '80');
-			
-			$activiteID =  '80';
-			$activite = get_post( $activiteID );
-			$activite_title = esc_html($activite->post_title);
-			$activite_description = esc_html($activite->post_excerpt);
-			
+		
 			?> 
-			<div id="titre_activite-<?= $activiteID  ?>" class="devis-item">
-				<figure class="devis-item-image">
-					<img src="<?= esc_url( $image_url ) ?>" />
-				</figure>
-				<div class="devis-item-content">
-					
-					<h3><?= $activite_title ?></h3>
-					<p><?= $activite_description ?></p>
-					
-				</div>
-			
-				<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
-				
-				<label for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes :</label>
-				<input value="22" type="number" name="nombre_personnes-<?= $activiteID ?>" required>
-				
-				<label for="date_activite-<?= $activiteID ?>">Date de l'activité :</label>
-				<input value="2023-05-11" type="date" name="date_activite-<?= $activiteID ?>" required>
-				
-				<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
-				<input value="Thuit de l'Oison" type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
-				
-				<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
-				<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
-				à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
-				<button><i class="ti-trash"></i></button>
-			</div>
-			
 						
 				<label for="email">Votre adresse e-mail :</label>
 				<input value="contact@gribouillenet.fr" type="email" name="email" required>
@@ -156,7 +120,9 @@ $args = array(
 		
 	</div>
 	
-	<?php	
+	<?php
+		cpt_allActivities();
+		
 		if ( isset( $_POST['email'] ) ){
 			submit_devis( $activitiesID );
 		}
@@ -246,4 +212,43 @@ function to_db( $all_activities ){
 	// );
 	
 	// $wpdb->insert( $table_name, $data, $format );
+}
+
+function cpt_allActivities(){
+
+		$args = array(
+				'post_type' => 'activites',
+				'posts_per_page'=>-1,
+			);
+			$query = new WP_Query($args);
+				if($query->have_posts()) : ?>
+					<div id="" class="">
+						<ul id="list-items-activities" class="">	
+						<?php while($query->have_posts()) : $query-> the_post();
+							$activiteID =  get_the_ID();
+							$activite = get_post( $activiteID );
+							$activite_title = esc_html($activite->post_title);
+							$activite_description = esc_html($activite->post_excerpt);
+							$activite_image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
+							?>
+							<li class="item-activite" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
+								<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
+									
+										<figure class="devis-item-image">
+											<img src="<?= esc_url( $activite_image_url ) ?>" />
+										</figure>
+										<div class="devis-item-content">
+											
+											<h3><?= $activite_title ?></h3>
+											<p><?= $activite_description ?></p>
+											
+										</div>
+
+								</article>	
+							</li>
+    					<?php endwhile; ?>
+						</ul>
+					</div>
+		<?php endif; wp_reset_query();
+
 }
