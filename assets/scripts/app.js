@@ -12,7 +12,7 @@ $(function(){
 // AJOUT ACTIVITÉ
 
 	if ($('#list-items-activities').length) {
-		$('#list-items-activities li.item-activite').each(function (index) {
+		$('#list-items-activities li.item-activite-choice').each(function (index) {
 			let data_activiteID = $(this).attr('data-activiteID');
 			let data_activiteTITLE =  $(this).attr('data-activiteTITLE');
 			let html_item = $(this).children().html();
