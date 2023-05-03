@@ -1529,6 +1529,17 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/scripts\/activities.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scripts\/activities-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/assets\/scripts\/app.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1777,6 +1788,70 @@
       "oAP" : "\/inc\/formating-content.php",
       "oF" : 0
     },
+    "\/inc\/functions\/function-activities-cpt.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-activities-cpt.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-add-list-button.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-add-list-button.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-add-to-devis.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-add-to-devis.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-devis-form.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-devis-form.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-send-mail.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-send-mail.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-submit-devis.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-submit-devis.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-to-db.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-to-db.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-traitement-form.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-traitement-form.php",
+      "oF" : 0
+    },
     "\/inc\/google-map.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1999,6 +2074,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/TESTS\/script-in-php.php",
+      "oF" : 0
+    },
+    "\/inc\/TESTS\/test-ajout-activite-php.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/TESTS\/test-ajout-activite-php.php",
       "oF" : 0
     },
     "\/inc\/TESTS\/test-form-cpt.php" : {

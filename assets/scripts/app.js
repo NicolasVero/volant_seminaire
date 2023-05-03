@@ -10,22 +10,50 @@ $(function(){
 	$('img').removeAttr('Width').removeAttr('Height').removeAttr('sizes').removeAttr('srcset');
 	
 // AJOUT ACTIVITÉ
-if ($('#list-items-activities').length) {
-  $('#list-items-activities li.item-activite').each(function (index) {
-	let data_activiteID = $(this).attr('data-activiteID');
-	let data_activiteTITLE =  $(this).attr('data-activiteTITLE');
-	let html_item = $(this).children().html();
-	
-	let form = '<input type="hidden" name="titre_activite-' + data_activiteID + '" value="' + data_activiteTITLE + '"><label for="nombre_personnes-' + data_activiteID + '">Nombre de personnes :</label><input type="number" name="nombre_personnes-' + data_activiteID + '" required><label for="date_activite-' + data_activiteID + '">Date de l\'activité :</label><input type="date" name="date_activite-' + data_activiteID + '" required><label for="lieu_seminaire-' + data_activiteID + '">Lieu du séminaire :</label> <input type="text" name="lieu_seminaire-' + data_activiteID + '" required><label for="horaires_debut-' + data_activiteID + '">Horaires :</label> <p>de <input type="time" name="horaires_debut-' + data_activiteID + '" required> à <input type="time" name="horaires_fin-' + data_activiteID + '" required></p><button><i class="ti-trash"></i></button>';
-	
-	$(this).click( function(){
-			$('#form-devis').prepend('<article id="titre_activite-' + data_activiteID + '" class="devis-item">' + html_item + form + '</article>');
-	});
-	
-	
-  });
-  }
 
+	if ($('#list-items-activities').length) {
+		$('#list-items-activities li.item-activite').each(function (index) {
+			let data_activiteID = $(this).attr('data-activiteID');
+			let data_activiteTITLE =  $(this).attr('data-activiteTITLE');
+			let html_item = $(this).children().html();
+			
+			let form = '<input type="hidden" name="id_activite-' +  data_activiteID + '" value="' +  data_activiteID + '"><input type="hidden" name="titre_activite-' + data_activiteID + '" value="' + data_activiteTITLE + '"><label for="nombre_personnes-' + data_activiteID + '">Nombre de personnes :</label><input type="number" name="nombre_personnes-' + data_activiteID + '" required><label for="date_activite-' + data_activiteID + '">Date de l\'activité :</label><input type="date" name="date_activite-' + data_activiteID + '" required><label for="lieu_seminaire-' + data_activiteID + '">Lieu du séminaire :</label> <input type="text" name="lieu_seminaire-' + data_activiteID + '" required><label for="horaires_debut-' + data_activiteID + '">Horaires :</label> <p>de <input type="time" name="horaires_debut-' + data_activiteID + '" required> à <input type="time" name="horaires_fin-' + data_activiteID + '" required></p><button><i class="ti-trash"></i></button>';
+		
+			$(this).click( function(){
+					$('#form-devis').prepend('<article id="titre_activite-' + data_activiteID + '" class="devis-item">' + html_item + form + '</article>');
+			});
+		
+		
+		});
+	}
+
+
+
+//FILTRE ACTIVITÉS
+// if( $('#filtres').length ){
+// 
+// 	$('#tous').click( function(e){
+// 
+// 		e.preventDefault();
+// 		$('.promo').slideDown();
+// 		$('#filtres a').removeClass('actif');
+// 		$(this).addClass('actif');
+// 
+// 		return false;
+// 
+// 	});
+// 
+// 	$('.filter').click( function(f){
+// 
+// 		f.preventDefault();
+// 		var filtre = $(this).attr('id');
+// 		$('.promo').hide('slow').removeClass('d-flex');
+// 		$('.'+ filtre).show('slow').addClass('d-flex');
+// 		$('#filtres a').removeClass('actif');
+// 		$(this).addClass('actif');
+// 		return false;
+// 	});
+// }
 
 
 
