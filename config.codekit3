@@ -1817,6 +1817,14 @@
       "oAP" : "\/inc\/functions\/function-send-mail.php",
       "oF" : 0
     },
+    "\/inc\/functions\/function-services-cpt.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-services-cpt.php",
+      "oF" : 0
+    },
     "\/inc\/functions\/function-submit-devis.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1967,6 +1975,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/security.php",
+      "oF" : 0
+    },
+    "\/inc\/services.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/services.php",
       "oF" : 0
     },
     "\/inc\/share.php" : {

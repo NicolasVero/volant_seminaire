@@ -28,9 +28,13 @@ get_header();
 		</div>
 	</div>
 
-	<?php endwhile; endif;?>
+	<?php endwhile; endif;
 	
-	<?php if( function_exists('cpt_allActivities') ){
+	if ( function_exists('cpt_services') ){
+		cpt_services();
+	}
+	
+	 if( function_exists('cpt_allActivities') ){
 		cpt_allActivities();
 	}?>
 

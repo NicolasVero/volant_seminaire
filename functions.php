@@ -50,6 +50,9 @@ require_once('inc/custom-taxonomy.php');
 //ACTIVITES
 require_once('inc/activities.php');
 
+//SERVICES
+require_once('inc/services.php');
+
 //BREADCRUMB
 //require_once('inc/breadcrumb.php');
 
