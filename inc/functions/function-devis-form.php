@@ -96,7 +96,7 @@ function devis_form() {
 				</div>	
 				<div class="row">
 					<h3 class="col-12">Message</h3>
-					<div class="col-12" <textarea name="message" placeholder="Votre message"></textarea></div>
+					<div class="col-12"><textarea name="message" placeholder="Votre message"></textarea></div>
 				</div>
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
