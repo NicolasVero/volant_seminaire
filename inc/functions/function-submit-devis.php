@@ -35,8 +35,10 @@ $urlTemplate = $_POST['blog_url'];
 		else 
 			$subject = 'Demande de devis pour plusieurs activités';
 			
-		$message_user  = get_message_user ($all_activities, $_POST, $urlTemplate);
-		$message_admin  = get_message_admin ($all_activities, $_POST, $urlTemplate);
+		$reference = create_reference($_POST);
+
+		$message_user   = get_message_user ($all_activities, $_POST, $urlTemplate , $reference);
+		$message_admin  = get_message_admin ($all_activities, $_POST, $urlTemplate, $reference);
 
 		// echo $message_user;
 		// echo $message_admin;
@@ -48,8 +50,6 @@ $urlTemplate = $_POST['blog_url'];
 
 		mail( $_POST['email'], $subject, $message_user , $headers );
 		mail( $to, $subject, $message_admin, $headers );
-
-		
 	}
 
 	header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
@@ -74,11 +74,24 @@ $urlTemplate = $_POST['blog_url'];
 		return str_replace(':', 'h', $heure);
 	}
 
-	function get_message_user($all_activities, $user_datas, $image_url) {
+	function create_reference($user_datas) {
+		$reference = date('ymd');
+		$reference .= strtoupper( substr($user_datas['firstname'], 0, 1) );
+		$reference .= strtoupper( substr($user_datas['lastname'], 0, 1) );
+		$reference .= '_';
+
+		$alphabet="abcdefghijklmnopqrstuvwxyz";
+		$reference .= strtoupper($alphabet[rand(0,25)]);
+
+		return $reference;
+	}
+
+	function get_message_user($all_activities, $user_datas, $image_url, $reference) {
 		$message = get_mail_header($image_url);
 
 		$message .= '
 			<h2 style="margin-left: 10%; margin-top: 50px; font-family: Arial, Helvetica, sans-serif;">Bonjour ' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</h2>
+			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Référence de votre devis : ' . $reference . '</p>
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Vous avez fait une demande de devis, et nous vous en remercions.</p>
 			<hr>
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Récapitulatif de votre demande : </p>'; 
@@ -89,12 +102,13 @@ $urlTemplate = $_POST['blog_url'];
 		return $message;
 	}
 
-	function get_message_admin($all_activities, $user_datas, $image_url) {
+	function get_message_admin($all_activities, $user_datas, $image_url, $reference) {
 
 		$message = get_mail_header($image_url);
 
 		$message .= '
 			<h2 style="margin-left: 10%; margin-top: 50px; font-family: Arial, Helvetica, sans-serif;">Un utilisateur a fait une demande de devis</h2>
+			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Référence du devis : ' . $reference . '</p>
 			<div style="line-height: 6px;">
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . formate_phone_number($user_datas['phone']) . '</p>
