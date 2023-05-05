@@ -46,36 +46,42 @@ function devis_form() {
 				 
 					<div id="titre_activite-<?= $activiteID ?>" class="devis-item">
 						<div class="row">
-							<figure class="devis-item-image col-3 col-md-1">
+							<figure class="devis-item-image col-3 col-md-3">
 								<img src="<?= esc_url( $activite_image_url ) ?>" />
 							</figure>
-							<div class="devis-item-content col-9 col-md-11">
-								
+							<div class="devis-item-content col-9 col-md-8">						
 								<h2><?= $activite_title ?></h2>
 								<p><?= $activite_description ?></p>
-								<button><i class="ti-trash"></i></button>
 							</div>
+							<button class="delete-activity col-1"><i class="ti-trash"></i></button>
 						</div>
 						<div class="row">
-						<input type="hidden" name="blog_info" value="<?= $blog_info ?>">
-						<input type="hidden" name="blog_url" value="<?= $blog_url ?>">
-						<input type="hidden" name="admin_email" value="<?= $blog_admin ?>">
-						<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
-						<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
-						
-						<label for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes :</label>
-						<input type="number" name="nombre_personnes-<?= $activiteID ?>" required>
-						
-						<label for="date_activite-<?= $activiteID ?>">Date de l'activité :</label>
-						<input type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" required>
-						
-						<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
-						<input type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
-						
-						<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
-						<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
-						à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
-						
+							<input type="hidden" name="blog_info" value="<?= $blog_info ?>">
+							<input type="hidden" name="blog_url" value="<?= $blog_url ?>">
+							<input type="hidden" name="admin_email" value="<?= $blog_admin ?>">
+							<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
+							<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
+							<div class="col-12 col-md-6">
+								<div class="d-flex align-items-center input-people">
+									<label class="col-6 pl-0" for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes</label>
+									<input class="col-6" type="number" name="nombre_personnes-<?= $activiteID ?>" required>
+								</div>
+								<div class="d-flex align-items-center input-date">
+									<label class="col-6 pl-0" for="date_activite-<?= $activiteID ?>">Date de l'activité</label>
+									<input class="col-6" type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" required>
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="d-flex align-items-center input-place">
+									<label class="col-6 pl-0" for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire</label>
+									<input type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
+								</div>
+								<div class="d-flex align-items-center input-hours">
+									<label class="col-6 pl-0 d-flex align-items-center" for="horaires_debut-<?= $activiteID ?>">Horaires</label>
+									<div class="d-flex col-6 align-items-center"><span>de</span><input type="time" name="horaires_debut-<?= $activiteID ?>" required> <span>à</span><input type="time" name="horaires_fin-<?= $activiteID ?>" required>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				<?php
