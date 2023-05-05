@@ -1809,12 +1809,12 @@
       "oAP" : "\/inc\/functions\/function-devis-form.php",
       "oF" : 0
     },
-    "\/inc\/functions\/function-send-mail.php" : {
+    "\/inc\/functions\/function-js.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/inc\/functions\/function-send-mail.php",
+      "oAP" : "\/inc\/functions\/function-js.php",
       "oF" : 0
     },
     "\/inc\/functions\/function-services-cpt.php" : {
@@ -1839,14 +1839,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/functions\/function-to-db.php",
-      "oF" : 0
-    },
-    "\/inc\/functions\/function-traitement-form.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/functions\/function-traitement-form.php",
       "oF" : 0
     },
     "\/inc\/google-map.php" : {

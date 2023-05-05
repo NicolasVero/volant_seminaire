@@ -27,7 +27,14 @@ $(function(){
 		});
 	}
 
-
+//FORMULAIRE DEMANDE DEVIS - HOTEL
+	
+	if( $('#hotels').length ){
+		$('#hotels').change( function() {
+			$('#lieu_seminaire_hotel').prop('disabled', !($(this).is( ':checked' ) ) );
+			$('#lieu_seminaire_hotel').val('');
+		});
+	}
 
 //FILTRE ACTIVITÉS
 // if( $('#filtres').length ){

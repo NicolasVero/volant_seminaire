@@ -50,6 +50,5 @@ function cpt_allActivities(){
 	<?php endif; wp_reset_query();
 }
 
-
-
 ?>
+

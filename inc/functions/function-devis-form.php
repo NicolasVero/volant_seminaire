@@ -4,6 +4,14 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+function get_today_date() {
+	return date('Y-m-d');
+}
+
+function get_max_date($n) {
+	return date("Y-m-d", strtotime("+" . $n . " year"));
+}
+
 function devis_form() {
 	$urlTemplate = get_stylesheet_directory_uri();
 	$args = array(
@@ -11,9 +19,9 @@ function devis_form() {
 		);
 		$query = new WP_Query($args);
 	
-			if($query->have_posts()) : while($query->have_posts()) : $query-> the_post();
-				the_title( '<h1 class="title-article-page">', '</h1>' );
-			endwhile; endif; wp_reset_query();
+		if($query->have_posts()) : while($query->have_posts()) : $query-> the_post();
+			the_title( '<h1 class="title-article-page">', '</h1>' );
+		endwhile; endif; wp_reset_query();
 			
 		$devis_items = isset( $_GET['activites'] ) ? sanitize_text_field( $_GET['activites'] ) : '';
 		$devis_items_array = explode( ',', $devis_items );		
@@ -31,21 +39,26 @@ function devis_form() {
 				$activite_description = esc_html($activite->post_excerpt);
 				$activite_image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
 				$blog_info = get_bloginfo( 'name' );
+				$blog_url = get_bloginfo( 'url' );
 				$blog_admin = get_option( 'admin_email' ); 
 				
 				?>
 				 
 					<div id="titre_activite-<?= $activiteID ?>" class="devis-item">
-						<figure class="devis-item-image">
-							<img src="<?= esc_url( $activite_image_url ) ?>" />
-						</figure>
-						<div class="devis-item-content">
-							
-							<h2><?= $activite_title ?></h2>
-							<p><?= $activite_description ?></p>
-							
+						<div class="row">
+							<figure class="devis-item-image col-3 col-md-1">
+								<img src="<?= esc_url( $activite_image_url ) ?>" />
+							</figure>
+							<div class="devis-item-content col-9 col-md-11">
+								
+								<h2><?= $activite_title ?></h2>
+								<p><?= $activite_description ?></p>
+								<button><i class="ti-trash"></i></button>
+							</div>
 						</div>
+						<div class="row">
 						<input type="hidden" name="blog_info" value="<?= $blog_info ?>">
+						<input type="hidden" name="blog_url" value="<?= $blog_url ?>">
 						<input type="hidden" name="admin_email" value="<?= $blog_admin ?>">
 						<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
 						<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
@@ -54,7 +67,7 @@ function devis_form() {
 						<input type="number" name="nombre_personnes-<?= $activiteID ?>" required>
 						
 						<label for="date_activite-<?= $activiteID ?>">Date de l'activité :</label>
-						<input type="date" name="date_activite-<?= $activiteID ?>" required>
+						<input type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" required>
 						
 						<label for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire :</label>
 						<input type="text" name="lieu_seminaire-<?= $activiteID ?>" required>
@@ -62,17 +75,27 @@ function devis_form() {
 						<label for="horaires_debut-<?= $activiteID ?>">Horaires :</label>
 						<p>de <input type="time" name="horaires_debut-<?= $activiteID ?>" required>
 						à <input type="time" name="horaires_fin-<?= $activiteID ?>" required></p>
-						<button><i class="ti-trash"></i></button>
+						
+						</div>
 					</div>
 				<?php
 	
 				endforeach;
 		
 				?> 
+				
+				<button class="add-more-activity"><i id="open-menu" class="ti-plus"></i><span>Ajouter une autre activité</span></button>
+				
 				<div class="row">
 					<h3 class="col-12">Séminaire clé en main</h3>
 					<p class="d-flex justify-content-center">Nous travaillons depuis plus de 10 ans avec<br/>des prestataires Hôteliers.</p>
-					<label class="d-inline-block" for=""></label>
+					
+					<label class="d-inline-block" for="hotels">Recevoir une offre prestataire hoteliers</label>
+					<input type="checkbox" id="hotels" name="hotels"> 
+					
+					<label class="d-inline-block" for="lieu_seminaire_hotel">Lieu souhaité du séminaire</label>
+					<input type="text" id="lieu_seminaire_hotel" name="lieu_seminaire_hotel" disabled="true"></input>
+					
 				</div>
 				<div class="row">
 					<h3 class="col-12">Mes coordonnées</h3>
@@ -105,11 +128,11 @@ function devis_form() {
 				</div>
 	
 					
-				</form>
-			</div>
-			
+			</form>
 		</div>
 		
+	</div>
+			
 		<?php
 			cpt_allActivities();
 			

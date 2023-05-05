@@ -17,3 +17,5 @@ include( $urlTemplate . '/inc/functions/function-devis-form.php');
 
 //LISTE DE TOUTES LES ACTIVITES
 include( $urlTemplate . '/inc/functions/function-activities-cpt.php');
+
+?>

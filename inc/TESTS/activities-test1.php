@@ -18,6 +18,10 @@ function add_contact_form_to_activites_submission() {
 }
 add_action( 'init', 'add_contact_form_to_activites_submission' );
 
+function a() {
+	
+}
+
 //bouton
 function add_activite_button() {
 	global $post;
@@ -39,6 +43,12 @@ function add_activite_form_popup() {
 				});
 			});
 		});
+		
+
+		
+		
+		
+		
 	</script>
 	<?php
 }
