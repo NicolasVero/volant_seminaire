@@ -65,12 +65,25 @@
 	font-family: @FontFirst;
 	font-weight: @Bold;
 }
+.FXB(){
+	font-family: @FontFirst;
+	font-weight: @XBold;
+}
 .FontGeneric(){
 	.FR();
-	.fontSize(16);
+	.fontSize(14);
+	.lineHeight(20);
 }
 html{
 	font-size: 62.5%;
+}
+body {
+	background-color: @White ;
+	overflow-x: hidden;
+	.FontGeneric();
+	color: @Black;
+	position: relative;
+	text-align: left;
 }
 //SIZE FONT
 .fontSize(@size) {

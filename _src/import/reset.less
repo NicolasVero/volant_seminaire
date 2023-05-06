@@ -1,3 +1,21 @@
+/*------------------------------
+GLOBAL
+--------------------------------*/
+*,
+*:after,
+*:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	&:focus {
+	outline: none;
+	}
+}
+*::-moz-focus-inner{
+border: none;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,16 +35,10 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-html{
-	font-size:100%;
-}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
-}
-body {
-	line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -45,7 +57,7 @@ table {
 }
 a {
 	text-decoration: none;
-	color: @Orange;
+	.fWhite();
 	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
 	&:hover,
 	&:focus,
@@ -54,55 +66,12 @@ a {
 	}
 }
 p{
-	.fontSize(18);
-	.lineHeight(24);
 	strong{
-		.fontSize(20);
-		.lineHeight(26);
 		.FB();
 	}
 	a{
+		.fOrange();
 		text-decoration: underline;
-	}
-}
-button,
-.button{
-	.bgWhite();
-	border-radius: 0px;
-	text-shadow: none;
-	text-decoration: none;
-	.fBlack();
-	display: inline-block;
-	.FB();
-	.fontSize(16);
-	.Height(40);
-	.lineHeight(40);
-	.PaddingRight(10);
-	text-transform: uppercase;
-	width: auto;
-	&:hover,
-	&:focus,
-	&:active{
-		text-shadow: none;
-		text-decoration: none;
-		.bgOrange();
-		outline-offset: 0;
-	}
-	i{
-		.bgBlack();
-		.fWhite();
-	}
-	i,
-	span{
-		.lineHeight(40);
-	}
-}
-.button-file-to-upload{
-	&:hover,
-	&:focus,
-	&:active{
-		.bgBlack();
-		.fWhite();
 	}
 }
 .site-main{
@@ -111,19 +80,7 @@ button,
 .site-inner{
 	margin: 0 auto;
 }
-*:focus {
-outline: none;
-}
-*::-moz-focus-inner{
-border: none;
-}
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+
 .home{
 	.site-main > :last-child{
 	.MarginBottom(0);
@@ -136,27 +93,6 @@ img{
 	display: block;
 	max-width: 100%;
 	height: auto;
-}
-/*------------------------------
-GLOBAL
---------------------------------*/
-*,
-*:after,
-*:before {
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-	-webkit-font-smoothing:antialiased;
-	font-smoothing:antialiased;
-	text-rendering:optimizeLegibility;
-}
-body {
-	background-color: @White ;
-	overflow-x: hidden;
-	.fontSize(16);
-	.FR();
-	color: @Black;
-	position: relative;
-	text-align: left;
 }
 
 /*------------------------------

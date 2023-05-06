@@ -7,11 +7,9 @@ if (! defined('ABSPATH')) {
 get_header();
 
 
-	if(have_posts()) : 
-		
-		
-		
-	while(have_posts()) : the_post();
+	if(have_posts()) : ?>
+		<div class="hero-featured">	
+	<?php while(have_posts()) : the_post();
 	
 		$id = get_the_ID();
 		$size = 'hero';
@@ -19,16 +17,14 @@ get_header();
 		$hero_name = get_bloginfo('name');
 		$hero_content = get_the_content();
 	?>
-	
-	<div class="hero-featured">
-		<img src="<?= $hero_image ?>" alt="<? $hero_name ?> accueil">
-		<div class="container">
+		<figure><img src="<?= $hero_image ?>" alt="<? $hero_name ?> accueil"></figure>
+		<div class="container container-hero-featured">
 			<h1><?= $hero_name ?></h1>
 			<?= $hero_content ?>
 		</div>
-	</div>
-
-	<?php endwhile; endif;
+	<?php endwhile; ?>
+		</div>
+	<?php endif;
 	
 	if ( function_exists('cpt_services') ){
 		cpt_services();

@@ -1,13 +1,12 @@
 .main-header{
 	.bgBlack();
+	.Padding(15);
 	width: 100vw;
 	.fixed();
-	bottom: 0;
+	top: 0;
 	z-index: 3;
 }
 .main-header-container{
-	.Padding(15, 0);
-	.PaddingTop(0);
 	.relative();
 	z-index: 1;
 }
@@ -38,10 +37,6 @@
 
 }
 @media screen and (min-width : 768px){
-	.main-header{
-		.relative();
-		.bgBlack();
-	}
 	.site-branding{
 		background: @logoL;
 		.Height(33);

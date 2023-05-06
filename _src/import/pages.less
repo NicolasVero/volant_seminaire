@@ -1,6 +1,54 @@
+//HOME
+.hero-featured{
+	.relative();
+	.MaxHeight(380);
+	.container-hero-featured{
+		.relative();
+		.Top(-250);
+		text-align: center;
+		z-index: 1;
+		h1,
+		p{
+			.fWhite();
+		}
+		h1{
+			.FXB();
+			.fontSize(28);
+			.lineHeight(40);
+		}
+		p{
+			.FB();
+			.MarginTop(30);
+		}
+	}
+	&:after{
+		content:'';
+		.bgBlackOverlay();
+		.absolute();
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
 @media screen and (min-width : 576px){
 }
 @media screen and (min-width : 768px){
+	.hero-featured{
+		.relative();
+		.MaxHeight(398);
+		.container-hero-featured{
+			h1{
+				.fontSize(42);
+				.lineHeight(58);
+			}
+			p{
+				width: 65%;
+				margin: 0 auto;
+			}
+		}
+	}
 }
 @media screen and (min-width : 992px){
 }

@@ -1,0 +1,65 @@
+h1{
+	.FB();
+	.fontSize(21);
+	.lineHeight(29);
+	strong{
+		.FB();
+	}
+}
+h2,
+h3{
+	.fontSize(14);
+	.FB();
+	.lineHeight(20);
+}
+h3{
+	text-transform: uppercase;
+}
+p{
+	a{
+		text-decoration: underline;
+	}
+	ul{
+		li{
+			list-style: circle;
+		}
+	}
+}
+a{
+	color: @Orange;
+	.transition();
+	&:hover, &:focus, &:active{
+		color: inherit;
+		cursor: pointer;
+		outline: none;
+	}
+}
+i{
+	font-style: normal;
+}
+ol,
+ul {
+	list-style: none;
+	margin: 0;
+	li{
+		list-style: none;
+	}
+}
+strong{
+	font-weight: @Bold;
+}
+
+@media screen and (min-width : 576px){
+}
+@media screen and (min-width : 768px){
+
+}
+@media screen and (min-width : 992px){
+}
+@media screen and (min-width : 1200px){
+	.container{
+		.MaxWidth(1080);
+	}
+}
+@media screen and (min-width : 1400px){
+}

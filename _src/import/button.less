@@ -1,26 +1,37 @@
-button.icon-fleche{
-	border: solid 3px;
-	.border-radius(@rad:5px);
-	.Height(45);
-	.MarginTop(20);
-	padding: 0;
-	.Width(45);
-	&:before{
-		color: @White;
-		.lineHeight(39);
+.button,
+button{
+	background-color: @White;
+	border: 1px solid @Grey-1;
+	.border-radius(@rad:50%);
+	color: @White;
+	.FB();
+	text-align: center;
+	margin: 0;
+	width: auto;
+	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+	&:hover,
+	&:focus,
+	&:active{
+		text-shadow: none;
+		text-decoration: none;
+		.bgOrange();
+		outline-offset: 0;
+	}
+	i{
+		.fWhite();
+	}
+	span{
+		display: block;
 	}
 }
-.vehicules-neufs{
-	button{
-		border-color: @Orange;
+.button-file-to-upload{
+	&:hover,
+	&:focus,
+	&:active{
+		.bgBlack();
+		.fWhite();
 	}
 }
-.vehicules-occasions{
-	button{
-		border-color: @Orange;
-	}
-}
-
 @media screen and (max-width : 576px){
 
 }
