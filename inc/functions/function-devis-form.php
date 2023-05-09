@@ -5,12 +5,6 @@ if (! defined('ABSPATH')) {
 }
 
 
-
-
-
-
-
-
 if(isset($_POST['email'])) {
 	echo "coucou";
 	$errors_log = array();
@@ -33,20 +27,18 @@ if(isset($_POST['email'])) {
 	
 	
 	
-	var_dump($errors_log);
+	//var_dump($errors_log);
 	
 	if(count($errors_log) == 0) {
 		session_start();
 		
 		$_SESSION = $_POST;
 		
-		var_dump($_SESSION);
+		//var_dump($_SESSION);
 		//header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
 	}
 	
 }
-
-
 
 
 

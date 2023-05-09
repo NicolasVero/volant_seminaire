@@ -29,7 +29,7 @@ function wpm_add_taxonomies()
         'show_in_rest'		=> true,
         'show_in_nav_menus'	=> true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'activites' ),
+        'rewrite'           => array( 'slug' => 'types-activites' ),
 
     );
 

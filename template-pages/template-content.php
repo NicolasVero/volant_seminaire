@@ -9,7 +9,7 @@ if (! defined('ABSPATH')) {
 ?>
 
 
-	<div class="container-article-page container-article-page-<?= $ID ?>">
+	<div class="container container-article-page container-article-page-<?= $ID ?>">
 		<?php 
 			the_title('<h1>', '</h1>');
 			the_content();

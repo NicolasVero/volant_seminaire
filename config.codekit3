@@ -1809,6 +1809,14 @@
       "oAP" : "\/inc\/functions\/function-devis-form.php",
       "oF" : 0
     },
+    "\/inc\/functions\/function-filters.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-filters.php",
+      "oF" : 0
+    },
     "\/inc\/functions\/function-js.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2418,70 +2426,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-parts\/navigation\/nav-widgets.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-carte.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-carte.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-chambre.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-chambre.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-couchage.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-couchage.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-marque.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-marque.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-modele.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-modele.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-searchform.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-searchform.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-tarifs.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-tarifs.php",
-      "oF" : 0
-    },
-    "\/template-parts\/widgets-filters\/widget-filtre-type.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/widgets-filters\/widget-filtre-type.php",
       "oF" : 0
     },
     "\/theme.json" : {
