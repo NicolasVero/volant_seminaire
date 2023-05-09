@@ -2,12 +2,39 @@
 $urlTemplate = $_POST['blog_url'];
 
 	if(isset($_POST['email']) ){
-		//var_dump($_POST);
+		session_start();
+		
+		$_SESSION = $_POST;
+		var_dump($_SESSION);
+		
+		$activites_rewrite = array();
+		$activites_rewrite_id = array();
+		foreach($_SESSION as $index => $session) {
+			if(preg_match('/id_activite-/', $index)) {
+				if(substr($index, 12 - strlen($index)) != $_SESSION['id_principale']) {
+					$activites_rewrite_id[] = substr($index, 12 - strlen($index));
+				}
+			}
+		}
+		
+		foreach($activites_rewrite_id as $activite_rewrite_id) {
+			$datas = array();
+			foreach($_SESSION as $index => $session) {
+				if(preg_match('/' . $activite_rewrite_id . '/', $index)) {
+					$datas[] = [$index, $session];
+				}
+			}
+			$activites_rewrite[] = $datas;
+		}
+		
+		var_dump($activites_rewrite);
+		var_dump($activites_rewrite_id);
+		
 		
 		$all_activities = array();
 		
 		$cpt = 0;
-		foreach($_POST as $index => $post) {
+		foreach($_SESSION as $index => $session) {
 			if(preg_match('/id_activite-/', $index)) {
 				$id[] = substr($index, 12);
 				$cpt++;
@@ -35,24 +62,24 @@ $urlTemplate = $_POST['blog_url'];
 		else 
 			$subject = 'Demande de devis pour plusieurs activités';
 			
-		$reference = create_reference($_POST);
+		$reference = create_reference($_SESSION);
 
-		$message_user   = get_message_user ($all_activities, $_POST, $urlTemplate , $reference);
-		$message_admin  = get_message_admin ($all_activities, $_POST, $urlTemplate, $reference);
+		$message_user   = get_message_user ($all_activities, $_SESSION, $urlTemplate , $reference);
+		$message_admin  = get_message_admin ($all_activities, $_SESSION, $urlTemplate, $reference);
 
 		// echo $message_user;
 		// echo $message_admin;
 
-		$headers = 'From: ' . $_POST['blog_info'] . ' <' . $to . '>' . "\r\n";
+		$headers = 'From: ' . $_SESSION['blog_info'] . ' <' . $to . '>' . "\r\n";
 		$headers .= 'Reply-To: ' . $to . "\r\n";
-		$headers .= 'CC: ' . htmlspecialchars( $_POST['email'] ) . "\r\n"; // Adresse de l'internaute
+		$headers .= 'CC: ' . htmlspecialchars( $_SESSION['email'] ) . "\r\n"; // Adresse de l'internaute
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-		mail( $_POST['email'], $subject, $message_user , $headers );
-		mail( $to, $subject, $message_admin, $headers );
+		//mail( $_POST['email'], $subject, $message_user , $headers );
+		//mail( $to, $subject, $message_admin, $headers );
 	}
 
-	header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
+	//header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
 	
 	function formate_phone_number($numero) {
 		
@@ -189,3 +216,4 @@ $urlTemplate = $_POST['blog_url'];
 			</body>
 		</html>';
 	}
+	

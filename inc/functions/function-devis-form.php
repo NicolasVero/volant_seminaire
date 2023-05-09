@@ -4,6 +4,55 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+
+
+
+
+
+
+
+if(isset($_POST['email'])) {
+	echo "coucou";
+	$errors_log = array();
+	
+	if(strlen($_POST['phone']) != 10       ) $errors_log[] = "Le numéro de téléphone renseigné est invalide";
+	if(strlen($_POST['firstname']) < 1     ) $errors_log[] = "Veuillez renseigner votre prénom";
+	if(strlen($_POST['lastname']) < 1      ) $errors_log[] = "Veuillez renseigner votre nom";
+	//if(strlen($_POST['social_reason']) < 1 ) $errors_log[] = "Veuillez renseigner une raison sociale";
+	if(strlen($_POST['message']) < 1       ) $errors_log[] = "Veuillez écrire un message";
+	
+	foreach($_POST as $index => $post) {
+		if(preg_match('/nombre_personnes-/', $index)) {
+			$ids[] = substr(17 - strlen($index));
+		}
+	}
+	
+	foreach($ids as $id) {
+		if($_POST['nombre-personnes ']) {}
+	}
+	
+	
+	
+	var_dump($errors_log);
+	
+	if(count($errors_log) == 0) {
+		session_start();
+		
+		$_SESSION = $_POST;
+		
+		var_dump($_SESSION);
+		//header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
+	}
+	
+}
+
+
+
+
+
+
+
+
 function get_today_date() {
 	return date('Y-m-d');
 }
@@ -26,10 +75,14 @@ function devis_form() {
 		$devis_items = isset( $_GET['activites'] ) ? sanitize_text_field( $_GET['activites'] ) : '';
 		$devis_items_array = explode( ',', $devis_items );		
 				
-		?>
+		?>	
+	
 	
 	<div class="devis-form-container">
 		<div class="devis-items-container">
+			
+			<!-- Faire appel au fichier de création de formulaire -->
+			
 			<form id="form-devis" method="post" action="<?php echo( $urlTemplate . '/inc/functions/function-submit-devis.php'); ?>">
 			<?php foreach ( $devis_items_array as $devis_item ) :
 				
@@ -59,6 +112,14 @@ function devis_form() {
 							<input type="hidden" name="blog_info" value="<?= $blog_info ?>">
 							<input type="hidden" name="blog_url" value="<?= $blog_url ?>">
 							<input type="hidden" name="admin_email" value="<?= $blog_admin ?>">
+							
+							<!-- ID ACTIVITE PRINCIPALE -->
+							
+							<input type="hidden" name="id_principale" value="<?= $activiteID ?>">
+							
+							<!--  -->
+							
+							
 							<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
 							<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
 							<div class="col-12 col-md-6">
