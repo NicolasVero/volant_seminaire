@@ -19,11 +19,11 @@ function cpt_services(){
 						?>
 						
 							<li class="item-service item-service-choice col-6 col-md-3">
-								<article id="article-service-<?= $serviceID ?>" class="article-service" >
-									<figure class="devis-item-image">
+								<article id="article-service-<?= $serviceID ?>" class="article-service d-flex flex-column align-items-center" >
+									<figure class="service-item-image">
 										<img src="<?= esc_url( $service_image_url ) ?>" alt="volant-seminaire-<?= $service_title ?>"/>
 									</figure>
-									<div class="devis-item-content">
+									<div class="service-item-content">
 										<h2><?= $service_title ?></h2>
 										<p><?= $service_description ?></p>
 									</div>
