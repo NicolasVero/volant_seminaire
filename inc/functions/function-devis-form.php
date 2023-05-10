@@ -81,8 +81,8 @@ if(isset($_POST['email'])) {
 	session_start();
 		
 	$_SESSION = $_POST;
-	$_SESSION['erreurs'] = array_unique($errors_log);
-	$_SESSION['input_erreurs'] = array_unique($inputs_errors_name);
+	$_SESSION['erreurs'] = $errors_log;
+	$_SESSION['input_erreurs'] = $inputs_errors_name;
 	$_SESSION['ids'] = $ids;
 	
 	if(count($errors_log) == 0) {
@@ -173,62 +173,7 @@ function devis_form() {
 						
 						include( 'function-activite-form.php' );
 					}				
-						
-											
 					
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
-
-
-
-
-
-
-					
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-				<?php
-					
-				//endforeach;
-				
 				?> 
 				
 				<button class="add-more-activity"><i id="open-menu" class="ti-plus"></i><span>Ajouter une autre activité</span></button>
