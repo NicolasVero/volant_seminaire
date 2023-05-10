@@ -9,7 +9,6 @@
 					)
 				);
 
-				
 				$termKey = [];
 				foreach( $terms as $index => $term ){
 					$termKey[] = $index; 
