@@ -1777,6 +1777,14 @@
       "oAP" : "\/inc\/formating-content.php",
       "oF" : 0
     },
+    "\/inc\/functions\/function-activite-form.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-activite-form.php",
+      "oF" : 0
+    },
     "\/inc\/functions\/function-activities-cpt.php" : {
       "cB" : 0,
       "ft" : 8192,

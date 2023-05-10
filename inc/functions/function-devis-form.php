@@ -4,6 +4,8 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
+$urlTemplate = get_stylesheet_directory();
+
 unset($_SESSION);
 
 // DETECTION ERREURS
@@ -50,8 +52,7 @@ if(isset($_POST['email'])) {
 		} 
 	}
 	
-	
-	
+
 	foreach($_POST as $index => $post) {
 		if(preg_match('/nombre_personnes-/', $index)) {
 			$ids[] = substr($index, 17 - strlen($index));
@@ -92,21 +93,13 @@ if(isset($_POST['email'])) {
 }
 
 
+// UTILITAIRE 
 function secure_input($input){
 	$input = trim($input);
 	$input = stripslashes($input);
 	$input = htmlspecialchars($input);
 	return $input;
 }
-
-
-// function colorize_errors($inputs_errors) {
-// 	
-// 	foreach($inputs_errors as $input_error) {
-// 		
-// 	}
-// 	
-// }
 
 function rewrite($index) {
 	if(isset($_SESSION[$index])) return $_SESSION[$index];
@@ -120,8 +113,12 @@ function get_max_date($n) {
 	return date("Y-m-d", strtotime("+" . $n . " year"));
 }
 
+
+
+
 function devis_form() {
 	$urlTemplate = get_stylesheet_directory_uri();
+	
 	$args = array(
 			'page_id' => 108,
 		);
@@ -160,59 +157,76 @@ function devis_form() {
 				
 				?>
 				 
-					<input type="hidden" name="blog_info" value="<?= $blog_info ?>">
-					<input type="hidden" name="blog_url" value="<?= $blog_url ?>">
-					<input type="hidden" name="admin_email" value="<?= $blog_admin ?>">
-					<input type="hidden" name="id_principale" value="<?= $activiteID ?>">
+					<input type="hidden" name="blog_info"     value="<?= $blog_info     ?>">
+					<input type="hidden" name="blog_url"      value="<?= $blog_url      ?>">
+					<input type="hidden" name="admin_email"   value="<?= $blog_admin    ?>">
+					<input type="hidden" name="id_principale" value="<?= $activiteID    ?>">
 					<input type="hidden" name="activite_slug" value="<?= $activite_slug ?>">
 				 
 				<?php 
 				
-					// if(isset($_POST['email'])) {
-					// 	$cpt = 0;
-					// 	$activiteID = 
-					// }					
+					if(isset($_POST['email'])) {
+						for($i = 0; $i < count($_SESSION['ids']); $i++) {
+							
+						}
+					} else {
+						
+						include( 'function-activite-form.php' );
+					}				
+						
+											
 					
-				?>
-					<div id="titre_activite-<?= $activiteID ?>" class="devis-item">
-						<div class="row">
-							<figure class="devis-item-image col-3 col-md-3">
-								<img src="<?= esc_url( $activite_image_url ) ?>" />
-							</figure>
-							<div class="devis-item-content col-9 col-md-8">						
-								<h2><?= $activite_title ?></h2>
-								<p><?= $activite_description ?></p>
-							</div>
-							<button class="delete-activity col-1"><i class="ti-trash"></i></button>
-						</div>
-						<div class="row">
-							<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
-							<input type="hidden" name="titre_activite-<?= $activiteID ?>" value="<?php echo esc_attr( $activite_title ); ?>">
-							<div class="col-12 col-md-6">
-								<div class="d-flex align-items-center input-people">
-									<label class="col-6 pl-0" for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes</label>
-									<input class="col-6" type="number" name="nombre_personnes-<?= $activiteID ?>" >
-								</div>
-								<div class="d-flex align-items-center input-date">
-									<label class="col-6 pl-0" for="date_activite-<?= $activiteID ?>">Date de l'activité</label>
-									<input class="col-6" type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" >
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="d-flex align-items-center input-place">
-									<label class="col-6 pl-0" for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire</label>
-									<input type="text" name="lieu_seminaire-<?= $activiteID ?>" >
-								</div>
-								<div class="d-flex align-items-center input-hours">
-									<label class="col-6 pl-0 d-flex align-items-center" for="horaires_debut-<?= $activiteID ?>">Horaires</label>
-									<div class="d-flex col-6 align-items-center"><span>de</span><input type="time" name="horaires_debut-<?= $activiteID ?>" > <span>à</span><input type="time" name="horaires_fin-<?= $activiteID ?>" >
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<?php
-				
+					
 				//endforeach;
 				
 				?> 
@@ -224,7 +238,7 @@ function devis_form() {
 					<p class="d-flex justify-content-center">Nous travaillons depuis plus de 10 ans avec<br/>des prestataires Hôteliers.</p>
 					
 					<label class="d-inline-block" for="hotels">Recevoir une offre prestataire hoteliers</label>
-					<input type="checkbox" id="hotels" name="hotels" <?php if(isset($_POST['hotels'])) { if($_POST['hotels'] == 'on'){ echo "checked"; }} ?>> 
+					<input type="checkbox" id="hotels" name="hotels"> 
 					
 					<label class="d-inline-block" for="lieu_seminaire_hotel">Lieu souhaité du séminaire</label>
 					<input type="text" id="lieu_seminaire_hotel" name="lieu_seminaire_hotel" disabled="true"></input>
@@ -259,27 +273,26 @@ function devis_form() {
 						<input type="submit" value="Envoyer">
 					</div>
 				</div>
-
 				
 				<div class="errors" style="background-color: #FFB0B0;">
+				
 					<?php 
-				
-				//var_dump($_POST);
-				//colorize_errors($_SESSION['input_erreurs']);
-				//if(isset($_SESSION['ids']))
-				//	var_dump($_SESSION['ids']);
-
-				if(isset($_SESSION['input_erreurs']))
-					var_dump($_SESSION['input_erreurs']);
-
-					if(isset($_SESSION['erreurs'])) {
-						foreach($_SESSION['erreurs'] as $error) {
-							echo '<p>' . $error . '</p>';		
+					
+						if(isset($_SESSION['input_erreurs']))
+							var_dump($_SESSION['input_erreurs']);
+	
+						if(isset($_SESSION['ids']))
+							var_dump($_SESSION['ids']);
+	
+	
+						if(isset($_SESSION['erreurs'])) {
+							foreach($_SESSION['erreurs'] as $error) {
+								echo '<p>' . $error . '</p>';		
+							}
 						}
-					}
-
-				
-				?>
+						
+					?>
+					
 				</div>
 				
 
