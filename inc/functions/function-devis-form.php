@@ -92,7 +92,6 @@ if(isset($_POST['email'])) {
 	
 }
 
-
 // UTILITAIRE 
 function secure_input($input){
 	$input = trim($input);
@@ -113,9 +112,6 @@ function get_max_date($n) {
 	return date("Y-m-d", strtotime("+" . $n . " year"));
 }
 
-
-
-
 function devis_form() {
 	$urlTemplate = get_stylesheet_directory_uri();
 	
@@ -132,7 +128,6 @@ function devis_form() {
 		$devis_items_array = explode( ',', $devis_items );		
 				
 		?>	
-	
 	
 	<div class="devis-form-container">
 		<div class="devis-items-container">
