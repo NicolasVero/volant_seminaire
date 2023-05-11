@@ -1,4 +1,4 @@
-<div class="container-filtres">	
+<div id="filters" class="container-filters">	
 
 			<ul class="list-items-filters d-flex justify-content-center">
 	
@@ -44,7 +44,7 @@
 					}
 				}
 				
-				echo '<li class="item-filter-' . $sorted_terms[0]['term_id'] . '"><a id="toutes" class="filter actif" href="#"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"><span>' . $sorted_terms[0]['term_name'] . '</span></a></li>';
+				echo '<li class="item-filter-' . $sorted_terms[0]['term_id'] . '"><a id="all" class="filter actif" href="#"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"><span>' . $sorted_terms[0]['term_name'] . '</span></a></li>';
 				// 		
 				for($cpt = 1; $cpt < count($sorted_terms); $cpt++){
 					
