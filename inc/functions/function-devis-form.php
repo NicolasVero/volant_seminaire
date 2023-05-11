@@ -8,30 +8,33 @@ $urlTemplate = get_stylesheet_directory();
 
 unset($_SESSION);
 
-// if(isset($_POST['submit_delete-80'])) {
-// 	echo "<h1>Is set</h1>";
-// }
-
 // DETECTION ERREURS
 if(isset($_POST['email'])) {
 
-	
+	// Sécurisation des données
 	foreach($_POST as $post) {
 		$post = secure_input($post);
 	}
 
+	$ids = array();
+	$errors_log = array();
+	$inputs_errors_name = array();
+	$skip_verif = false;
 
+	// Récupérer ID des différentes activités
 	foreach($_POST as $index => $post) {
 		if(preg_match('/nombre_personnes-/', $index) && !isset($_POST['submit_delete-' . substr($index, 17 - strlen($index))])) {
 			$ids[] = substr($index, 17 - strlen($index));
-			echo $index;
 		}
 	}
+	
+	// Si tous les posts supprimés, revient à celui de base	
+	if(count($ids) == 0 && isset($_POST['id_principale'])) {
+		$ids[] = $_POST['id_principale'];
+		$skip_verif = true;
+	}
 
-	
-	$errors_log = array();
-	$inputs_errors_name = array();
-	
+
 	if(strlen($_POST['phone']) < 10 ) {
 		$errors_log[] = "Le numéro de téléphone renseigné est invalide";
 		$inputs_errors_name[] = 'phone';
@@ -58,7 +61,6 @@ if(isset($_POST['email'])) {
 	}
 	
 	
-	
 	if(isset($_POST['hotels']) && isset($_POST['lieu_seminaire_hotel'])) {
 		if($_POST['hotels'] == 'on' && strlen($_POST['lieu_seminaire_hotel']) < 1) {
 			$errors_log[] = "Veuillez sélectionner un hôtel";
@@ -76,14 +78,24 @@ if(isset($_POST['email'])) {
 		'Veuillez renseigner un horaire correct'
 	];
 	
-	foreach($ids as $id) {
-		for($i = 0; $i < count($inputs); $i++) {
-			if(strlen($_POST[$inputs[$i] . '-' . $id]) < 1) {
-				$errors_log[] = $errors[$i];
-				$inputs_errors_name[] = $inputs[$i] . '-' . $id;
+	if(!$skip_verif) {
+		foreach($ids as $id) {
+			for($i = 0; $i < count($inputs); $i++) {
+				if(strlen($_POST[$inputs[$i] . '-' . $id]) < 1) {
+					$errors_log[] = $errors[$i];
+					$inputs_errors_name[] = $inputs[$i] . '-' . $id;
+				}
+			}
+			if(strlen($_POST[$inputs[3] . '-' . $id]) > 0 && strlen($_POST[$inputs[4] . '-' . $id]) > 0) {
+				if(!compare_hours($_POST[$inputs[3] . '-' . $id], $_POST[$inputs[4] . '-' . $id] )) {
+					$errors_log[] = "Les heures de début et de fin de séminaire ne sont pas correctes";
+					$inputs_errors_name[] = $inputs[3] . '-' . $id;
+					$inputs_errors_name[] = $inputs[4] . '-' . $id;
+				}
 			}
 		}
 	}
+	
 	
 	session_start();
 		
@@ -95,7 +107,6 @@ if(isset($_POST['email'])) {
 	if(count($errors_log) == 0) {
 		// header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
 		header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
-		echo 'urltemp : ' . $urlTemplate;
 	}
 	
 }
@@ -106,6 +117,12 @@ function secure_input($input){
 	$input = stripslashes($input);
 	$input = htmlspecialchars($input);
 	return $input;
+}
+
+function compare_hours($heure_1, $heure_2) {
+	if(strlen($heure_1) != 5 || strlen($heure_2) != 5) return null;
+	
+	return str_replace(':', '', $heure_1) < str_replace(':', '', $heure_2);
 }
 
 function rewrite($index) {
@@ -174,13 +191,13 @@ function devis_form() {
 							$activite_image_url 	= get_the_post_thumbnail_url( $activiteID, 'medium' );
 							$blog_info          	= get_bloginfo( 'name' );
 							$blog_url 				= get_bloginfo( 'url' );
-							$blog_admin 			= get_option( 'admin_email' ); 
+							$blog_admin 			= get_option( 'admin_email' );
 
 							include( 'function-activite-form.php' );	
 						}
 					} else {
 						include( 'function-activite-form.php' );
-					}				
+					}
 					
 				?> 
 				
