@@ -4,6 +4,9 @@ echo 'bienvenue';
 		session_start();
 
 
+	
+
+
 	if(isset($_SESSION['email']) ){
 		
 		$activites_rewrite = array();

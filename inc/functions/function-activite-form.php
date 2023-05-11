@@ -7,7 +7,7 @@
 			<h2><?= $activite_title ?></h2>
 			<p><?= $activite_description ?></p>
 		</div>
-		<button class="delete-activity col-1"><i class="ti-trash"></i></button>
+		<button type="submit" name="submit_delete-<?= $activiteID ?>" class="delete-activity col-1"><i class="ti-trash"></i></button>
 	</div>
 	<div class="row">
 		<input type="hidden" name="id_activite-<?= $activiteID ?>" value="<?= $activiteID ?>">
@@ -35,3 +35,5 @@
 		</div>
 	</div>
 </div>
+
+<h1><?= $activiteID ?></h1>

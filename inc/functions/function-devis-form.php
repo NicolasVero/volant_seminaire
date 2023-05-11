@@ -8,6 +8,10 @@ $urlTemplate = get_stylesheet_directory();
 
 unset($_SESSION);
 
+// if(isset($_POST['submit_delete-80'])) {
+// 	echo "<h1>Is set</h1>";
+// }
+
 // DETECTION ERREURS
 if(isset($_POST['email'])) {
 
@@ -18,13 +22,13 @@ if(isset($_POST['email'])) {
 
 
 	foreach($_POST as $index => $post) {
-		if(preg_match('/nombre_personnes-/', $index)) {
+		if(preg_match('/nombre_personnes-/', $index) && !isset($_POST['submit_delete-' . substr($index, 17 - strlen($index))])) {
 			$ids[] = substr($index, 17 - strlen($index));
+			echo $index;
 		}
 	}
 
-
-
+	
 	$errors_log = array();
 	$inputs_errors_name = array();
 	
