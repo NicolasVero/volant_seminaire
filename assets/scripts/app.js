@@ -40,11 +40,14 @@ $(function(){
 if( $('#filters').length ){
 
 	$('#all').click( function(e){
-
+	
 		e.preventDefault();
+	
+		
 		$('.item-activite').slideDown();
 		$('#filters a').removeClass('actif');
 		$(this).addClass('actif');
+		//$('.item-activite').show('slow').addClass('d-flex');
 
 		return false;
 
@@ -53,10 +56,12 @@ if( $('#filters').length ){
 	$('.filter').click( function(f){
 
 		f.preventDefault();
+
 		var filtre = $(this).attr('id');
-		$('.promo').hide('slow').removeClass('d-flex');
-		$('.'+ filtre).show('slow').addClass('d-flex');
-		$('#filtres a').removeClass('actif');
+		
+		$('.item-activite').hide('slow').removeClass('d-flex');
+		$('.item-activite-'+ filtre).show('slow').addClass('d-flex');
+		$('#filters a').removeClass('actif');
 		$(this).addClass('actif');
 		return false;
 	});
