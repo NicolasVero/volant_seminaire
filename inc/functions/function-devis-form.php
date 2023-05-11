@@ -201,7 +201,7 @@ function devis_form() {
 					
 				?> 
 				
-				<button class="add-more-activity"><i id="open-menu" class="ti-plus"></i><span>Ajouter une autre activité</span></button>
+				<a href="#" id="add-more-activity" class="button add-more-activity d-inline-block"><span class="d-flex"><i class="button-circle-orange ti-plus d-block"></i><span class="d-block">Ajouter une autre activité</span></span></a>
 				
 				<div class="row">
 					<h3 class="col-12">Séminaire clé en main</h3>

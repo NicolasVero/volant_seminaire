@@ -11828,9 +11828,9 @@ html {
 button {
   background-color: #FFFFFF;
   border: 1px solid #DBDBDB;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
   color: #333333;
   font-family: "acumin-pro", sans-serif;
   font-weight: 700;
@@ -11851,7 +11851,6 @@ button:focus,
 button:active {
   text-shadow: none;
   text-decoration: none;
-  background-color: #FF4E00;
   outline-offset: 0;
 }
 .button i,
@@ -11861,6 +11860,23 @@ button i {
 .button span,
 button span {
   display: block;
+}
+.button-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.button-circle-grey {
+  border: 1px solid #DBDBDB;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.button-circle-orange {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FF4E00;
 }
 .button-file-to-upload:hover,
 .button-file-to-upload:focus,
@@ -14810,6 +14826,26 @@ img.mfp-img {
     object-fit: cover;
     width: 100%;
   }
+}
+.container-list-items-activities {
+  background-color: #FFFFFF;
+  bottom: 0;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.container-list-items-activities.open {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  z-index: 3;
 }
 /*--------------------------------
 IMPORTS EXTERNES

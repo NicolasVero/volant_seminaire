@@ -1,8 +1,8 @@
 .button,
 button{
-	background-color: @White;
+	.bgWhite();
 	border: 1px solid @Grey-1;
-	.border-radius(@rad:50%);
+	.border-radius(@rad:50px);
 	.fBlack();
 	.FB();
 	text-align: center;
@@ -14,7 +14,6 @@ button{
 	&:active{
 		text-shadow: none;
 		text-decoration: none;
-		.bgOrange();
 		outline-offset: 0;
 	}
 	i{
@@ -23,6 +22,17 @@ button{
 	span{
 		display: block;
 	}
+}
+.button-circle{
+	.border-radius(@rad:50%);
+}
+.button-circle-grey{
+	border: 1px solid @Grey-1;
+	.border-radius(@rad:50%);
+}
+.button-circle-orange{
+	.border-radius(@rad:50%);
+	.bgOrange();
 }
 .button-file-to-upload{
 	&:hover,

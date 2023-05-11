@@ -9,8 +9,7 @@ $(function(){
 // SUPPRIMER LES ATTRIBUTS WIDTH, HEIGHT ET SIZES DES IMAGES
 	$('img').removeAttr('Width').removeAttr('Height').removeAttr('sizes').removeAttr('srcset');
 	
-// AJOUT ACTIVITÉ
-
+// AJOUT ACTIVITÉ AU FORMULAIRE
 	if ($('#list-items-activities').length) {
 		$('#list-items-activities li.item-activite-choice').each(function (index) {
 			let data_activiteID = $(this).attr('data-activiteID');
@@ -28,41 +27,42 @@ $(function(){
 	}
 
 //FORMULAIRE DEMANDE DEVIS - HOTEL
-	
 	if( $('#hotels').length ){
 		$('#hotels').change( function() {
 			$('#lieu_seminaire_hotel').prop('disabled', !($(this).is( ':checked' ) ) );
 			$('#lieu_seminaire_hotel').val('');
 		});
 	}
+//FENETRE AJOUT ACTIVITÉ
+	if( $('#add-more-activity').length ){
+		$('#add-more-activity').click( function(e){
+			e.preventDefault()
+			$('#container-list-items-activities').addClass('open');
+		});
+	}
 
 //FILTRE ACTIVITÉS
-if( $('#filters').length ){
-
+	if( $('#filters').length ){
 	$('#all').click( function(e){
-	
-		e.preventDefault();
-	
 		
+		e.preventDefault();
 		$('.item-activite').slideDown();
 		$('#filters a').removeClass('actif');
 		$(this).addClass('actif');
-		//$('.item-activite').show('slow').addClass('d-flex');
-
+		
 		return false;
-
 	});
 
 	$('.filter').click( function(f){
 
 		f.preventDefault();
-
 		var filtre = $(this).attr('id');
 		
 		$('.item-activite').hide('slow').removeClass('d-flex');
 		$('.item-activite-'+ filtre).show('slow').addClass('d-flex');
 		$('#filters a').removeClass('actif');
 		$(this).addClass('actif');
+		
 		return false;
 	});
 }
