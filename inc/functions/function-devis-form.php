@@ -10,11 +10,21 @@ unset($_SESSION);
 
 // DETECTION ERREURS
 if(isset($_POST['email'])) {
+
 	
 	foreach($_POST as $post) {
 		$post = secure_input($post);
 	}
-		//var_dump($_POST);
+
+
+	foreach($_POST as $index => $post) {
+		if(preg_match('/nombre_personnes-/', $index)) {
+			$ids[] = substr($index, 17 - strlen($index));
+		}
+	}
+
+
+
 	$errors_log = array();
 	$inputs_errors_name = array();
 	
@@ -52,13 +62,6 @@ if(isset($_POST['email'])) {
 		} 
 	}
 	
-
-	foreach($_POST as $index => $post) {
-		if(preg_match('/nombre_personnes-/', $index)) {
-			$ids[] = substr($index, 17 - strlen($index));
-		}
-	}
-
 	
 	$inputs = ['nombre_personnes', 'date_activite', 'lieu_seminaire', 'horaires_debut', 'horaires_fin'];
 	$errors = [
