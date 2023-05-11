@@ -1,11 +1,10 @@
 <?php
-$urlTemplate = $_POST['blog_url'];
-
-	if(isset($_POST['email']) ){
+$urlTemplate = $_SESSION['blog_url'];
+echo 'bienvenue';
 		session_start();
-		
-		$_SESSION = $_POST;
-		var_dump($_SESSION);
+
+
+	if(isset($_SESSION['email']) ){
 		
 		$activites_rewrite = array();
 		$activites_rewrite_id = array();
@@ -47,7 +46,7 @@ $urlTemplate = $_POST['blog_url'];
 			$activite = array();
 			$activite_id = $id[$i]; 
 			for($j = 0; $j < count($datas); $j++) {
-				$activite[] = htmlspecialchars( $_POST[$datas[$j] . '-' . $activite_id] );
+				$activite[] = htmlspecialchars( $_SESSION[$datas[$j] . '-' . $activite_id] );
 			}
 			$all_activities[] = $activite;
 		}
@@ -67,15 +66,15 @@ $urlTemplate = $_POST['blog_url'];
 		$message_user   = get_message_user ($all_activities, $_SESSION, $urlTemplate , $reference);
 		$message_admin  = get_message_admin ($all_activities, $_SESSION, $urlTemplate, $reference);
 
-		// echo $message_user;
-		// echo $message_admin;
+		echo $message_user;
+		echo $message_admin;
 
 		$headers = 'From: ' . $_SESSION['blog_info'] . ' <' . $to . '>' . "\r\n";
 		$headers .= 'Reply-To: ' . $to . "\r\n";
 		$headers .= 'CC: ' . htmlspecialchars( $_SESSION['email'] ) . "\r\n"; // Adresse de l'internaute
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-		//mail( $_POST['email'], $subject, $message_user , $headers );
+		//mail( $_SESSION['email'], $subject, $message_user , $headers );
 		//mail( $to, $subject, $message_admin, $headers );
 	}
 

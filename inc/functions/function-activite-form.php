@@ -15,21 +15,21 @@
 		<div class="col-12 col-md-6">
 			<div class="d-flex align-items-center input-people">
 				<label class="col-6 pl-0" for="nombre_personnes-<?= $activiteID ?>">Nombre de personnes</label>
-				<input class="col-6" type="number" name="nombre_personnes-<?= $activiteID ?>" >
+				<input class="col-6" type="number" name="nombre_personnes-<?= $activiteID ?>" value="<?= rewrite('nombre_personnes-' . $activiteID) ?>">
 			</div>
 			<div class="d-flex align-items-center input-date">
 				<label class="col-6 pl-0" for="date_activite-<?= $activiteID ?>">Date de l'activité</label>
-				<input class="col-6" type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" >
+				<input class="col-6" type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" value="<?= rewrite('date_activite-' . $activiteID) ?>" >
 			</div>
 		</div>
 		<div class="col-12 col-md-6">
 			<div class="d-flex align-items-center input-place">
 				<label class="col-6 pl-0" for="lieu_seminaire-<?= $activiteID ?>">Lieu du séminaire</label>
-				<input type="text" name="lieu_seminaire-<?= $activiteID ?>" >
+				<input type="text" name="lieu_seminaire-<?= $activiteID ?>" value="<?= rewrite('lieu_seminaire-' . $activiteID) ?>">
 			</div>
 			<div class="d-flex align-items-center input-hours">
 				<label class="col-6 pl-0 d-flex align-items-center" for="horaires_debut-<?= $activiteID ?>">Horaires</label>
-				<div class="d-flex col-6 align-items-center"><span>de</span><input type="time" name="horaires_debut-<?= $activiteID ?>" > <span>à</span><input type="time" name="horaires_fin-<?= $activiteID ?>" >
+				<div class="d-flex col-6 align-items-center"><span>de</span><input type="time" name="horaires_debut-<?= $activiteID ?>" value="<?= rewrite('horaires_debut-' . $activiteID) ?>"> <span>à</span><input type="time" name="horaires_fin-<?= $activiteID ?>" value="<?= rewrite('horaires_fin-' . $activiteID) ?>">
 				</div>
 			</div>
 		</div>

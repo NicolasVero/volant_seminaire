@@ -86,8 +86,9 @@ if(isset($_POST['email'])) {
 	$_SESSION['ids'] = $ids;
 	
 	if(count($errors_log) == 0) {
-		header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
-		echo 'réussi';
+		// header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
+		header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
+		echo 'urltemp : ' . $urlTemplate;
 	}
 	
 }
@@ -131,15 +132,10 @@ function devis_form() {
 	
 	<div class="devis-form-container">
 		<div class="devis-items-container">
-			
-			<!-- Faire appel au fichier de création de formulaire -->
-			
-			<!-- <form id="form-devis" method="post" action="<?php //echo( $urlTemplate . '/inc/functions/function-submit-devis.php'); ?>"> -->
-			<form id="form-devis" method="post" action="<?php echo('https://volant-seminaire.gribdev.net/demander-un-devis/?activites=activite-mini'); ?>">
+			<form id="form-devis" method="post" action="">
+
 			<?php 
-			
-			//foreach ( $devis_items_array as $devis_item ) :
-				
+							
 				$activiteID 			= get_the_ID();
 				$activite 				= get_post( $activiteID );
 				$activite_title 		= esc_html($activite->post_title);
@@ -162,10 +158,20 @@ function devis_form() {
 				
 					if(isset($_POST['email'])) {
 						for($i = 0; $i < count($_SESSION['ids']); $i++) {
-							
+						
+							$activiteID 			= $_SESSION['ids'][$i];
+							$activite 				= get_post( $activiteID );
+							$activite_title 		= esc_html($activite->post_title);
+							$activite_description 	= esc_html($activite->post_excerpt);
+							$activite_slug 		  	= esc_html($activite->post_name);
+							$activite_image_url 	= get_the_post_thumbnail_url( $activiteID, 'medium' );
+							$blog_info          	= get_bloginfo( 'name' );
+							$blog_url 				= get_bloginfo( 'url' );
+							$blog_admin 			= get_option( 'admin_email' ); 
+
+							include( 'function-activite-form.php' );	
 						}
 					} else {
-						
 						include( 'function-activite-form.php' );
 					}				
 					
