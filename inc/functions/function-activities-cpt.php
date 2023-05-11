@@ -36,11 +36,22 @@ function cpt_allActivities(){?>
 						$activite_image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
 						$activite_taxonomy = 'types_d_activites';
 						$activite_taxos = get_the_terms( $activiteID , $activite_taxonomy);
-						$activite_taxo_a = $activite_taxos[0]->slug;
-						$activite_taxo_b= $activite_taxos[1]->slug;
+						
+						$taxos = [];
+						$classes = '';
+						for( $i = 0; $i< count( $activite_taxos ) -1; $i++ ){
+							$taxos[] = $activite_taxos[$i]->slug;
+							$classes .= 'item-activite-' . $taxos[$i] . ' ';
+						}
+						
+						
+						// $activite_taxo_a = $activite_taxos[0]->slug;
+						// $activite_taxo_b= $activite_taxos[1]->slug;
+						
+						//var_dump($activite_taxos);
 						
 						?>
-							<li class="item-activite <?php if($activite_taxo_a){ echo 'item-activite-' . $activite_taxo_a; }?> <?php if($activite_taxo_b){ echo 'item-activite-' . $activite_taxo_b; }?> item-activite-choice col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
+							<li class="item-activite <?= $classes ?> item-activite-choice col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
 								<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
 									<?php if( is_front_page() ) : ?>
 									<a href="<?= $activite_link ?>" title="En savoir plus sur l'activité : <?= $activite_title ?>">
