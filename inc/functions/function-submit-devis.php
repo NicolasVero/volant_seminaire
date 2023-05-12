@@ -142,7 +142,7 @@ echo 'bienvenue';
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . formate_phone_number($user_datas['phone']) . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['email'] . '</p>
-				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['social_reason'] . '</p>
+				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . if(isset($user_datas['social_reason']) ? $user_datas['social_reason'] : "Non renseigné" . '</p>
 			</div>
 			<p style="margin-left: 15%; margin-right: 15%; font-style: italic; margin-bottom: 50px; margin-top: 35px; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['message'] . '</p>
 			

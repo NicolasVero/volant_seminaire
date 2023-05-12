@@ -24,12 +24,69 @@ $urlTemplate = get_stylesheet_directory();
     <header id="main-header" class="main-header header-site" role="banner">
         <div class="container-fluid main-header-container container d-flex flex-column flex-md-row justify-content-md-between align-items-lg-center">
             <?php
-            get_template_part('template-parts/navigation/nav', 'header-brand');
-            get_template_part('template-parts/navigation/nav', 'widgets');
-            get_template_part('template-parts/navigation/nav', 'header');
-         
-        ?>
+                get_template_part('template-parts/navigation/nav', 'header-brand');
+                get_template_part('template-parts/navigation/nav', 'widgets');
+                get_template_part('template-parts/navigation/nav', 'header');
+            ?>
         </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<span style="color: white" class="open-navigation"><i class="fas fa-bars"></i></span>
+        <div id="navigation-container">
+          <div class="navigation-menu">
+            <?php if(function_exists('menu_navigation')) echo menu_navigation(); ?>
+          </div>
+        </div>
+        
+        <?php
+        
+        function menu_navigation() {
+            
+            
+            
+            return '<h1 style="color: white">affichage menu</h1>';
+        }
+
+        ?>
+          
+        
+        <script>
+          const bouton_open = document.getElementsByClassName('open-navigation')[0];
+          const menu = document.getElementById('navigation-container');
+          menu.style.display = 'none';
+          bouton_open.addEventListener('click', function() {
+                if(window.getComputedStyle(menu).getPropertyValue('display') == 'none') {
+                    menu.style.display = 'block';
+                } else {
+                     menu.style.display = 'none';
+                }
+          });
+         
+        </script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <!-- <div class="search-form-container container-fluid">
             <?php //include 'inc/searchform.php';?>
         </div> -->

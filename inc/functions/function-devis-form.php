@@ -50,10 +50,16 @@ if(isset($_POST['email'])) {
 		$inputs_errors_name[] = 'lastname';
 	}
 	
-	if(strlen($_POST['social_reason']) < 1 ) {
-		$errors_log[] = "Veuillez renseigner une raison sociale";
-		$inputs_errors_name[] = 'social_reason';
+	// if(strlen($_POST['social_reason']) < 1 ) {
+	// 	$errors_log[] = "Veuillez renseigner une raison sociale";
+	// 	$inputs_errors_name[] = 'social_reason';
+	// }
+	
+	if(strlen($_POST['email']) < 1) {
+		$errors_log[] = "Veuillez renseigner un email";
+		$inputs_errors_name[] = 'email';
 	}
+	
 	
 	if(strlen($_POST['message']) < 1 ) {
 		$errors_log[] = "Veuillez écrire un message";
@@ -74,8 +80,8 @@ if(isset($_POST['email'])) {
 		'Veuillez renseigner un nombre de personne', 
 		'Veuillez renseigner une date pour votre activité', 
 		'Veuillez renseigner un lieu pour votre séminaire', 
-		'Veuillez renseigner un horaire correct', 
-		'Veuillez renseigner un horaire correct'
+		'Veuillez renseigner un horaire de début correct', 
+		'Veuillez renseigner un horaire de fin correct'
 	];
 	
 	if(!$skip_verif) {
@@ -105,8 +111,8 @@ if(isset($_POST['email'])) {
 	$_SESSION['ids'] = $ids;
 	
 	if(count($errors_log) == 0) {
-		// header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
-		header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
+		header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
+		//header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
 	}
 	
 }
@@ -223,19 +229,19 @@ function devis_form() {
 					<input type="checkbox" id="hotels" name="hotels"> 
 					
 					<label class="d-inline-block" for="lieu_seminaire_hotel">Lieu souhaité du séminaire</label>
-					<input type="text" id="lieu_seminaire_hotel" name="lieu_seminaire_hotel" disabled="true"></input>
-					
+					<input type="text" id="lieu_seminaire_hotel" name="lieu_seminaire_hotel" disabled="true"></input>	
 				</div>
+				
 				<div class="row">
 					<h3 class="col-12">Mes coordonnées</h3>
 					<div class="col-12 col-md-6">
 						<div class="item-input-form">
-							<label class="d-inline-block" for="firstname">Prénom</label>
+							<label class="d-inline-block" for="firstname">* Prénom</label>
 							<input class="d-inline-block" type="text" name="firstname" placeholder="Votre prénom" value="<?= rewrite('firstname') ?>">
 							<?= display_error('firstname') ?>
 						</div>
 						<div class="item-input-form">
-							<label class="d-inline-block" for="lastname">Nom</label>
+							<label class="d-inline-block" for="lastname">* Nom</label>
 							<input class="d-inline-block" type="text" name="lastname" placeholder="Votre nom" value="<?= rewrite('lastname') ?>">
 							<?= display_error('lastname') ?>
 						</div>
@@ -247,19 +253,19 @@ function devis_form() {
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="item-input-form">	
-							<label class="d-inline-block" for="phone">Téléphone</label>
+							<label class="d-inline-block" for="phone">* Téléphone</label>
 							<input class="d-inline-block" type="tel" name="phone" placeholder="+33 00 00 00 00 00" value="<?= rewrite('phone') ?>">
 							<?= display_error('phone') ?>
 						</div>
 						<div class="item-input-form">
-							<label class="d-inline-block" for="email">Adresse e-mail</label>
+							<label class="d-inline-block" for="email">* Adresse e-mail</label>
 							<input class="d-inline-block" type="email" name="email" placeholer="Votre adresse email" value="<?= rewrite('email') ?>">
 							<?= display_error('email') ?>
 						</div>
 					</div>
 				</div>	
 				<div class="row">
-					<h3 class="col-12">Message</h3>
+					<h3 class="col-12">* Message</h3>
 					<div class="item-input-form">
 						<div class="col-12"><textarea name="message" placeholder="Votre message"><?= rewrite('message') ?></textarea></div>
 						<?= display_error('message') ?>	
@@ -271,30 +277,6 @@ function devis_form() {
 					</div>
 				</div>
 				
-				<!-- <div class="errors" style="background-color: #FFB0B0;"> -->
-				
-					<?php 
-					
-					var_dump($_SESSION);
-	// 				
-	// 					if(isset($_SESSION['input_erreurs']))
-	// 						var_dump($_SESSION['input_erreurs']);
-	// 
-	// 					if(isset($_SESSION['ids']))
-	// 						var_dump($_SESSION['ids']);
-	// 
-	// 
-	// 					if(isset($_SESSION['erreurs'])) {
-	// 						foreach($_SESSION['erreurs'] as $error) {
-	// 							echo '<p>' . $error . '</p>';		
-	// 						}
-	// 					}
-						
-					?>
-					
-				<!-- </div> -->
-				
-
 			</form>
 		</div>
 		
@@ -303,8 +285,5 @@ function devis_form() {
 		<?php
 			 cpt_allActivities();
 			
-// 			if ( isset( $_POST['email'] ) ){
-// 				submit_devis( $activitiesID );
-// 			}
 }		
 add_shortcode( 'devis_form', 'devis_form' );
