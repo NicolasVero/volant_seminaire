@@ -129,6 +129,18 @@ function rewrite($index) {
 	if(isset($_SESSION[$index])) return $_SESSION[$index];
 }
 
+function display_error($input, $id = null) {
+	if($id != null) $input .= '-' . $id;
+	if(isset($_SESSION['input_erreurs'])) {
+		foreach($_SESSION['input_erreurs'] as $index => $input_erreur) {
+			if($input == $input_erreur) {
+				return '<span class="d-inline-block error-form">' . $_SESSION['erreurs'][$index] . '</span>';
+			}
+		}
+	}
+	return false;
+}
+
 function get_today_date() {
 	return date('Y-m-d');
 }
@@ -220,25 +232,29 @@ function devis_form() {
 						<div class="item-input-form">
 							<label class="d-inline-block" for="firstname">Prénom</label>
 							<input class="d-inline-block" type="text" name="firstname" placeholder="Votre prénom" value="<?= rewrite('firstname') ?>">
-							
+							<?= display_error('firstname') ?>
 						</div>
 						<div class="item-input-form">
 							<label class="d-inline-block" for="lastname">Nom</label>
 							<input class="d-inline-block" type="text" name="lastname" placeholder="Votre nom" value="<?= rewrite('lastname') ?>">
+							<?= display_error('lastname') ?>
 						</div>
 						<div class="item-input-form">
 							<label class="d-inline-block" for="social_reason">Raison sociale</label>
 							<input class="d-inline-block" type="text" name="social_reason" placeholder="Entreprise ou particuliers" value="<?= rewrite('social_reason') ?>">
+							<?= display_error('social_reason') ?>
 						</div>
 					</div>
 					<div class="col-12 col-md-6">
 						<div class="item-input-form">	
 							<label class="d-inline-block" for="phone">Téléphone</label>
 							<input class="d-inline-block" type="tel" name="phone" placeholder="+33 00 00 00 00 00" value="<?= rewrite('phone') ?>">
+							<?= display_error('phone') ?>
 						</div>
 						<div class="item-input-form">
 							<label class="d-inline-block" for="email">Adresse e-mail</label>
 							<input class="d-inline-block" type="email" name="email" placeholer="Votre adresse email" value="<?= rewrite('email') ?>">
+							<?= display_error('email') ?>
 						</div>
 					</div>
 				</div>	
@@ -246,6 +262,7 @@ function devis_form() {
 					<h3 class="col-12">Message</h3>
 					<div class="item-input-form">
 						<div class="col-12"><textarea name="message" placeholder="Votre message"><?= rewrite('message') ?></textarea></div>
+						<?= display_error('message') ?>	
 					</div>
 				</div>
 				<div class="row">
@@ -254,26 +271,28 @@ function devis_form() {
 					</div>
 				</div>
 				
-				<div class="errors" style="background-color: #FFB0B0;">
+				<!-- <div class="errors" style="background-color: #FFB0B0;"> -->
 				
 					<?php 
 					
-						if(isset($_SESSION['input_erreurs']))
-							var_dump($_SESSION['input_erreurs']);
-	
-						if(isset($_SESSION['ids']))
-							var_dump($_SESSION['ids']);
-	
-	
-						if(isset($_SESSION['erreurs'])) {
-							foreach($_SESSION['erreurs'] as $error) {
-								echo '<p>' . $error . '</p>';		
-							}
-						}
+					var_dump($_SESSION);
+	// 				
+	// 					if(isset($_SESSION['input_erreurs']))
+	// 						var_dump($_SESSION['input_erreurs']);
+	// 
+	// 					if(isset($_SESSION['ids']))
+	// 						var_dump($_SESSION['ids']);
+	// 
+	// 
+	// 					if(isset($_SESSION['erreurs'])) {
+	// 						foreach($_SESSION['erreurs'] as $error) {
+	// 							echo '<p>' . $error . '</p>';		
+	// 						}
+	// 					}
 						
 					?>
 					
-				</div>
+				<!-- </div> -->
 				
 
 			</form>
