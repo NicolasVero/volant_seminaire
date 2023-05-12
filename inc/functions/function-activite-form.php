@@ -21,7 +21,7 @@
 			<div class="d-flex align-items-center input-date item-input-form">
 				<label class="col-6 pl-0" for="date_activite-<?= $activiteID ?>">Date de l'activité</label>
 				<input class="col-6" type="date" name="date_activite-<?= $activiteID ?>" min="<?= get_today_date() ?>" max="<?= get_max_date(6) ?>" value="<?= rewrite('date_activite-' . $activiteID) ?>" >
-				<?= display_error('nombre_personnes', $activiteID) ?>
+				<?= display_error('date_activite', $activiteID) ?>
 			</div>
 		</div>
 		<div class="col-12 col-md-6">
@@ -33,10 +33,9 @@
 				<label class="col-6 pl-0 d-flex align-items-center" for="horaires_debut-<?= $activiteID ?>">Horaires</label>
 				<div class="d-flex col-6 align-items-center"><span>de</span><input type="time" name="horaires_debut-<?= $activiteID ?>" value="<?= rewrite('horaires_debut-' . $activiteID) ?>"> <span>à</span><input type="time" name="horaires_fin-<?= $activiteID ?>" value="<?= rewrite('horaires_fin-' . $activiteID) ?>">
 				</div>
-				<?= display_error('nombre_personnes', $activiteID) ?>
+				<?= display_error('horaires_debut', $activiteID) ?>
+				<?= display_error('horaires_fin', $activiteID) ?>
 			</div>
 		</div>
 	</div>
 </div>
-
-<h1><?= $activiteID ?></h1>
