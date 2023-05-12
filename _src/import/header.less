@@ -16,10 +16,9 @@
 		display: none;
 	}
 }
-.site-branding{
-	background-image: @logoS;
-	background-position: center center;
-	background-repeat: no-repeat;
+.site-branding,
+.site-branding-big{
+	background: @logoS;
 	background-size: contain;
 	direction: ltr;
 	display: block;
@@ -32,6 +31,11 @@
 	margin: 0;
 	.MarginTop(15);
 	z-index: 4;
+}
+.site-branding-big{
+	background: @logoXL;
+	.Width(164);
+	.Height(144);
 }
 @media screen and (min-width : 576px){
 

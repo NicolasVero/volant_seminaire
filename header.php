@@ -30,63 +30,6 @@ $urlTemplate = get_stylesheet_directory();
             ?>
         </div>
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-<span style="color: white" class="open-navigation"><i class="fas fa-bars"></i></span>
-        <div id="navigation-container">
-          <div class="navigation-menu">
-            <?php if(function_exists('menu_navigation')) echo menu_navigation(); ?>
-          </div>
-        </div>
-        
-        <?php
-        
-        function menu_navigation() {
-            
-            
-            
-            return '<h1 style="color: white">affichage menu</h1>';
-        }
-
-        ?>
-          
-        
-        <script>
-          const bouton_open = document.getElementsByClassName('open-navigation')[0];
-          const menu = document.getElementById('navigation-container');
-          menu.style.display = 'none';
-          bouton_open.addEventListener('click', function() {
-                if(window.getComputedStyle(menu).getPropertyValue('display') == 'none') {
-                    menu.style.display = 'block';
-                } else {
-                     menu.style.display = 'none';
-                }
-          });
-         
-        </script>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <!-- <div class="search-form-container container-fluid">
             <?php //include 'inc/searchform.php';?>
         </div> -->

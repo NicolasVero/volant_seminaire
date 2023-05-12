@@ -26,24 +26,24 @@ function remove_nav_parent()
 }
 add_action('after_setup_theme', 'remove_nav_parent');
 
-// SUPPRESSION DU MENU ARTICLE DE L'ADMIN
-// function remove_menu_admin()
-// {
-//     // 	remove_menu_page( 'edit.php' );
-//     remove_menu_page('edit-comments.php');
-//
-//     global $menu;
-//     $restricted = array( __('Comments'));
-//     end($menu);
-//     while (prev($menu)) {
-//         $value = explode(' ', $menu[key($menu)][0]);
-//
-//         if (in_array($value[0] != null ? $value[0] : "", $restricted)) {
-//             unset($menu[key($menu)]);
-//         }
-//     }
-// }
-// add_action('admin_menu', 'remove_menu_admin');
+//SUPPRESSION DU MENU ARTICLE DE L'ADMIN
+function remove_menu_admin()
+{
+    // 	remove_menu_page( 'edit.php' );
+    remove_menu_page('edit-comments.php');
+
+    global $menu;
+    $restricted = array( __('Comments'));
+    end($menu);
+    while (prev($menu)) {
+        $value = explode(' ', $menu[key($menu)][0]);
+
+        if (in_array($value[0] != null ? $value[0] : "", $restricted)) {
+            unset($menu[key($menu)]);
+        }
+    }
+}
+add_action('admin_menu', 'remove_menu_admin');
 
 
 // EXCERPT DANS LES PAGES

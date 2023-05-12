@@ -793,6 +793,24 @@
       "sI" : 0,
       "sU" : 0
     },
+    "\/_src\/import\/icons.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/icons.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
     "\/_src\/import\/images.less" : {
       "aP" : 0,
       "bl" : 0,
@@ -1435,6 +1453,40 @@
       "oAP" : "\/assets\/fonts\/themify.woff",
       "oF" : 0
     },
+    "\/assets\/fonts\/volant-seminaire-icon.eot" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/fonts\/volant-seminaire-icon.eot",
+      "oF" : 0
+    },
+    "\/assets\/fonts\/volant-seminaire-icon.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/fonts\/volant-seminaire-icon.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/fonts\/volant-seminaire-icon.ttf" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/fonts\/volant-seminaire-icon.ttf",
+      "oF" : 0
+    },
+    "\/assets\/fonts\/volant-seminaire-icon.woff" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/fonts\/volant-seminaire-icon.woff",
+      "oF" : 0
+    },
     "\/assets\/images\/gif\/loader.gif" : {
       "ft" : 4194304,
       "iS" : 17989,
@@ -1921,6 +1973,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/login.php",
+      "oF" : 0
+    },
+    "\/inc\/menu.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/menu.php",
       "oF" : 0
     },
     "\/inc\/nav-social-mobile.php" : {
