@@ -217,26 +217,36 @@ function devis_form() {
 				<div class="row">
 					<h3 class="col-12">Mes coordonnées</h3>
 					<div class="col-12 col-md-6">
-						<label class="d-inline-block" for="firstname">Prénom</label>
-						<input class="d-inline-block" type="text" name="firstname" placeholder="Votre prénom" value="<?= rewrite('firstname') ?>">
-						
-						<label class="d-inline-block" for="lastname">Nom</label>
-						<input class="d-inline-block" type="text" name="lastname" placeholder="Votre nom" value="<?= rewrite('lastname') ?>">
-						
-						<label class="d-inline-block" for="social_reason">Raison sociale</label>
-						<input class="d-inline-block" type="text" name="social_reason" placeholder="Entreprise ou particuliers" value="<?= rewrite('social_reason') ?>">
+						<div class="item-input-form">
+							<label class="d-inline-block" for="firstname">Prénom</label>
+							<input class="d-inline-block" type="text" name="firstname" placeholder="Votre prénom" value="<?= rewrite('firstname') ?>">
+							
+						</div>
+						<div class="item-input-form">
+							<label class="d-inline-block" for="lastname">Nom</label>
+							<input class="d-inline-block" type="text" name="lastname" placeholder="Votre nom" value="<?= rewrite('lastname') ?>">
+						</div>
+						<div class="item-input-form">
+							<label class="d-inline-block" for="social_reason">Raison sociale</label>
+							<input class="d-inline-block" type="text" name="social_reason" placeholder="Entreprise ou particuliers" value="<?= rewrite('social_reason') ?>">
+						</div>
 					</div>
-					<div class="col-12 col-md-6">	
-						<label class="d-inline-block" for="phone">Téléphone</label>
-						<input class="d-inline-block" type="tel" name="phone" placeholder="+33 00 00 00 00 00" value="<?= rewrite('phone') ?>">
-						
-						<label class="d-inline-block" for="email">Adresse e-mail</label>
-						<input class="d-inline-block" type="email" name="email" placeholer="Votre adresse email" value="<?= rewrite('email') ?>">
+					<div class="col-12 col-md-6">
+						<div class="item-input-form">	
+							<label class="d-inline-block" for="phone">Téléphone</label>
+							<input class="d-inline-block" type="tel" name="phone" placeholder="+33 00 00 00 00 00" value="<?= rewrite('phone') ?>">
+						</div>
+						<div class="item-input-form">
+							<label class="d-inline-block" for="email">Adresse e-mail</label>
+							<input class="d-inline-block" type="email" name="email" placeholer="Votre adresse email" value="<?= rewrite('email') ?>">
+						</div>
 					</div>
 				</div>	
 				<div class="row">
 					<h3 class="col-12">Message</h3>
-					<div class="col-12"><textarea name="message" placeholder="Votre message"><?= rewrite('message') ?></textarea></div>
+					<div class="item-input-form">
+						<div class="col-12"><textarea name="message" placeholder="Votre message"><?= rewrite('message') ?></textarea></div>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center">
