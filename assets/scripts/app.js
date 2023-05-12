@@ -34,12 +34,13 @@ $(function(){
 		});
 	}
 //FENETRE AJOUT ACTIVITÉ
-	if( $('#add-more-activity').length ){
-		$('#add-more-activity').click( function(e){
-			e.preventDefault()
-			$('#container-list-items-activities').addClass('open');
-		});
-	}
+	// if( $('#add-more-activity').length ){
+	// 	$('#container-list-items-activities').slideDown().hide();
+	// 	$('#add-more-activity').click( function(e){
+	// 		e.preventDefault()
+	// 		$('#container-list-items-activities').slideUp().show().addClass('open');
+	// 	});
+	// }
 
 //FILTRE ACTIVITÉS
 	if( $('#filters').length ){

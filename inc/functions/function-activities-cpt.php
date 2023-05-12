@@ -1,13 +1,16 @@
 <?php
 
 function cpt_allActivities(){?>
-	
+	<?php if( !is_front_page() ) : ?>
 	<div id="container-list-items-activities" class="container-list-items-activities">
-	<div class="container">
-		<h2>Les activités</h2>
-			<?php if( !is_front_page() ) : ?>
+		<div class="container">
+			<h2>Les activités</h2>
 				<button class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
-			<?php endif;
+	<?php else: ?>
+		<div id="container-list-items-activities" class="container-list-items-activities-home">
+		<div class="container">
+			<h2>Les activités</h2>
+	<?php	 endif;
 				
 				$urlTemplate = get_stylesheet_directory();
 				include( $urlTemplate . '/inc/functions/function-filters.php'); 
@@ -53,12 +56,15 @@ function cpt_allActivities(){?>
 								
 								//var_dump($activite_taxos);
 								
-								?>
-									<li class="item-activite <?= $classes ?> item-activite-choice col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
+								if( is_front_page() ) : ?>
+									<li class="item-activite <?= $classes ?> col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
 										<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
-											<?php if( is_front_page() ) : ?>
 											<a href="<?= $activite_link ?>" title="En savoir plus sur l'activité : <?= $activite_title ?>">
-											<?php endif;?>
+								
+								<?php else :?>
+									<li class="item-activite <?= $classes ?> item-activite-choice col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
+									<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
+								<?php endif;?>
 												<figure class="devis-item-image">
 													<img src="<?= esc_url( $activite_image_url ) ?>" alt="volant-seminaire-<?= $activite_title ?>"/>
 													<i class="ti-plus"></i>
@@ -67,9 +73,9 @@ function cpt_allActivities(){?>
 													<h3><?= $activite_title ?></h3>
 													<p><?= $activite_description ?></p>
 												</div>
-											<?php if( is_front_page() ) : ?>
-											</a>
-											<?php endif;?>
+								<?php if( is_front_page() ) : ?>
+								</a>
+								<?php endif;?>
 										</article>
 									</li>
 								<?php endwhile; ?>

@@ -14726,16 +14726,34 @@ img.mfp-img {
   height: 100%;
   width: 100%;
 }
+.container-list-items-activities-home,
 .container-list-items-activities {
   margin-top: 30px;
   margin-top: 3rem;
 }
+.container-list-items-activities-home h2,
 .container-list-items-activities h2 {
   text-align: center;
   font-size: 22px;
   font-size: 2.2rem;
   margin-bottom: 30px;
   margin-bottom: 3rem;
+}
+.container-list-items-activities {
+  margin: 0;
+  padding-top: 90px;
+  padding-top: 9rem;
+}
+.container-list-items-activities.open {
+  -webkit-transition: transform 0.8s ease-in-out;
+  -moz-transition: transform 0.8s ease-in-out;
+  -ms-transition: transform 0.8s ease-in-out;
+  -o-transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  -webkit-transform: translateY(-117%);
+  -ms-transform: translateY(-117%);
+  -o-transform: translateY(-117%);
+  transform: translateY(-117%);
 }
 .link-Add_activite a {
   color: #333333;
@@ -14826,26 +14844,6 @@ img.mfp-img {
     object-fit: cover;
     width: 100%;
   }
-}
-.container-list-items-activities {
-  background-color: #FFFFFF;
-  bottom: 0;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-.container-list-items-activities.open {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  -o-transform: translateY(100%);
-  transform: translateY(100%);
-  z-index: 3;
 }
 /*--------------------------------
 IMPORTS EXTERNES
