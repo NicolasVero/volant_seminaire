@@ -1,34 +1,35 @@
 <?php
-
-function cpt_allActivities(){?>
-	<?php if( !is_front_page() ) : ?>
-	<div id="container-list-items-activities" class="container-list-items-activities">
-		<div class="container">
-			<h2>Les activités</h2>
-				<button class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
-	<?php else: ?>
+function cpt_allActivities(){ 
+	if( is_front_page() ) : ?>
 		<div id="container-list-items-activities" class="container-list-items-activities-home">
-		<div class="container">
-			<h2>Les activités</h2>
-	<?php	 endif;
+			<div class="container">
+				<h2>Les activités</h2>
+	<?php else: ?>
+		<div id="container-list-items-activities" class="container-list-items-activities">
+			<div class="container">
+				<h2>Les activités</h2>
+					<button class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
+		
+	<?php endif;
 				
 				$urlTemplate = get_stylesheet_directory();
+				
 				include( $urlTemplate . '/inc/functions/function-filters.php'); 
 				
-				$args = array(
-						'post_type' => 'activites',
-						'posts_per_page'=>-1,
-						'orderby' => 'ID',
-						'order'  => 'ASC',
-						array(
-							'taxonomy' => 'types_d_activites',
-							'hide_empty' => true
-						)
-					);
 				
+				$args = array(
+					'post_type' => 'activites',
+					'posts_per_page' => -1,
+					'orderby' => 'ID',
+					'order' => 'ASC',
+					'tax_query' => array(
+							'taxonomy' => 'types_d_activites',
+							'hide_empty' => false
+					)
+				);
 				$query = new WP_Query($args);
-					if($query->have_posts()) : ?>
-						
+					if( $query->have_posts() ) :			
+						 ?>
 							<ul id="list-items-activities" class="row">	
 							<?php 
 							while($query->have_posts()) : $query-> the_post();
@@ -49,22 +50,15 @@ function cpt_allActivities(){?>
 									$taxos[] = $activite_taxos[$i]->slug;
 									$classes .= 'item-activite-' . $taxos[$i] . ' ';
 								}
-								
-								
-								// $activite_taxo_a = $activite_taxos[0]->slug;
-								// $activite_taxo_b= $activite_taxos[1]->slug;
-								
-								//var_dump($activite_taxos);
-								
-								if( is_front_page() ) : ?>
+								if( is_front_page() ) { ?>
 									<li class="item-activite <?= $classes ?> col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
 										<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
 											<a href="<?= $activite_link ?>" title="En savoir plus sur l'activité : <?= $activite_title ?>">
 								
-								<?php else :?>
+								<?php } else {?>
 									<li class="item-activite <?= $classes ?> item-activite-choice col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
 									<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
-								<?php endif;?>
+								<?php }?>
 												<figure class="devis-item-image">
 													<img src="<?= esc_url( $activite_image_url ) ?>" alt="volant-seminaire-<?= $activite_title ?>"/>
 													<i class="ti-plus"></i>
@@ -73,18 +67,16 @@ function cpt_allActivities(){?>
 													<h3><?= $activite_title ?></h3>
 													<p><?= $activite_description ?></p>
 												</div>
-								<?php if( is_front_page() ) : ?>
+								<?php if( is_front_page() ) { ?>
 								</a>
-								<?php endif;?>
+								<?php } ?>
 										</article>
 									</li>
 								<?php endwhile; ?>
 							</ul>
-						</div>
+				</div>
 			<?php endif; wp_reset_query();
-		}
-		
 		?>
-	</div>
-	
-
+		</div>
+		</div>
+		<?php }

@@ -4,9 +4,9 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 //WIDGET
 function grib_widgets_init() {
 	register_sidebar( array(
-		'name'          => 'Téléphone',
-		'id'            => 'widget-header-tel',
-		'class'         => 'widget-tel',
+		'name'          => 'Menu latéral',
+		'id'            => 'widget-menu-lateral',
+		'class'         => 'widget-menu-lateral',
 		'before_widget' => '<div id="%1$s" class="%2$s widget-container-map d-flex container-fluid">',
 		'after_widget'  => '</div>'
 	) );

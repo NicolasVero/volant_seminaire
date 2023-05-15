@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-$tel = get_field( 'telephone', $acfw );
+$tel = get_field( 'telephone_fixe', $acfw );
 
 if($tel):
 ?>
