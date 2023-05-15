@@ -111,8 +111,8 @@ if(isset($_POST['email'])) {
 	$_SESSION['ids'] = $ids;
 	
 	if(count($errors_log) == 0) {
-		header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
-		//header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
+		//header("Location: " . $urlTemplate . "/inc/functions/function-submit-devis.php");
+		header("Location: https://volant-seminaire.gribdev.net/wp-content/themes/volant-seminaire/inc/functions/function-submit-devis.php");
 	}
 	
 }

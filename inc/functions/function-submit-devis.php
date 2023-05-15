@@ -1,36 +1,41 @@
+<p>test</p>
+
+
 <?php
-$urlTemplate = $_SESSION['blog_url'];
-echo 'bienvenue';
+
 		session_start();
 
-
+var_dump($_SESSION);
 	
+$urlTemplate = $_SESSION['blog_url'];
 
 
-	if(isset($_SESSION['email']) ){
+
+	echo 'test';
+	if(isset($_SESSION['email'])){
 		
-		$activites_rewrite = array();
-		$activites_rewrite_id = array();
-		foreach($_SESSION as $index => $session) {
-			if(preg_match('/id_activite-/', $index)) {
-				if(substr($index, 12 - strlen($index)) != $_SESSION['id_principale']) {
-					$activites_rewrite_id[] = substr($index, 12 - strlen($index));
-				}
-			}
-		}
-		
-		foreach($activites_rewrite_id as $activite_rewrite_id) {
-			$datas = array();
-			foreach($_SESSION as $index => $session) {
-				if(preg_match('/' . $activite_rewrite_id . '/', $index)) {
-					$datas[] = [$index, $session];
-				}
-			}
-			$activites_rewrite[] = $datas;
-		}
-		
-		var_dump($activites_rewrite);
-		var_dump($activites_rewrite_id);
+		// $activites_rewrite = array();
+		// $activites_rewrite_id = array();
+		// foreach($_SESSION as $index => $session) {
+		// 	if(preg_match('/id_activite-/', $index)) {
+		// 		if(substr($index, 12 - strlen($index)) != $_SESSION['id_principale']) {
+		// 			$activites_rewrite_id[] = substr($index, 12 - strlen($index));
+		// 		}
+		// 	}
+		// }
+		// 
+		// foreach($activites_rewrite_id as $activite_rewrite_id) {
+		// 	$datas = array();
+		// 	foreach($_SESSION as $index => $session) {
+		// 		if(preg_match('/' . $activite_rewrite_id . '/', $index)) {
+		// 			$datas[] = [$index, $session];
+		// 		}
+		// 	}
+		// 	$activites_rewrite[] = $datas;
+		// }
+		// 
+		// var_dump($activites_rewrite);
+		// var_dump($activites_rewrite_id);
 		
 		
 		$all_activities = array();
@@ -59,10 +64,11 @@ echo 'bienvenue';
 		$to = 'testappligrib@gmail.com';
 
 
-		if(count($all_activities) == 1 )
+		if(count($all_activities) == 1 ) {
 			$subject = 'Demande de devis pour l\'activité ' . $all_activities[0][0] ;
-		else 
+		} else {
 			$subject = 'Demande de devis pour plusieurs activités';
+		} 
 			
 		$reference = create_reference($_SESSION);
 
@@ -79,9 +85,12 @@ echo 'bienvenue';
 
 		//mail( $_SESSION['email'], $subject, $message_user , $headers );
 		//mail( $to, $subject, $message_admin, $headers );
+
+
+		header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
 	}
 
-	//header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
+	// header('Location:' . $urlTemplate . '/'); --> FAIRE RETOUR PAGE ACCUEIL 
 	
 	function formate_phone_number($numero) {
 		
@@ -133,6 +142,10 @@ echo 'bienvenue';
 
 	function get_message_admin($all_activities, $user_datas, $image_url, $reference) {
 
+		$raison_sociale = (isset($user_datas['social_reason'])) ? $user_datas['social_reason'] : "Non renseigné";
+		
+		var_dump($user_datas);
+
 		$message = get_mail_header($image_url);
 
 		$message .= '
@@ -142,7 +155,7 @@ echo 'bienvenue';
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . formate_phone_number($user_datas['phone']) . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['email'] . '</p>
-				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . if(isset($user_datas['social_reason']) ? $user_datas['social_reason'] : "Non renseigné" . '</p>
+				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $raison_sociale . '</p>
 			</div>
 			<p style="margin-left: 15%; margin-right: 15%; font-style: italic; margin-bottom: 50px; margin-top: 35px; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['message'] . '</p>
 			
@@ -154,9 +167,11 @@ echo 'bienvenue';
 		return $message;
 	}
 	
-
+	
+	
 	function get_mail_header($image_url) {
-		return 
+		
+		return	
 		'<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 			<html xmlns="http://www.w3.org/1999/xhtml">
 			<head>

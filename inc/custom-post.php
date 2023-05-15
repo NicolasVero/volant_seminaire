@@ -42,8 +42,8 @@ function custom_post()
 		'name'                => _x( 'Services', 'Post Type General Name'),
 		'singular_name'       => _x( 'Service', 'Post Type Singular Name'),
 		'menu_name'           => __( 'Services'),
-		'all_items'           => __( 'Tous les Services'),
-		'view_item'           => __( 'Voir le ervice'),
+		'all_items'           => __( 'Tous les services'),
+		'view_item'           => __( 'Voir le service'),
 		'add_new_item'        => __( 'Ajouter une nouvelle Service'),
 		'add_new'             => __( 'Ajouter'),
 		'edit_item'           => __( 'Editer un service'),
@@ -68,6 +68,41 @@ function custom_post()
 	);
 
 	register_post_type( 'services', $args );
+    
+    
+    
+    //DEVIS
+    
+    $labels = array(
+        'name'                => _x( 'Devis', 'Post Type General Name'),
+        'singular_name'       => _x( 'Devis', 'Post Type Singular Name'),
+        'menu_name'           => __( 'Devis'),
+        'all_items'           => __( 'Tous les devis'),
+        'view_item'           => __( 'Voir le devis'),
+        'add_new_item'        => __( 'Ajouter un nouveau devis'),
+        'add_new'             => __( 'Ajouter'),
+        'edit_item'           => __( 'Editer un devis'),
+        'update_item'         => __( 'Modifier le devis'),
+        'search_items'        => __( 'Rechercher'),
+        'not_found'           => __( 'Non trouvé'),
+        'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+    );
+    
+    $args = array(
+        'label'               => __( 'Devis'),
+        'description'         => __( 'Toute l\'Service de Lanimea'),
+        'labels'              => $labels,
+        'menu_icon'           => 'dashicons-format-aside',
+        'supports'            => array( 'title', 'editor', 'author', 'thumbnail', 'revisions', 'custom-fields', 'menu' ),
+        'hierarchical'        => false,
+        'public'              => true,
+        'has_archive'         => true,
+        'rewrite'			  => array( 'slug' => 'les-devis'),
+        'show_in_rest'        => true,
+    
+    );
+    
+    register_post_type( 'devis', $args );
 }
 
 add_action('init', 'custom_post', 0);
