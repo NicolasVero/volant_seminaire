@@ -3,7 +3,6 @@
 	session_start();
 	$urlTemplate = $_SESSION['blog_url'];
 
-
 	if(isset($_SESSION['email'])){
 		
 		$all_activities = array();
@@ -29,12 +28,16 @@
 	
 		$_SESSION['phone'] = formate_phone_number($_SESSION['phone']);
 
-		foreach($ids as $id)
+		if( isset( $_SESSION['lieu_seminaire_hotel'] ) ) 
+			$_SESSION['lieu_seminaire_hotel'] = ucfirst(strtolower( $_SESSION['lieu_seminaire_hotel'] ));
+		
+			foreach($ids as $id)
 			$_SESSION['date_activite-' . $id]  = formate_date($_SESSION['date_activite-' . $id]);
 
 		// Envoyer un email à l'adresse personnalisée et à l'adresse de l'internaute qui a rempli le formulaire
 		//$to = $_POST['admin_email']; // Adresse personnalisée --> webmaster@gribouillenet.fr
 		$to = 'testappligrib@gmail.com';
+		//$to = 'nicolasvero03@gmail.com';
 
 
 		if(count($all_activities) == 1 ) {
@@ -56,17 +59,21 @@
 		$headers .= 'CC: ' . htmlspecialchars( $_SESSION['email'] ) . "\r\n"; // Adresse de l'internaute
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-		//mail( $_SESSION['email'], $subject, $message_user , $headers );
-		//mail( $to, $subject, $message_admin, $headers );
 
-		set_cookies($reference);		
-		
+		if(
+			mail( $_SESSION['email'], $subject, $message_user , $headers ) &&
+			mail( $to, $subject, $message_admin, $headers )
+		) {
+			set_cookies($reference);		
+			header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
+		} else {
+			header('Location: https://volant-seminaire.gribdev.net/erreur/');
+		}
+
 		// header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
-		header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
 	}
 
-	//header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
-	// header('Location:' . $urlTemplate . '/'); --> FAIRE RETOUR PAGE ACCUEIL 
+	// header('Location:' . $urlTemplate . '/'); --> PAGE ERREUR
 	
 	function set_cookies($reference) {
 				
@@ -91,6 +98,9 @@
 		
 		setcookie('ids', substr($ids, 0, -1), time() + $cookie_live_time, '/');
 		setcookie('reference', $reference, time() + $cookie_live_time, '/');
+
+		if( isset($_SESSION['lieu_seminaire_hotel']) )
+			setcookie('lieu_seminaire_hotel', $_SESSION['lieu_seminaire_hotel'], time() + $cookie_live_time, '/');
 	}
 	
 	function formate_phone_number($numero) {
@@ -136,7 +146,7 @@
 			<hr>
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Récapitulatif de votre demande : </p>'; 
 						
-		$message .= get_mail_loop($all_activities);
+		$message .= get_mail_loop($all_activities, $user_datas);
 		$message .= get_mail_footer();
 
 		return $message;
@@ -160,7 +170,7 @@
 			
 			<hr>';
 
-		$message .= get_mail_loop($all_activities);
+		$message .= get_mail_loop($all_activities, $user_datas);
 		$message .= get_mail_footer();
 
 		return $message;
@@ -198,7 +208,7 @@
 											<td>';
 	}
 
-	function get_mail_loop($all_activities) {
+	function get_mail_loop($all_activities, $user_datas) {
 		$message = '';
 
 		for($i = 0; $i < count($all_activities); $i++) {
@@ -206,7 +216,11 @@
 			<p style="margin-left: 10%; margin-bottom: 30px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif;">
 			Pour ' . $all_activities[$i][1] . ' personne' .  ($all_activities[$i][1] > 1 ? 's' : '') . ', 
 			<span style="display: block;">Le ' . $all_activities[$i][2] . ', 
-			à ' . ucfirst($all_activities[$i][3]) . ', de ' . formate_heure($all_activities[$i][4]) . ' à ' . formate_heure($all_activities[$i][5]) . '</span></p>';
+			à ' . ucfirst(strtolower($all_activities[$i][3])) . ', de ' . formate_heure($all_activities[$i][4]) . ' à ' . formate_heure($all_activities[$i][5]) . '</span></p>';
+		}
+
+		if( isset( $user_datas['lieu_seminaire_hotel'] ) ) {
+			$message .= '<hr><p style="margin-left: 10%; margin-bottom: 30px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif;">Préstation hôtelière à :<strong> ' . ucfirst( strtolower( $user_datas['lieu_seminaire_hotel'] ) ) . '</strong></p>';
 		}
 
 		return $message;
