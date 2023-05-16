@@ -19,6 +19,25 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 							}
 						?>
 					</header>
-					<?= the_content(); ?>
+					<?php
+					the_content();
+					
+					$images = get_field('galerie');
+					
+					
+					if( $images ): ?>
+						<ul id="galerie-medium" class="galerie-medium">
+							<?php for( $i=0; $i < 6; $i++ ){
+								$size = 'full';
+								$image_id =  $images[$i]['id'];
+							?>	
+								<li>
+									<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+								</li>
+								
+							<?php } ?>
+						</ul>
+					<?php endif; ?>
+					
 			</article>
 	</div>	

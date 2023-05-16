@@ -1,5 +1,6 @@
 .navigation-container{
 	.bgBlack();
+	.fWhite();
 	.absolute();
 	height: 100vh;
 	opacity: 0;
@@ -8,7 +9,17 @@
 	.Top(-15);
 	.Padding(60);
 	.WidthP(100);
-	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out); 
+	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+	li{
+		color: inherit;
+		a{
+			color: inherit;
+			&:hover,
+			&:focus{
+				color: inherit;
+			}
+		}
+	} 
 }
 .navigation-container.open{
 	.transformX(@x:0);
@@ -24,6 +35,7 @@
 	.Width(34);
 	i{
 		.fBlack();
+		display: flex;
 		&:before{
 			color: inherit;
 		}
