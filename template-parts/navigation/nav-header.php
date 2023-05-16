@@ -18,9 +18,9 @@ include( $urlTemplate . '/inc/datas/data-navigation.php');
         <button id="menu-close" class="menu-close d-flex flex-column align-items-center justify-content-center" aria-controls="primary-menu-close" aria-expanded="false"><span><?php _e('Fermer', 'volant-seminaire'); ?></span><i class="icon-close"></i></button>
         
         <?php if(function_exists('menu_navigation')) echo menu_navigation(); ?>
-    
+        
         <hr>
-    
+
     </nav>
      <?php 
         dynamic_sidebar('Menu latéral');    

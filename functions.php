@@ -77,3 +77,7 @@ require_once('inc/formating-content.php');
 
 // PAGINATION
 require_once('inc/pagination.php');
+
+
+// CREATION MENU LATERAL 
+require_once('inc/menu.php');
