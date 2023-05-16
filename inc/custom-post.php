@@ -25,7 +25,7 @@ function custom_post()
         'description'         => __('Les activités neufs et d\'occasions vendus par le Havre Caravano'),
         'labels'              => $labels,
         'menu_icon'           => 'dashicons-car',
-        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', 'menu' ),
+        'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'custom-fields', 'menu' ),
         'hierarchical'        => false,
         'public'              => true,
         'has_archive'         => true,

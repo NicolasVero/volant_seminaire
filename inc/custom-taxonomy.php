@@ -25,9 +25,9 @@ function wpm_add_taxonomies()
         'hierarchical'      => true,
         'labels'            => $labels_type,
         'show_ui'           => true,
-        'show_admin_column' => true,
-        'show_in_rest'		=> true,
-        'show_in_nav_menus'	=> true,
+        'show_admin_column' => false,
+        'show_in_rest'		=> false,
+        'show_in_nav_menus'	=> false,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'types-activites' ),
 
