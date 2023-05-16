@@ -40,15 +40,12 @@
 							'term_icon'		=> $term_icon, 
 							'term_parent'	=> $term_parent
 						];
-
 					}
 				}
-				
-				echo '<li class="item-filter"><a id="all" class="actif" href="#"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"><span>' . $sorted_terms[0]['term_name'] . '</span></a></li>';
+					echo '<li class="item-filter"><a id="all" class="actif" href="#"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"><span>' . $sorted_terms[0]['term_name'] . '</span></a></li>';				
 				// 		
 				for($cpt = 1; $cpt < count($sorted_terms); $cpt++){
-					
-					echo '<li class="item-filter-' . $sorted_terms[$cpt]['term_id'] . '	"><a href="#" id="'. $sorted_terms[$cpt]['term_slug'] . '" class="filter"><img src="' . $sorted_terms[$cpt]['term_icon']['url'] . '" alt="' . $sorted_terms[$cpt]['term_icon']['alt'] . '"><span>' . $sorted_terms[$cpt]['term_name'] . '</span></a></li>';
+						echo '<li class="item-filter-' . $sorted_terms[$cpt]['term_id'] . '	"><a href="#" id="'. $sorted_terms[$cpt]['term_slug'] . '" class="filter"><img src="' . $sorted_terms[$cpt]['term_icon']['url'] . '" alt="' . $sorted_terms[$cpt]['term_icon']['alt'] . '"><span>' . $sorted_terms[$cpt]['term_name'] . '</span></a></li>';
 				}
 				?>
 				

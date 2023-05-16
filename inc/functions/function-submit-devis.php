@@ -1,44 +1,16 @@
 <?php
 
-session_start();
-
-//var_dump($_SESSION);
-	
-$urlTemplate = $_SESSION['blog_url'];
-
+	session_start();
+	$urlTemplate = $_SESSION['blog_url'];
 
 	if(isset($_SESSION['email'])){
-		
-		// $activites_rewrite = array();
-		// $activites_rewrite_id = array();
-		// foreach($_SESSION as $index => $session) {
-		// 	if(preg_match('/id_activite-/', $index)) {
-		// 		if(substr($index, 12 - strlen($index)) != $_SESSION['id_principale']) {
-		// 			$activites_rewrite_id[] = substr($index, 12 - strlen($index));
-		// 		}
-		// 	}
-		// }
-		// 
-		// foreach($activites_rewrite_id as $activite_rewrite_id) {
-		// 	$datas = array();
-		// 	foreach($_SESSION as $index => $session) {
-		// 		if(preg_match('/' . $activite_rewrite_id . '/', $index)) {
-		// 			$datas[] = [$index, $session];
-		// 		}
-		// 	}
-		// 	$activites_rewrite[] = $datas;
-		// }
-		// 
-		// var_dump($activites_rewrite);
-		// var_dump($activites_rewrite_id);
-		
 		
 		$all_activities = array();
 		
 		$cpt = 0;
 		foreach($_SESSION as $index => $session) {
 			if(preg_match('/id_activite-/', $index)) {
-				$id[] = substr($index, 12);
+				$ids[] = substr($index, 12);
 				$cpt++;
 			}
 		}
@@ -47,16 +19,25 @@ $urlTemplate = $_SESSION['blog_url'];
 		
 		for($i = 0; $i < $cpt; $i++) {
 			$activite = array();
-			$activite_id = $id[$i]; 
+			$activite_id = $ids[$i]; 
 			for($j = 0; $j < count($datas); $j++) {
 				$activite[] = htmlspecialchars( $_SESSION[$datas[$j] . '-' . $activite_id] );
 			}
 			$all_activities[] = $activite;
 		}
 	
+		$_SESSION['phone'] = formate_phone_number($_SESSION['phone']);
+
+		if( isset( $_SESSION['lieu_seminaire_hotel'] ) ) 
+			$_SESSION['lieu_seminaire_hotel'] = ucfirst(strtolower( $_SESSION['lieu_seminaire_hotel'] ));
+		
+			foreach($ids as $id)
+			$_SESSION['date_activite-' . $id]  = formate_date($_SESSION['date_activite-' . $id]);
+
 		// Envoyer un email à l'adresse personnalisée et à l'adresse de l'internaute qui a rempli le formulaire
 		//$to = $_POST['admin_email']; // Adresse personnalisée --> webmaster@gribouillenet.fr
 		$to = 'testappligrib@gmail.com';
+		//$to = 'nicolasvero03@gmail.com';
 
 
 		if(count($all_activities) == 1 ) {
@@ -78,19 +59,21 @@ $urlTemplate = $_SESSION['blog_url'];
 		$headers .= 'CC: ' . htmlspecialchars( $_SESSION['email'] ) . "\r\n"; // Adresse de l'internaute
 		$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 
-		//mail( $_SESSION['email'], $subject, $message_user , $headers );
-		//mail( $to, $subject, $message_admin, $headers );
 
-		set_cookies($reference);		
-		// var_dump($_SESSION['ids']);
-		// echo serialize($_SESSION['ids']);
-		
+		if(
+			mail( $_SESSION['email'], $subject, $message_user , $headers ) &&
+			mail( $to, $subject, $message_admin, $headers )
+		) {
+			set_cookies($reference);		
+			header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
+		} else {
+			header('Location: https://volant-seminaire.gribdev.net/erreur/');
+		}
+
 		// header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
-		header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
 	}
 
-	//header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
-	// header('Location:' . $urlTemplate . '/'); --> FAIRE RETOUR PAGE ACCUEIL 
+	// header('Location:' . $urlTemplate . '/'); --> PAGE ERREUR
 	
 	function set_cookies($reference) {
 				
@@ -100,7 +83,7 @@ $urlTemplate = $_SESSION['blog_url'];
 		$activite_datas_index  = ['titre_activite', 'nombre_personnes', 'lieu_seminaire', 'date_activite', 'horaires_debut', 'horaires_fin'];
 		
 		foreach($personnal_datas_index as $personnal_data_index) {
-			setcookie($personnal_data_index, $_SESSION[$personnal_data_index], time() + $cookie_live_time, '/');
+			setcookie($personnal_data_index, $_SESSION[$personnal_data_index], time() + $cookie_live_time, '/');	
 		}	
 			
 		foreach($_SESSION['ids'] as $id) {
@@ -115,6 +98,9 @@ $urlTemplate = $_SESSION['blog_url'];
 		
 		setcookie('ids', substr($ids, 0, -1), time() + $cookie_live_time, '/');
 		setcookie('reference', $reference, time() + $cookie_live_time, '/');
+
+		if( isset($_SESSION['lieu_seminaire_hotel']) )
+			setcookie('lieu_seminaire_hotel', $_SESSION['lieu_seminaire_hotel'], time() + $cookie_live_time, '/');
 	}
 	
 	function formate_phone_number($numero) {
@@ -145,6 +131,7 @@ $urlTemplate = $_SESSION['blog_url'];
 
 		$alphabet="abcdefghijklmnopqrstuvwxyz";
 		$reference .= strtoupper($alphabet[rand(0,25)]);
+		$reference .= strtoupper($alphabet[rand(0,25)]);
 
 		return $reference;
 	}
@@ -159,7 +146,7 @@ $urlTemplate = $_SESSION['blog_url'];
 			<hr>
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Récapitulatif de votre demande : </p>'; 
 						
-		$message .= get_mail_loop($all_activities);
+		$message .= get_mail_loop($all_activities, $user_datas);
 		$message .= get_mail_footer();
 
 		return $message;
@@ -175,7 +162,7 @@ $urlTemplate = $_SESSION['blog_url'];
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Référence du devis : ' . $reference . '</p>
 			<div style="line-height: 6px;">
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</p>
-				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . formate_phone_number($user_datas['phone']) . '</p>
+				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['phone'] . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['email'] . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $raison_sociale . '</p>
 			</div>
@@ -183,7 +170,7 @@ $urlTemplate = $_SESSION['blog_url'];
 			
 			<hr>';
 
-		$message .= get_mail_loop($all_activities);
+		$message .= get_mail_loop($all_activities, $user_datas);
 		$message .= get_mail_footer();
 
 		return $message;
@@ -206,7 +193,7 @@ $urlTemplate = $_SESSION['blog_url'];
 					<tbody>
 						<tr>
 							<td align="center">
-								<table style="background-color: #333333; height: 75px; min-width: 50%; max-width: 100%;">
+								<table style="background-color: #333333; height: 75px; min-width: 50%; max-width: 1000px;">
 									<tbody>
 										<tr>
 											<td style="text-align: center">
@@ -215,21 +202,25 @@ $urlTemplate = $_SESSION['blog_url'];
 										</tr> 
 									</tbody>
 								</table>
-								<table style="background-color: white; min-width: 50%; max-width: 50%;">
+								<table style="background-color: white; min-width: 50%; max-width: 1000px;">
 									<tbody>
 										<tr>
 											<td>';
 	}
 
-	function get_mail_loop($all_activities) {
+	function get_mail_loop($all_activities, $user_datas) {
 		$message = '';
 
 		for($i = 0; $i < count($all_activities); $i++) {
 			$message .= '<h3 style="margin-bottom: 5px; margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $all_activities[$i][0] . '</h3>
 			<p style="margin-left: 10%; margin-bottom: 30px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif;">
 			Pour ' . $all_activities[$i][1] . ' personne' .  ($all_activities[$i][1] > 1 ? 's' : '') . ', 
-			<span style="display: block;">Le ' . formate_date($all_activities[$i][2]) . ', 
-			à ' . ucfirst($all_activities[$i][3]) . ', de ' . formate_heure($all_activities[$i][4]) . ' à ' . formate_heure($all_activities[$i][5]) . '</span></p>';
+			<span style="display: block;">Le ' . $all_activities[$i][2] . ', 
+			à ' . ucfirst(strtolower($all_activities[$i][3])) . ', de ' . formate_heure($all_activities[$i][4]) . ' à ' . formate_heure($all_activities[$i][5]) . '</span></p>';
+		}
+
+		if( isset( $user_datas['lieu_seminaire_hotel'] ) ) {
+			$message .= '<hr><p style="margin-left: 10%; margin-bottom: 30px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif;">Préstation hôtelière à :<strong> ' . ucfirst( strtolower( $user_datas['lieu_seminaire_hotel'] ) ) . '</strong></p>';
 		}
 
 		return $message;
@@ -241,7 +232,7 @@ $urlTemplate = $_SESSION['blog_url'];
 					</tr>
 						</tbody>
 								</table>
-								<table style="background-color: #FF4E00; height: 75px; min-width: 50%; max-width: 100%;">
+								<table style="background-color: #FF4E00; height: 75px; min-width: 50%; max-width: 1000px;">
 									<tbody>
 										<tr style="text-align: center">
 											<td style="color: white; font-family: Arial, Helvetica, sans-serif">© ' . date("Y") . ' Volant Séminaire</td>

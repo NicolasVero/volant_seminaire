@@ -113,7 +113,7 @@ if (!function_exists('img_caption_shortcode_html5')) {
 // 
 //             break;
 //     }
-// }, 10, 2 );s
+// }, 10, 2 );
 
 // FORMAT COLONNE FULLWIDTH
 /*
@@ -123,62 +123,62 @@ function custom_wide() {
 add_action( 'after_setup_theme', 'custom_wide' );
 */
 
-function customs_by_grib()
-{
-    add_theme_support('align-wide');
-    add_theme_support('editor-color-palette', array(
-        array(
-            'name' => __('Bleu #004B99', 'theme Havre caravano'),
-            'slug' => 'blue#004B99',
-            'color' => '#004B99',
-        ),
-        array(
-            'name' => __('Bleu #0059B5', 'theme Havre caravano'),
-            'slug' => 'blue#0059B5',
-            'color' => '#0059B5',
-        ),
-        array(
-            'name' => __('Bleu #A5D1FF', 'theme Havre caravano'),
-            'slug' => 'blue#A5D1FF',
-            'color' => '#A5D1FF',
-        ),
-        array(
-            'name' => __('Bleu #162E46', 'theme Havre caravano'),
-            'slug' => 'blue#162E46',
-            'color' => '#162E46',
-        ),
-    ));
-    add_theme_support('disable-custom-colors');
-    add_theme_support('editor-font-sizes', array(
-        array(
-            'name' => __('small', 'themeLangDomain'),
-            'shortName' => __('S', 'themeLangDomain'),
-            'size' => 12,
-            'slug' => 'small'
-        ),
-        array(
-            'name' => __('regular', 'themeLangDomain'),
-            'shortName' => __('M', 'themeLangDomain'),
-            'size' => 16,
-            'slug' => 'regular'
-        ),
-        array(
-            'name' => __('large', 'themeLangDomain'),
-            'shortName' => __('L', 'themeLangDomain'),
-            'size' => 36,
-            'slug' => 'large'
-        ),
-        array(
-            'name' => __('larger', 'themeLangDomain'),
-            'shortName' => __('XL', 'themeLangDomain'),
-            'size' => 50,
-            'slug' => 'larger'
-        )
-    ));
-    add_theme_support('disable-custom-font-sizes');
-    add_theme_support('editor-styles');
-    add_editor_style('style-editor.css');
-    add_theme_support('wp-block-styles');
-    add_theme_support('responsive-embeds');
-}
-add_action('after_setup_theme', 'customs_by_grib');
+// function customs_by_grib()
+// {
+//     add_theme_support('align-wide');
+//     add_theme_support('editor-color-palette', array(
+//         array(
+//             'name' => __('Bleu #004B99', 'theme Havre caravano'),
+//             'slug' => 'blue#004B99',
+//             'color' => '#004B99',
+//         ),
+//         array(
+//             'name' => __('Bleu #0059B5', 'theme Havre caravano'),
+//             'slug' => 'blue#0059B5',
+//             'color' => '#0059B5',
+//         ),
+//         array(
+//             'name' => __('Bleu #A5D1FF', 'theme Havre caravano'),
+//             'slug' => 'blue#A5D1FF',
+//             'color' => '#A5D1FF',
+//         ),
+//         array(
+//             'name' => __('Bleu #162E46', 'theme Havre caravano'),
+//             'slug' => 'blue#162E46',
+//             'color' => '#162E46',
+//         ),
+//     ));
+//     add_theme_support('disable-custom-colors');
+//     add_theme_support('editor-font-sizes', array(
+//         array(
+//             'name' => __('small', 'themeLangDomain'),
+//             'shortName' => __('S', 'themeLangDomain'),
+//             'size' => 12,
+//             'slug' => 'small'
+//         ),
+//         array(
+//             'name' => __('regular', 'themeLangDomain'),
+//             'shortName' => __('M', 'themeLangDomain'),
+//             'size' => 16,
+//             'slug' => 'regular'
+//         ),
+//         array(
+//             'name' => __('large', 'themeLangDomain'),
+//             'shortName' => __('L', 'themeLangDomain'),
+//             'size' => 36,
+//             'slug' => 'large'
+//         ),
+//         array(
+//             'name' => __('larger', 'themeLangDomain'),
+//             'shortName' => __('XL', 'themeLangDomain'),
+//             'size' => 50,
+//             'slug' => 'larger'
+//         )
+//     ));
+//     add_theme_support('disable-custom-font-sizes');
+//     add_theme_support('editor-styles');
+//     add_editor_style('style-editor.css');
+//     add_theme_support('wp-block-styles');
+//     add_theme_support('responsive-embeds');
+// }
+// add_action('after_setup_theme', 'customs_by_grib');
