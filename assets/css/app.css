@@ -11859,10 +11859,17 @@ button:active {
 .button i,
 button i {
   color: #FFFFFF;
+  display: flex;
+}
+.button i:before,
+button i:before {
+  color: inherit;
 }
 .button span,
 button span {
-  display: block;
+  direction: ltr;
+  height: 0;
+  text-indent: -999em;
 }
 .button-circle {
   -webkit-border-radius: 50%;
@@ -14571,6 +14578,7 @@ img.mfp-img {
 }
 .navigation-container {
   background-color: #333333;
+  color: #FFFFFF;
   position: absolute;
   height: 100vh;
   opacity: 0;
@@ -14589,6 +14597,16 @@ img.mfp-img {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.navigation-container li {
+  color: inherit;
+}
+.navigation-container li a {
+  color: inherit;
+}
+.navigation-container li a:hover,
+.navigation-container li a:focus {
+  color: inherit;
 }
 .navigation-container.open {
   -webkit-transform: translateX(0);
@@ -14617,6 +14635,7 @@ img.mfp-img {
 .menu-open i,
 .menu-close i {
   color: #333333;
+  display: flex;
 }
 .menu-open i:before,
 .menu-close i:before {

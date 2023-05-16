@@ -11,7 +11,7 @@ button{
 	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
 	&:hover,
 	&:focus,
-	&:active{
+	&:active{	
 		text-shadow: none;
 		text-decoration: none;
 		outline-offset: 0;
@@ -21,9 +21,15 @@ button{
 	}
 	i{
 		.fWhite();
+		display: flex;
+		&:before{
+			color: inherit;
+		}
 	}
 	span{
-		display: block;
+		direction: ltr;
+		height: 0;
+		text-indent: -999em;
 	}
 }
 .button-circle{

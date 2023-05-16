@@ -1938,14 +1938,6 @@
       "oAP" : "\/inc\/functions\/function-submit-devis.php",
       "oF" : 0
     },
-    "\/inc\/functions\/function-to-db.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/functions\/function-to-db.php",
-      "oF" : 0
-    },
     "\/inc\/google-map.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2114,94 +2106,6 @@
       "oAP" : "\/inc\/sticky-custom-posts-type.php",
       "oF" : 0
     },
-    "\/inc\/TESTS\/activities-ajout-1.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/activities-ajout-1.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/activities-test1.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/activities-test1.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/add-to-devis-CF7-1.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/add-to-devis-CF7-1.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/add-to-devis-CF7-2.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/add-to-devis-CF7-2.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/add-to-devis-formulaire.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/add-to-devis-formulaire.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/base-finale-agarder-formulaire.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/base-finale-agarder-formulaire.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/base-form.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/base-form.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/base-formulaire.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/base-formulaire.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/script-in-php.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/script-in-php.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/test-ajout-activite-php.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/test-ajout-activite-php.php",
-      "oF" : 0
-    },
-    "\/inc\/TESTS\/test-form-cpt.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/TESTS\/test-form-cpt.php",
-      "oF" : 0
-    },
     "\/inc\/tunning.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2347,30 +2251,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-pages\/template-devis.php",
-      "oF" : 0
-    },
-    "\/template-pages\/TESTS\/template-devis-base.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-pages\/TESTS\/template-devis-base.php",
-      "oF" : 0
-    },
-    "\/template-pages\/TESTS\/template-devis-basephp.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-pages\/TESTS\/template-devis-basephp.php",
-      "oF" : 0
-    },
-    "\/template-pages\/TESTS\/template-estimate.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-pages\/TESTS\/template-estimate.php",
       "oF" : 0
     },
     "\/template-parts\/content-archive.php" : {
