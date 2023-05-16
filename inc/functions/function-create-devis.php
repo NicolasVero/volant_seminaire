@@ -15,8 +15,8 @@
 		
 		$message = '
 			<h2>Référence du devis ['. $_COOKIE['reference'] .']</h2>
-			<p>Demandé par <strong>' . $_COOKIE['firstname'] . ' ' . $_COOKIE['lastname'] . '</strong></p>' . 
-			'Fiche contact : <br/>&lsaquo;' . $_COOKIE['email'] . '&rsaquo;<br/>' . $_COOKIE['phone'] . '<p>';
+			<p>Demandé par <strong>' . $_COOKIE['firstname'] . ' ' . $_COOKIE['lastname'] . '</strong></p> 
+			<p>Fiche contact : <br/>Email : <strong>&lsaquo;' . $_COOKIE['email'] . '&rsaquo;</strong><br/>Téléphone : <strong>' . $_COOKIE['phone'] . '</strong><p>';
 			
 		$message .= '<p><i>' . $_COOKIE['message'] . '</i></p>';
 	
@@ -25,8 +25,8 @@
 		foreach(explode('/', $_COOKIE['ids']) as $id) {
 			
 			$message .= '<h3>' . $_COOKIE[$activite_datas_index[0] . '-' . $id] . '</h3>';	
-			$message .= '<p>Nombre de personnes : <strong>' . $_COOKIE[$activite_datas_index[1] . '-' . $id] . ' personne(s)</strong></p>';
-			$message .= '<p>Date, heures, et lieu souhaités :<strong> ' . $_COOKIE[$activite_datas_index[3] . '-' . $id] . ', de ' . $_COOKIE[$activite_datas_index[4] . '-' . $id]. ' à ' . $_COOKIE[$activite_datas_index[5] . '-' . $id] . ', à ' . $_COOKIE[$activite_datas_index[2] . '-' . $id] . '</strong></p>';
+			$message .= '<p>Nombre de personnes : <strong>' . $_COOKIE[$activite_datas_index[1] . '-' . $id] . ' personne(s)</strong>
+						 Date, heures, et lieu souhaités :<strong> ' . $_COOKIE[$activite_datas_index[3] . '-' . $id] . ', de ' . $_COOKIE[$activite_datas_index[4] . '-' . $id]. ' à ' . $_COOKIE[$activite_datas_index[5] . '-' . $id] . ', à ' . $_COOKIE[$activite_datas_index[2] . '-' . $id] . '</strong></p>';
 			$message .= '<hr>';
 		}
 		

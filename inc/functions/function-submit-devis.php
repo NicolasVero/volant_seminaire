@@ -1,44 +1,17 @@
 <?php
 
-session_start();
-
-//var_dump($_SESSION);
-	
-$urlTemplate = $_SESSION['blog_url'];
+	session_start();
+	$urlTemplate = $_SESSION['blog_url'];
 
 
 	if(isset($_SESSION['email'])){
-		
-		// $activites_rewrite = array();
-		// $activites_rewrite_id = array();
-		// foreach($_SESSION as $index => $session) {
-		// 	if(preg_match('/id_activite-/', $index)) {
-		// 		if(substr($index, 12 - strlen($index)) != $_SESSION['id_principale']) {
-		// 			$activites_rewrite_id[] = substr($index, 12 - strlen($index));
-		// 		}
-		// 	}
-		// }
-		// 
-		// foreach($activites_rewrite_id as $activite_rewrite_id) {
-		// 	$datas = array();
-		// 	foreach($_SESSION as $index => $session) {
-		// 		if(preg_match('/' . $activite_rewrite_id . '/', $index)) {
-		// 			$datas[] = [$index, $session];
-		// 		}
-		// 	}
-		// 	$activites_rewrite[] = $datas;
-		// }
-		// 
-		// var_dump($activites_rewrite);
-		// var_dump($activites_rewrite_id);
-		
 		
 		$all_activities = array();
 		
 		$cpt = 0;
 		foreach($_SESSION as $index => $session) {
 			if(preg_match('/id_activite-/', $index)) {
-				$id[] = substr($index, 12);
+				$ids[] = substr($index, 12);
 				$cpt++;
 			}
 		}
@@ -47,13 +20,18 @@ $urlTemplate = $_SESSION['blog_url'];
 		
 		for($i = 0; $i < $cpt; $i++) {
 			$activite = array();
-			$activite_id = $id[$i]; 
+			$activite_id = $ids[$i]; 
 			for($j = 0; $j < count($datas); $j++) {
 				$activite[] = htmlspecialchars( $_SESSION[$datas[$j] . '-' . $activite_id] );
 			}
 			$all_activities[] = $activite;
 		}
 	
+		$_SESSION['phone'] = formate_phone_number($_SESSION['phone']);
+
+		foreach($ids as $id)
+			$_SESSION['date_activite-' . $id]  = formate_date($_SESSION['date_activite-' . $id]);
+
 		// Envoyer un email à l'adresse personnalisée et à l'adresse de l'internaute qui a rempli le formulaire
 		//$to = $_POST['admin_email']; // Adresse personnalisée --> webmaster@gribouillenet.fr
 		$to = 'testappligrib@gmail.com';
@@ -82,8 +60,6 @@ $urlTemplate = $_SESSION['blog_url'];
 		//mail( $to, $subject, $message_admin, $headers );
 
 		set_cookies($reference);		
-		// var_dump($_SESSION['ids']);
-		// echo serialize($_SESSION['ids']);
 		
 		// header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
 		header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
@@ -100,7 +76,7 @@ $urlTemplate = $_SESSION['blog_url'];
 		$activite_datas_index  = ['titre_activite', 'nombre_personnes', 'lieu_seminaire', 'date_activite', 'horaires_debut', 'horaires_fin'];
 		
 		foreach($personnal_datas_index as $personnal_data_index) {
-			setcookie($personnal_data_index, $_SESSION[$personnal_data_index], time() + $cookie_live_time, '/');
+			setcookie($personnal_data_index, $_SESSION[$personnal_data_index], time() + $cookie_live_time, '/');	
 		}	
 			
 		foreach($_SESSION['ids'] as $id) {
@@ -145,6 +121,7 @@ $urlTemplate = $_SESSION['blog_url'];
 
 		$alphabet="abcdefghijklmnopqrstuvwxyz";
 		$reference .= strtoupper($alphabet[rand(0,25)]);
+		$reference .= strtoupper($alphabet[rand(0,25)]);
 
 		return $reference;
 	}
@@ -175,7 +152,7 @@ $urlTemplate = $_SESSION['blog_url'];
 			<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">Référence du devis : ' . $reference . '</p>
 			<div style="line-height: 6px;">
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . ucfirst(strtolower($user_datas['firstname'])) . ' ' . ucfirst(strtolower($user_datas['lastname'])) . '</p>
-				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . formate_phone_number($user_datas['phone']) . '</p>
+				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['phone'] . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $user_datas['email'] . '</p>
 				<p style="margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $raison_sociale . '</p>
 			</div>
@@ -228,7 +205,7 @@ $urlTemplate = $_SESSION['blog_url'];
 			$message .= '<h3 style="margin-bottom: 5px; margin-left: 10%; font-family: Arial, Helvetica, sans-serif;">' . $all_activities[$i][0] . '</h3>
 			<p style="margin-left: 10%; margin-bottom: 30px; margin-top: 10px; font-family: Arial, Helvetica, sans-serif;">
 			Pour ' . $all_activities[$i][1] . ' personne' .  ($all_activities[$i][1] > 1 ? 's' : '') . ', 
-			<span style="display: block;">Le ' . formate_date($all_activities[$i][2]) . ', 
+			<span style="display: block;">Le ' . $all_activities[$i][2] . ', 
 			à ' . ucfirst($all_activities[$i][3]) . ', de ' . formate_heure($all_activities[$i][4]) . ' à ' . formate_heure($all_activities[$i][5]) . '</span></p>';
 		}
 
