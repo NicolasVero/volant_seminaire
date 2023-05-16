@@ -1,17 +1,12 @@
-<p>test</p>
-
-
 <?php
 
-		session_start();
+session_start();
 
-var_dump($_SESSION);
+//var_dump($_SESSION);
 	
 $urlTemplate = $_SESSION['blog_url'];
 
 
-
-	echo 'test';
 	if(isset($_SESSION['email'])){
 		
 		// $activites_rewrite = array();
@@ -75,8 +70,8 @@ $urlTemplate = $_SESSION['blog_url'];
 		$message_user   = get_message_user ($all_activities, $_SESSION, $urlTemplate , $reference);
 		$message_admin  = get_message_admin ($all_activities, $_SESSION, $urlTemplate, $reference);
 
-		echo $message_user;
-		echo $message_admin;
+		// echo $message_user;
+		// echo $message_admin;
 
 		$headers = 'From: ' . $_SESSION['blog_info'] . ' <' . $to . '>' . "\r\n";
 		$headers .= 'Reply-To: ' . $to . "\r\n";
@@ -86,11 +81,41 @@ $urlTemplate = $_SESSION['blog_url'];
 		//mail( $_SESSION['email'], $subject, $message_user , $headers );
 		//mail( $to, $subject, $message_admin, $headers );
 
-
-		header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
+		set_cookies($reference);		
+		// var_dump($_SESSION['ids']);
+		// echo serialize($_SESSION['ids']);
+		
+		// header('Location:' . $urlTemplate . '/confirmation-demande-de-devis/');
+		header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
 	}
 
+	//header('Location: https://volant-seminaire.gribdev.net/confirmation-demande-de-devis/');
 	// header('Location:' . $urlTemplate . '/'); --> FAIRE RETOUR PAGE ACCUEIL 
+	
+	function set_cookies($reference) {
+				
+		$cookie_live_time = 10;
+		
+		$personnal_datas_index = ['firstname', 'lastname', 'social_reason', 'phone', 'email', 'message'];
+		$activite_datas_index  = ['titre_activite', 'nombre_personnes', 'lieu_seminaire', 'date_activite', 'horaires_debut', 'horaires_fin'];
+		
+		foreach($personnal_datas_index as $personnal_data_index) {
+			setcookie($personnal_data_index, $_SESSION[$personnal_data_index], time() + $cookie_live_time, '/');
+		}	
+			
+		foreach($_SESSION['ids'] as $id) {
+			foreach($activite_datas_index as $activite_data_index) {
+				setcookie($activite_data_index . '-' . $id, $_SESSION[$activite_data_index . '-' . $id], time() + $cookie_live_time, '/');
+			}
+		}
+		$ids = '';
+		foreach($_SESSION['ids'] as $id) {
+			$ids .= $id . '/'; 
+		}
+		
+		setcookie('ids', substr($ids, 0, -1), time() + $cookie_live_time, '/');
+		setcookie('reference', $reference, time() + $cookie_live_time, '/');
+	}
 	
 	function formate_phone_number($numero) {
 		
@@ -143,9 +168,6 @@ $urlTemplate = $_SESSION['blog_url'];
 	function get_message_admin($all_activities, $user_datas, $image_url, $reference) {
 
 		$raison_sociale = (isset($user_datas['social_reason'])) ? $user_datas['social_reason'] : "Non renseigné";
-		
-		var_dump($user_datas);
-
 		$message = get_mail_header($image_url);
 
 		$message .= '

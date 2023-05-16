@@ -1879,12 +1879,12 @@
       "oAP" : "\/inc\/functions\/function-add-to-devis.php",
       "oF" : 0
     },
-    "\/inc\/functions\/function-cpt-activite.php" : {
+    "\/inc\/functions\/function-create-devis.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/inc\/functions\/function-cpt-activite.php",
+      "oAP" : "\/inc\/functions\/function-create-devis.php",
       "oF" : 0
     },
     "\/inc\/functions\/function-devis-form.php" : {
