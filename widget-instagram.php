@@ -8,6 +8,9 @@ $instagram = get_field( 'instagram', $acfw );
 
 if($instagram):
 ?>
-<a href=""><i class="icon-insta"></i><?= $instagram ?></a>
+
+<div class="d-flex align-items-center">
+	<a href="" class="d-flex align-content-center"><i class="icon-insta"></i><?= $instagram ?></a>
+</div>
 	
 <?php endif;?>

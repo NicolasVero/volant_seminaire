@@ -8,6 +8,9 @@ $facebook = get_field( 'facebook', $acfw );
 
 if($facebook):
 ?>
-<a href=""><i class="icon-facebook"></i><?= $facebook ?></a>
+
+<div class="d-flex align-items-center">
+	<a href="" class="d-flex align-content-center"><i class="icon-facebook"></i><?= $facebook ?></a>
+</div>
 	
 <?php endif;?>

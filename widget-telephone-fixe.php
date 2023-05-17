@@ -8,6 +8,8 @@ $telephone_fixe = get_field( 'telephone_fixe', $acfw );
 
 if($telephone_fixe):
 ?>
-<a href=""><i class="icon-phone"></i><?= $telephone_fixe ?></a>
-	
+
+<div class="d-flex align-items-center">
+	<a href="" class="d-flex align-content-center"><i class="icon-phone"></i><?= $telephone_fixe ?></a>
+</div>	
 <?php endif;?>
