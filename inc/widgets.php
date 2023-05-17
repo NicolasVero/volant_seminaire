@@ -9,7 +9,7 @@ function grib_widgets_init() {
 		'class'         => 'widget-menu-lateral',
 		'before_widget' => '<li id="widget-%1$s" class="widget-%2$s">',
 		'after_widget'  => '</li>',
-		'before_sidebar' => '<nav id="nav-widgets" class="widgets-container"><ul>',
+		'before_sidebar' => '<nav id="nav-widgets" class="nav-widgets-container"><ul>',
 		'after_sidebar'  => '</ul></nav>'
 	) );
 }
