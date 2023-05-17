@@ -26,12 +26,12 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					
 					
 					if( $images ): ?>
-						<ul id="galerie-medium" class="galerie-medium">
+						<ul id="galerie-medium" class="grid-galerie grid-">
 							<?php for( $i=0; $i < 6; $i++ ){
 								$size = 'full';
 								$image_id =  $images[$i]['id'];
 							?>	
-								<li>
+								<li class="item-<?= $i ?>">
 									<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 								</li>
 								

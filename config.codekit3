@@ -775,6 +775,24 @@
       "sI" : 0,
       "sU" : 0
     },
+    "\/_src\/import\/galeries.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/galeries.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
     "\/_src\/import\/header.less" : {
       "aP" : 0,
       "bl" : 0,
@@ -2427,6 +2445,30 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/widget-email.php",
+      "oF" : 0
+    },
+    "\/widget-facebook.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/widget-facebook.php",
+      "oF" : 0
+    },
+    "\/widget-instagram.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/widget-instagram.php",
+      "oF" : 0
+    },
+    "\/widget-localisation.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/widget-localisation.php",
       "oF" : 0
     },
     "\/widget-map.php" : {
