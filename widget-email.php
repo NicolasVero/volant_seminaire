@@ -10,7 +10,8 @@ if($email):
 ?>
 
 <div class="d-flex align-items-center">
-	<i class="icon-email" class="d-flex align-content-center"></i><?= $email ?>
+	<i class="icon-email" class="d-flex align-content-center"></i>
+	<span class=""><?= $email ?></span>
 </div>
 
 <?php endif;?>
