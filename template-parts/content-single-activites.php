@@ -27,8 +27,8 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					if( $images ): 
 						$random_grid = get_random_grid_class(3, 5);						
 						?>
-						<ul id="galerie-medium" class="grid-galerie <?= $random_grid ?>">
-							<?php for( $i=0; $i < 5; $i++ ){
+						<ul id="galerie-medium" class="grid-galerie <?= $random_grid[0] ?>">
+							<?php for( $i=0; $i < $random_grid[1]; $i++ ){
 								$size = 'full';
 								$image_id =  $images[$i]['id'];
 							?>	

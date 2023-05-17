@@ -9,5 +9,8 @@ $urlTemplate = get_stylesheet_directory();
 
 function get_random_grid_class($n, $max) {
 
-	return 'grid-' . rand(1, $n) + 3 . '-' . rand(1, $max);
+	$categorie = rand(1, $n) + 3;
+	$slug      = rand(1, $max);
+
+	return ['grid-' . $categorie . '-' . $slug, $categorie, $slug];
 }
