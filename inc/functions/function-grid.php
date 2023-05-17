@@ -7,6 +7,7 @@ if (! defined('ABSPATH')) {
 $urlTemplate = get_stylesheet_directory();
 // include( $urlTemplate . '/inc/datas/);
 
-function get_random_grid_class($max) {
-	return 'grid-' . rand(1, $max);
+function get_random_grid_class($n, $max) {
+
+	return 'grid-' . rand(1, $n) + 3 . '-' . rand(1, $max);
 }
