@@ -18,7 +18,7 @@ $urlTemplate = get_stylesheet_directory();
     <?php endif; ?>
     <?php wp_head(); ?>
 </head>
-<?php include_once("analyticstracking.php"); ?>
+<?php //include_once("analyticstracking.php"); ?>
 
 <body <?php body_class(); ?>>
     <header id="main-header" class="main-header header-site" role="banner">

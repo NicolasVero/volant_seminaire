@@ -7,8 +7,10 @@ function grib_widgets_init() {
 		'name'          => 'Menu latéral',
 		'id'            => 'widget-menu-lateral',
 		'class'         => 'widget-menu-lateral',
-		'before_widget' => '<div id="%1$s" class="%2$s widget-container-map d-flex container-fluid">',
-		'after_widget'  => '</div>'
+		'before_widget' => '<li id="widget-%1$s" class="widget-%2$s">',
+		'after_widget'  => '</li>',
+		'before_sidebar' => '<nav id="nav-widgets" class="widgets-container"><ul>',
+		'after_sidebar'  => '</ul></nav>'
 	) );
 }
 add_action( 'widgets_init', 'grib_widgets_init' );

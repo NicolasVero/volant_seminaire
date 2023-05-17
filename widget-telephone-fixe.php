@@ -4,10 +4,10 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-$tel = get_field( 'telephone_fixe', $acfw );
+$telephone_fixe = get_field( 'telephone_fixe', $acfw );
 
-if($tel):
+if($telephone_fixe):
 ?>
-<div id="widget-tel" class="widget-tel d-flex align-items-center"><i class="ti-mobile"></i><?= $tel ?></div>
-
+<a href=""><i class="icon-phone"></i><?= $telephone_fixe ?></a>
+	
 <?php endif;?>

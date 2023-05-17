@@ -2421,6 +2421,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/widget-email.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/widget-email.php",
+      "oF" : 0
+    },
     "\/widget-map.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2435,6 +2443,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/widget-telephone-fixe.php",
+      "oF" : 0
+    },
+    "\/widget-telephone-portable.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/widget-telephone-portable.php",
       "oF" : 0
     }
   },
