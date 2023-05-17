@@ -784,7 +784,7 @@
       "iI" : 0,
       "ma" : 1,
       "mS" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/css\/galeries.css",
       "oF" : 0,
       "oS" : 0,
@@ -828,6 +828,18 @@
       "rwU" : 0,
       "sI" : 0,
       "sU" : 0
+    },
+    "\/_src\/import\/images.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/_src\/import\/images-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/_src\/import\/images.less" : {
       "aP" : 0,
@@ -1191,6 +1203,26 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/assets\/css\/app.css.map",
+      "oF" : 0
+    },
+    "\/assets\/css\/galeries.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/galeries-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/assets\/css\/galeries.css.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/css\/galeries.css.map",
       "oF" : 0
     },
     "\/assets\/fonts\/fa-brands-400.eot" : {
@@ -1930,6 +1962,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/inc\/functions\/function-filters.php",
+      "oF" : 0
+    },
+    "\/inc\/functions\/function-grid.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/inc\/functions\/function-grid.php",
       "oF" : 0
     },
     "\/inc\/functions\/function-js.php" : {

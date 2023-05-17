@@ -23,18 +23,16 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					the_content();
 					
 					$images = get_field('galerie');
-					
-					
+										
 					if( $images ): 
-						$random_grid = get_random_grid_class(5);
+						$random_grid = get_random_grid_class(5);						
 						?>
-
 						<ul id="galerie-medium" class="grid-galerie <?= $random_grid ?>">
 							<?php for( $i=0; $i < 5; $i++ ){
 								$size = 'full';
 								$image_id =  $images[$i]['id'];
 							?>	
-								<li class="item-<?= $i ?>">
+								<li class="item-grid item-<?= $i ?>">
 									<?php echo wp_get_attachment_image( $image_id, $size ); ?>
 								</li>
 								
@@ -43,11 +41,5 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					<?php endif; ?>
 					
 			</article>
-	</div>	
-
-
-<?php 
-
-	function get_random_grid_class($max) {
-		return 'grid-' . rand(1, $max);
-	}
+	</div>
+		
