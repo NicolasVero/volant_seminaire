@@ -8,6 +8,10 @@ $email = get_field( 'email', $acfw );
 
 if($email):
 ?>
-<i class="icon-email"></i><?= $email ?>
-	
+
+<div class="d-flex align-items-center">
+	<i class="icon-email" class="d-flex align-content-center"></i>
+	<span class=""><?= $email ?></span>
+</div>
+
 <?php endif;?>

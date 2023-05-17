@@ -14368,100 +14368,6 @@ input[type="file"] {
     width: 13.9rem;
   }
 }
-.container-images-random {
-  position: relative;
-  height: 235px;
-  height: 23.5rem;
-  overflow: hidden;
-}
-.container-images-random:after {
-  content: '';
-  background-color: #FF4E00;
-  background: linear-gradient(90deg, color: #FF4E00; 0%, rgba(3, 105, 211, 0) 100%);
-  background: -webkit-linear-gradient(90deg, color: #FF4E00; 0%, rgba(3, 105, 211, 0) 100%);
-  background: -moz-linear-gradient(90deg, color: #FF4E00; 0%, rgba(3, 105, 211, 0) 100%);
-  display: block;
-  height: 150px;
-  height: 15rem;
-  position: absolute;
-  bottom: 0px;
-  bottom: 0rem;
-  width: 100%;
-  z-index: 1;
-}
-.container-images-random img {
-  position: absolute;
-  left: 0px;
-  left: 0rem;
-  top: 0px;
-  top: 0rem;
-  z-index: -1;
-}
-.container-images-random h1 {
-  color: #FFFFFF;
-  font-size: 28px;
-  font-size: 2.8000000000000003rem;
-  bottom: 25%;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  z-index: 2;
-}
-@media screen and (min-width: 768px) {
-  .container-images-random {
-    height: 37vh;
-  }
-  .container-images-random:after {
-    height: 250px;
-    height: 25rem;
-  }
-  .container-images-random img {
-    top: -100px;
-    top: -10rem;
-  }
-  .container-images-random h1 {
-    font-size: 50px;
-    font-size: 5rem;
-    bottom: 35%;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .container-images-random {
-    height: 80vh;
-  }
-  .container-images-random:after {
-    height: 350px;
-    height: 35rem;
-  }
-  .container-images-random h1 {
-    font-size: 90px;
-    font-size: 9rem;
-  }
-  .container-slider-home {
-    padding-left: 0px;
-    padding-left: 0rem;
-    padding-right: 30px;
-    padding-right: 3rem;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .container-images-random {
-    height: 100vh;
-  }
-  .container-images-random:after {
-    height: 450px;
-    height: 45rem;
-  }
-  .container-images-random img {
-    top: -300px;
-    top: -30rem;
-  }
-  .container-images-random h1 {
-    font-size: 120px;
-    font-size: 12rem;
-    bottom: 25%;
-  }
-}
 :root {
   --overlaye-color: rgba(11, 6, 2, 0.7);
   --back-color: #ffffff;
@@ -14573,8 +14479,18 @@ img.mfp-img {
   right: 15px;
   right: 1.5rem;
 }
-.site-widgets-header {
-  background-color: #FFFFFF;
+.nav-widgets-container li {
+  margin-bottom: 25px;
+}
+.nav-widgets-container li i {
+  background-color: white;
+  border-radius: 100%;
+  margin-right: 25px;
+  color: #333333;
+  padding: 4px;
+}
+.nav-widgets-container li span {
+  font-weight: 700;
 }
 .navigation-container {
   background-color: #333333;
@@ -14850,4 +14766,4 @@ IMPORT SPÉCIFICITÉ
 /*------------------------------
 PAGES
 --------------------------------*/
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=./app.css.map */

@@ -8,6 +8,11 @@ $telephone_portable = get_field( 'telephone_portable', $acfw );
 
 if( $telephone_portable ):
 ?>
-<a href=""><i class="icon-mobile"></i><?= $telephone_portable ?></a>
+
+
+<a href="" class="d-flex align-items-center">
+	<i class="icon-mobile"></i>
+	<span><?= $telephone_portable ?></span>
+</a>
 	
 <?php endif;?>
