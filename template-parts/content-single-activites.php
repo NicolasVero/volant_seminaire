@@ -22,24 +22,15 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					<?php
 					the_content();
 					
-					$images = get_field('galerie');
-										
-					if( $images ): 
-						$random_grid = get_random_grid_class(3, 5);						
-						?>
-						<ul id="galerie-medium" class="grid-galerie <?= $random_grid[0] ?>">
-							<?php for( $i=0; $i < $random_grid[1]; $i++ ){
-								$size = 'full';
-								$image_id =  $images[$i]['id'];
-							?>	
-								<li class="item-grid item-<?= $i ?>">
-									<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-								</li>
-								
-							<?php } ?>
-						</ul>
-					<?php endif; ?>
+
+					// OLD
+
+					// END OLD 
 					
+					// NEW
+					echo get_galerie(); 
+
+					?>
 			</article>
 	</div>
 		
