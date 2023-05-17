@@ -8,7 +8,7 @@ $urlTemplate = get_stylesheet_directory();
 // include( $urlTemplate . '/inc/datas/);
 
 // function get_galerie($n_min = 4, $n_max = 6, $is_random = false) {
-function get_galerie($n_min = 4, $n_max = 6, $is_random = false) {
+function get_galerie() {
 
 	$images    = get_field('galerie'       );
 	$n_min     = get_field('min_de_photo'  );
@@ -17,8 +17,6 @@ function get_galerie($n_min = 4, $n_max = 6, $is_random = false) {
 
 	if( ! $images ) return; 
 
-
-	// Definir max en fonction du nombre de possibilité des grilles 
 	if($n_min < 1 || $n_min > 8) $n_min = 4;
 	if($n_max < 1 || $n_max > 8) $n_max = 6;
 	
@@ -33,14 +31,6 @@ function get_galerie($n_min = 4, $n_max = 6, $is_random = false) {
 	
 	$slug = rand(1, $max_slug);
 	$class = 'grid-' . $categorie . '-' . $slug;
-
-	// $datas = [
-	// 	'class'      => 'grid-' . $categorie . '-' . $slug,
-	// 	'categorie'  => $categorie, 
-	// 	'slug'       => $slug,
-	// 	'intervalle' => $intervalle,
-	// 	'max_slug'   => $max_slug
-	// ];
 
 	if($is_random)
 		shuffle($images);

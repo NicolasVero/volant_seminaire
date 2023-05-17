@@ -21,16 +21,9 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 					</header>
 					<?php
 					the_content();
-					
-
-					// OLD
-
-					// END OLD 
-					
-					// NEW
-					echo get_galerie(); 
-
+					echo get_galerie();
 					?>
+					
 			</article>
 	</div>
 		

@@ -14757,6 +14757,17 @@ img.mfp-img {
     cursor: pointer;
   }
 }
+.grid-galerie {
+  margin-top: 15px;
+  margin-top: 1.5rem;
+}
+.grid-galerie .item-grid {
+  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
+}
+.grid-galerie .item-grid:last-of-type {
+  margin: 0;
+}
 @media screen and (min-width: 768px) {
   .grid-galerie {
     display: grid;
@@ -14764,6 +14775,9 @@ img.mfp-img {
     grid-template-rows: repeat(2, 240px);
     grid-column-gap: 15px;
     grid-row-gap: 15px;
+  }
+  .grid-galerie .item-grid {
+    margin: unset;
   }
   .grid-galerie .item-grid img {
     height: 100%;
@@ -14773,10 +14787,10 @@ img.mfp-img {
   .grid-1-1 .item-1 {
     grid-area: 1 / 1 / 3 / 5;
   }
-  .grid-2-2 .item-1 {
+  .grid-2-1 .item-1 {
     grid-area: 1 / 1 / 3 / 3;
   }
-  .grid-2-2 .item-2 {
+  .grid-2-1 .item-2 {
     grid-area: 1 / 3 / 3 / 5;
   }
   .grid-3-1 .item-1 {
@@ -15098,4 +15112,4 @@ IMPORT SPÉCIFICITÉ
 /*------------------------------
 PAGES
 --------------------------------*/
-/*# sourceMappingURL=./app.css.map */
+/*# sourceMappingURL=app.css.map */
