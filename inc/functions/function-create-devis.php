@@ -1,16 +1,34 @@
 <?php 
-	$args = array(
-		'post_title'    => $_COOKIE['reference'],
-		'post_content'  => generate_content(),
-		'post_status'   => 'publish',
-		'post_author'   => 1,
-		'post_type'     => 'devis',
-	);
+
+
+	if(isset($_COOKIE['reference'])) {
+		if(is_devis_unique($_COOKIE['reference'])) {
+			
+			$args = array(
+				'post_title'    => $_COOKIE['reference'],
+				'post_content'  => generate_content(),
+				'post_status'   => 'publish',
+				'post_author'   => 1,
+				'post_type'     => 'devis',
+			);
 		
-	wp_insert_post($args);
+			wp_insert_post($args);
+		}	
+	} 
 	
 	//destroy_cookies();
 	
+	function is_devis_unique($post_title) {
+	
+		$query = new WP_Query(array(
+			'post_type' => 'devis',
+			'post_title' => $post_title,
+			'posts_per_page' => 1
+		));
+		
+		return !$query->have_posts();
+	}
+		
 	function generate_content() {
 		
 		$message = '

@@ -1,5 +1,4 @@
 <?php
-//session_start();
 
 if (! defined('ABSPATH')) {
 	exit;
@@ -18,7 +17,7 @@ $ID = get_the_ID();
 </div>
 
 <?php  
-if( is_page(452) ) {
+if( is_page(452) && isset($_COOKIE)) {
 	include $urlTemplate . '/inc/functions/function-create-devis.php';
 }
 ?>
