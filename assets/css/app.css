@@ -14524,6 +14524,29 @@ img.mfp-img {
 .navigation-container li a:focus {
   color: inherit;
 }
+.navigation-container .nav-site a {
+  margin: 15px auto;
+}
+.navigation-container .nav-site dl.menu-menu-header {
+  margin-top: 60px;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element i {
+  background-color: white;
+  border-radius: 100%;
+  margin-right: 25px;
+  color: #333333;
+  padding: 4px;
+  height: 100%;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element .header-nav-element-text {
+  display: flex;
+  flex-direction: column;
+}
 .navigation-container.open {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
