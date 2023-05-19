@@ -13,20 +13,31 @@
 			);
 		
 			wp_insert_post($args);
-		}	
-	} 
-	
+			unset($_COOKIE['reference']);
+		} 
+	}
 	//destroy_cookies();
+	
+	// header("Refresh: 5; URL=https://volant-seminaire.gribdev.net/"); 
+	// exit();
+	
+	
 	
 	function is_devis_unique($post_title) {
 	
 		$query = new WP_Query(array(
-			'post_type' => 'devis',
-			'post_title' => $post_title,
-			'posts_per_page' => 1
-		));
+				'post_type' => 'devis',
+				's' => $post_title,
+				'posts_per_page' => 1
+			));
 		
-		return !$query->have_posts();
+		//var_dump($query);
+		
+		$is_unique = !$query->have_posts();
+		
+		wp_reset_postdata();
+		
+		return $is_unique;
 	}
 		
 	function generate_content() {
