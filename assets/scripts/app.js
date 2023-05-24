@@ -16,19 +16,7 @@ $(function(){
 			});
 			$('#menu-close').click(function(){
 				$('#navigation-container').removeClass('open');
-			})
-		
-		
-			// const bouton_open = document.getElementsByClassName('menu-open')[0];
-		  //   const menu = document.getElementById('navigation-container');
-		  // 	menu.style.display = 'none';
-		  // 	bouton_open.addEventListener('click', function() {
-			// if(window.getComputedStyle(menu).getPropertyValue('display') == 'none') {
-			// 	menu.style.display = 'block';
-			// } else {
-			//  	menu.style.display = 'none';
-			// }
-		  // });
+			});
 	}
 	
 // AJOUT ACTIVITÉ AU FORMULAIRE
