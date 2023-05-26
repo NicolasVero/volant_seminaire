@@ -54,7 +54,7 @@
       "iI" : 0,
       "ma" : 1,
       "mS" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/css\/add-activity.css",
       "oF" : 0,
       "oS" : 0,
@@ -2166,12 +2166,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/index.php",
-      "oF" : 0
-    },
-    "\/node_modules" : {
-      "ft" : 65536,
-      "oA" : 2,
-      "oAP" : "\/node_modules",
       "oF" : 0
     },
     "\/page.php" : {
