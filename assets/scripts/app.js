@@ -16,19 +16,7 @@ $(function(){
 			});
 			$('#menu-close').click(function(){
 				$('#navigation-container').removeClass('open');
-			})
-		
-		
-			// const bouton_open = document.getElementsByClassName('menu-open')[0];
-		  //   const menu = document.getElementById('navigation-container');
-		  // 	menu.style.display = 'none';
-		  // 	bouton_open.addEventListener('click', function() {
-			// if(window.getComputedStyle(menu).getPropertyValue('display') == 'none') {
-			// 	menu.style.display = 'block';
-			// } else {
-			//  	menu.style.display = 'none';
-			// }
-		  // });
+			});
 	}
 	
 // AJOUT ACTIVITÉ AU FORMULAIRE
@@ -61,7 +49,7 @@ $(function(){
 			$('#lieu_seminaire_hotel').prop('disabled', !($(this).is( ':checked' ) ) );
 			$('#lieu_seminaire_hotel').val('');
 		});
-	}
+	}	
 //FENETRE AJOUT ACTIVITÉ
 	// if( $('#add-more-activity').length ){
 	// 	$('#container-list-items-activities').slideDown().hide();
@@ -73,29 +61,47 @@ $(function(){
 
 //FILTRE ACTIVITÉS
 	if( $('#filters').length ){
-	$('#all').click( function(e){
-		
-		e.preventDefault();
-		$('.item-activite').slideDown();
-		$('#filters a').removeClass('actif');
-		$(this).addClass('actif');
-		
-		return false;
-	});
-
-	$('.filter').click( function(f){
-
-		f.preventDefault();
-		var filtre = $(this).attr('id');
-		
-		$('.item-activite').hide('slow').removeClass('d-flex');
-		$('.item-activite-'+ filtre).show('slow').addClass('d-flex');
-		$('#filters a').removeClass('actif');
-		$(this).addClass('actif');
-		
-		return false;
-	});
-}
+		$('#all').click( function(e){
+			e.preventDefault();
+			
+			$('.item-activite').slideDown();
+			$('#filters a').removeClass('actif');
+			$(this).addClass('actif');
+			
+			return false;
+		});
+		$('.filter').click( function(f){
+			f.preventDefault();
+			
+			var filtre = $(this).attr('id');
+			$('.item-activite').hide('slow').removeClass('d-flex');
+			$('.item-activite-'+ filtre).show('slow').addClass('d-flex');
+			$('#filters a').removeClass('actif');
+			$(this).addClass('actif');
+			
+			return false;
+		});
+		$('#filters').slick({
+			infinite: false,
+			dots: false,
+			focusOnSelect: true,
+			slidesToScroll: 1,
+			appendArrows: $('#navigation-activities'),
+			prevArrow:'<button type="button" class="slick-prev d-flex justify-content-center align-items-center"><i class="ti-arrow-left"></i></button>',
+			nextArrow:'<button type="button" class="slick-next d-flex justify-content-center align-items-center"><i class="ti-arrow-right"></i></button>',
+			
+			responsive: [
+				{
+					breakpoint: 576,
+					settings:{
+						arrows: false,
+						dots: false,
+						slidesToShow: 3
+					}
+				}
+			]
+		});
+	}
 
 
 

@@ -14524,6 +14524,29 @@ img.mfp-img {
 .navigation-container li a:focus {
   color: inherit;
 }
+.navigation-container .nav-site a {
+  margin: 15px auto;
+}
+.navigation-container .nav-site dl.menu-menu-header {
+  margin-top: 60px;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element i {
+  background-color: white;
+  border-radius: 100%;
+  margin-right: 25px;
+  color: #333333;
+  padding: 4px;
+  height: 100%;
+}
+.navigation-container .nav-site dl.menu-menu-header .header-nav-element .header-nav-element-text {
+  display: flex;
+  flex-direction: column;
+}
 .navigation-container.open {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -15102,6 +15125,62 @@ img.mfp-img {
   .grid-8-1 .item-8 {
     grid-area: 2 / 4 / 3 / 5;
   }
+}
+.container-list-items-activities {
+  background-color: #FFFFFF;
+  height: 100vh;
+}
+.container-filters {
+  margin-bottom: 30px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.item-activite {
+  padding: 15px;
+  padding: 1.5rem;
+}
+.item-filter {
+  max-width: 100px;
+  max-width: 10rem;
+  margin: 0px 5px;
+  margin: 0rem 0.5rem;
+  float: left;
+}
+.item-filter:first-of-type {
+  margin-left: 0px;
+  margin-left: 0rem;
+}
+.item-filter:last-of-type {
+  margin-right: 0px;
+  margin-right: 0rem;
+}
+.item-filter a {
+  color: #333333;
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 700;
+}
+.item-filter a:hover {
+  color: #333333;
+}
+.item-filter span {
+  display: block;
+  font-variant: inherit;
+  color: #333333;
+  line-height: 1;
+  text-align: center;
+}
+.item-filter .item-filter-img {
+  height: 35px;
+  height: 3.5rem;
+  margin: 5px 0px;
+  margin: 0.5rem 0rem;
+  margin-top: 0px;
+  margin-top: 0rem;
+  width: 100px;
+  width: 10rem;
+}
+.item-filter .item-filter-img img {
+  height: 100%;
 }
 /*--------------------------------
 IMPORTS EXTERNES
