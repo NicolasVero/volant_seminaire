@@ -89,7 +89,7 @@ $(function(){
 			appendArrows: $('#navigation-activities'),
 			prevArrow:'<button type="button" class="slick-prev d-flex justify-content-center align-items-center"><i class="ti-arrow-left"></i></button>',
 			nextArrow:'<button type="button" class="slick-next d-flex justify-content-center align-items-center"><i class="ti-arrow-right"></i></button>',
-			
+			swipeToSlide: true,
 			responsive: [
 				{
 					breakpoint: 576,

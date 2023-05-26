@@ -15140,11 +15140,10 @@ img.mfp-img {
   padding: 1.5rem;
 }
 .item-filter {
-  max-width: 100px;
-  max-width: 10rem;
   margin: 0px 5px;
   margin: 0rem 0.5rem;
   float: left;
+  width: 100px !important;
 }
 .item-filter:first-of-type {
   margin-left: 0px;
@@ -15168,6 +15167,7 @@ img.mfp-img {
   color: #333333;
   line-height: 1;
   text-align: center;
+  width: 100px;
 }
 .item-filter .item-filter-img {
   height: 35px;

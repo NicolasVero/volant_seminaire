@@ -1,6 +1,6 @@
-<div class="container-filters">	
+<!-- <div class="container-filters">	 -->
 
-			<ul id="filters" class="list-items-filters d-block clearfix">
+			<div id="filters" class="list-items-filters d-block clearfix">
 	
 			<?php	$terms = get_terms(
 					array(
@@ -42,13 +42,13 @@
 						];
 					}
 				}
-					echo '<li class="item-filter"><a id="all" class="actif d-flex flex-column justify-content-center align-items-center" href="#"><figure class="item-filter-img d-flex justify-content-center"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"></figure><span>' . $sorted_terms[0]['term_name'] . '</span></a></li>';				
+					echo '<div class="item-filter"><a id="all" class="actif d-flex flex-column justify-content-center align-items-center" href="#"><figure class="item-filter-img d-flex justify-content-center"><img src="' . $sorted_terms[0]['term_icon']['url'] . '" alt="' . $sorted_terms[0]['term_icon']['alt'] . '"></figure><span>' . $sorted_terms[0]['term_name'] . '</span></a></div>';				
 				// 		
 				for($cpt = 1; $cpt < count($sorted_terms); $cpt++){
-						echo '<li class="item-filter item-filter-' . $sorted_terms[$cpt]['term_id'] . '"><a href="#" id="'. $sorted_terms[$cpt]['term_slug'] . '" class="filter d-flex flex-column justify-content-center align-items-center"><figure class="item-filter-img d-flex justify-content-center"><img src="' . $sorted_terms[$cpt]['term_icon']['url'] . '" alt="' . $sorted_terms[$cpt]['term_icon']['alt'] . '"></figure><span>' . $sorted_terms[$cpt]['term_name'] . '</span></a></li>';
+						echo '<div class="item-filter item-filter-' . $sorted_terms[$cpt]['term_id'] . '"><a href="#" id="'. $sorted_terms[$cpt]['term_slug'] . '" class="filter d-flex flex-column justify-content-center align-items-center"><figure class="item-filter-img d-flex justify-content-center"><img src="' . $sorted_terms[$cpt]['term_icon']['url'] . '" alt="' . $sorted_terms[$cpt]['term_icon']['alt'] . '"></figure><span>' . $sorted_terms[$cpt]['term_name'] . '</span></a></div>';
 				}
 				?>
 				
-	</ul>
+	</div>
 	<div id="navigation-activities"></div>
-</div>
+<!-- </div> -->
