@@ -38,17 +38,23 @@ $(function(){
 			let data_activiteTITLE =  $(this).attr('data-activiteTITLE');
 			let html_item = $(this).children().html();
 			let form = '<div class="row"><input type="hidden" name="id_activite-' +  data_activiteID + '" value="' +  data_activiteID + '"><input type="hidden" name="titre_activite-' + data_activiteID + '" value="' + data_activiteTITLE + '"><label for="nombre_personnes-' + data_activiteID + '">Nombre de personnes :</label><input type="number" name="nombre_personnes-' + data_activiteID + '"><label for="date_activite-' + data_activiteID + '">Date de l\'activité :</label><input type="date" name="date_activite-' + data_activiteID + '"><label for="lieu_seminaire-' + data_activiteID + '">Lieu du séminaire :</label> <input type="text" name="lieu_seminaire-' + data_activiteID + '"><label for="horaires_debut-' + data_activiteID + '">Horaires :</label> <p>de <input type="time" name="horaires_debut-' + data_activiteID + '"> à <input type="time" name="horaires_fin-' + data_activiteID + '"></p></div>';
+			
+			// AJOUT 
 			$(this).click( function(){
 				$('#form-devis').prepend('<div id="titre_activite-' + data_activiteID + '" class="devis-item"><div class="row">' + html_item + '<button class="delete-activite"><i class="ti-trash"></i></button></div>' + form + '</div>');
 				$('#titre_activite-' + data_activiteID + ' .ti-plus').remove();
 			});
+
+			// SUPPRESSION
+			$(document).on('click', '.delete-activite', function() {
+				$(this).closest('.devis-item').remove();
+			});
 		});
 	}
-	if( $('#form-devis').length ){
-		$('body').on('click', '.delete-activite', function() {
-			$(this).parent().remove();
-		});
-	}
+
+
+
+
 //FORMULAIRE DEMANDE DEVIS - HOTEL
 	if( $('#hotels').length ){
 		$('#hotels').change( function() {
