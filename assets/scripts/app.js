@@ -82,21 +82,23 @@ $(function(){
 			return false;
 		});
 		$('#filters').slick({
-			infinite: false,
+			infinite: true,
 			dots: false,
-			focusOnSelect: true,
+			slidesToShow: 10,
 			slidesToScroll: 1,
 			appendArrows: $('#navigation-activities'),
-			prevArrow:'<button type="button" class="slick-prev d-flex justify-content-center align-items-center"><i class="ti-arrow-left"></i></button>',
-			nextArrow:'<button type="button" class="slick-next d-flex justify-content-center align-items-center"><i class="ti-arrow-right"></i></button>',
-			swipeToSlide: true,
+			prevArrow:'<button type="button" class="slick-prev d-inline-block"><i class="fa-solid fa-angle-left"></i></button>',
+			nextArrow:'<button type="button" class="slick-next d-inline-block"><i class="fa-solid fa-angle-right"></i></button>',
 			responsive: [
 				{
 					breakpoint: 576,
 					settings:{
 						arrows: false,
 						dots: false,
-						slidesToShow: 3
+						slidesToShow: 3,
+						appendArrows: $('#navigation-activities'),
+						prevArrow:'<button type="button" class="slick-prev d-inline-block"><i class="fa-solid fa-angle-left"></i></button>',
+						nextArrow:'<button type="button" class="slick-next d-inline-block"><i class="fa-solid fa-angle-right"></i></button>',
 					}
 				}
 			]

@@ -46,7 +46,7 @@ function cpt_allActivities(){
 								
 								$taxos = [];
 								$classes = '';
-								for( $i = 0; $i< count( $activite_taxos ) -1; $i++ ){
+								for( $i = 0; $i< count( $activite_taxos ); $i++ ){
 									$taxos[] = $activite_taxos[$i]->slug;
 									$classes .= 'item-activite-' . $taxos[$i] . ' ';
 								}

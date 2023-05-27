@@ -11,7 +11,7 @@ IMPORT BASE
 GLOBAL
 --------------------------------*/
 @import url("https://use.typekit.net/nrt2gml.css");
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url("https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css");
 *,
@@ -11894,6 +11894,31 @@ button span {
   background-color: #333333;
   color: #FFFFFF;
 }
+.navigation-activities {
+  text-align: center;
+}
+.navigation-activities button {
+  background-color: #FF4E00;
+  border: none;
+  padding: 0;
+  margin: 15px;
+  margin: 1.5rem;
+  text-align: center;
+  height: 35px;
+  height: 3.5rem;
+  width: 35px;
+  width: 3.5rem;
+  line-height: 35px;
+  line-height: 3.5rem;
+}
+.navigation-activities button i {
+  display: block;
+  font-size: 14px;
+  font-size: 1.4000000000000001rem;
+}
+.navigation-activities button i:before {
+  font-size: inherit;
+}
 /*------------------------------
 CLEARFIX
 --------------------------------*/
@@ -15143,7 +15168,6 @@ img.mfp-img {
   margin: 0px 5px;
   margin: 0rem 0.5rem;
   float: left;
-  width: 100px !important;
 }
 .item-filter:first-of-type {
   margin-left: 0px;
