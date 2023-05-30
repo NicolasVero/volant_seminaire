@@ -71,8 +71,23 @@ button{
 		}
 	}
 }
-.button-addTo-estimate{
-	
+.button-add-to-estimate,
+.button-return-back{
+	.fBlack();
+	.FB();
+	&:hover,
+	&:focus{
+		.fBlack();
+	}
+	i{
+		color: inherit;
+		&:before{
+			color: inherit;
+		}	
+	}	
+}
+.button-return-back{
+	.FR();
 }
 @media screen and (max-width : 576px){
 

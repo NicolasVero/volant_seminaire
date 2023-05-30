@@ -10,7 +10,6 @@ IMPORT BASE
 /*------------------------------
 GLOBAL
 --------------------------------*/
-@import url("https://use.typekit.net/nrt2gml.css");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url("https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css");
@@ -166,7 +165,7 @@ a:active {
   color: #333333;
 }
 p strong {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 p a {
@@ -11832,7 +11831,7 @@ button {
   -moz-border-radius: 50px;
   border-radius: 50px;
   color: #333333;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   text-align: center;
   margin: 0;
@@ -11919,6 +11918,30 @@ button span {
 .navigation-activities button i:before {
   font-size: inherit;
 }
+.button-add-to-estimate,
+.button-return-back {
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+.button-add-to-estimate:hover,
+.button-return-back:hover,
+.button-add-to-estimate:focus,
+.button-return-back:focus {
+  color: #333333;
+}
+.button-add-to-estimate i,
+.button-return-back i {
+  color: inherit;
+}
+.button-add-to-estimate i:before,
+.button-return-back i:before {
+  color: inherit;
+}
+.button-return-back {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
 /*------------------------------
 CLEARFIX
 --------------------------------*/
@@ -11948,7 +11971,7 @@ VARIABLES COULEURS PROJETS
   color: #FFFFFF;
 }
 h1 {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 21px;
   font-size: 2.1rem;
@@ -11956,14 +11979,14 @@ h1 {
   line-height: 2.9000000000000004rem;
 }
 h1 strong {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 h2,
 h3 {
   font-size: 14px;
   font-size: 1.4000000000000001rem;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   line-height: 20px;
   line-height: 2rem;
@@ -12014,6 +12037,27 @@ strong {
   }
 }
 @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+@font-face {
   font-family: 'volant-seminaire-icon';
   src: url('../fonts/volant-seminaire-icon.eot?ekmktu');
   src: url('../fonts/volant-seminaire-icon.eot?ekmktu#iefix') format('embedded-opentype'), url('../fonts/volant-seminaire-icon.ttf?ekmktu') format('truetype'), url('../fonts/volant-seminaire-icon.woff?ekmktu') format('woff'), url('../fonts/volant-seminaire-icon.svg?ekmktu#volant-seminaire-icon') format('svg');
@@ -12028,8 +12072,8 @@ strong {
   font-family: 'volant-seminaire-icon' !important;
   speak: never;
   font-style: normal;
-  font-size: 22px;
-  font-size: 2.2rem;
+  font-size: 24px;
+  font-size: 2.4000000000000004rem;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
@@ -13176,7 +13220,7 @@ html {
 body {
   background-color: #FFFFFF;
   overflow-x: hidden;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14px;
   font-size: 1.4000000000000001rem;
@@ -13188,227 +13232,37 @@ body {
 }
 footer {
   background-color: #FF4E00;
-  color: #FF4E00;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 14px;
   font-size: 1.4000000000000001rem;
-  text-align: center;
-  padding-bottom: 0px;
-  padding-bottom: 0rem;
-}
-footer .brand-footer {
-  margin: 0 auto;
-  width: 60%;
+  padding: 30px 15px;
+  padding: 3rem 1.5rem;
 }
 footer li {
-  display: block;
+  display: inline-block;
+  padding: 0px 10px;
+  padding: 0rem 1rem;
 }
-footer li a {
-  color: #FF4E00;
-}
-footer .footer-nav {
-  padding: 15px;
-  padding: 1.5rem;
-}
-footer .facebook a {
-  padding-left: 0;
-}
-footer .items-copyright li a {
-  font-size: 12px;
-  font-size: 1.2000000000000002rem;
-}
-footer .footer-copyright {
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 700;
-  padding-bottom: 15px;
-  padding-bottom: 1.5rem;
-  padding-top: 15px;
-  padding-top: 1.5rem;
-  background-color: #FF4E00;
-  text-transform: uppercase;
-}
-footer .container-button-top .btn-return-top {
-  background-color: transparent;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  border: solid 1px;
-  color: #FF4E00;
-  height: 45px;
-  height: 4.5rem;
-  width: 45px;
-  width: 4.5rem;
-}
-footer .container-button-top span {
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-footer h3,
-footer address {
-  text-align: center;
-}
-footer .widget h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
-  margin: 25px 0px;
-  margin: 2.5rem 0rem;
-}
-footer .widget address {
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-}
-footer .infos-contact p {
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  text-align: center;
-}
-footer .infos-contact p.contact-open,
-footer .infos-contact p.contact-close {
-  color: #FFFFFF;
-}
-footer .infos-contact p.contact-close {
-  text-transform: uppercase;
-}
-footer .acf-container-map {
-  background-color: #FF4E00;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-footer .acf-container-map .infos-map {
-  padding: 30px;
-  padding: 3rem;
-}
-footer .acf-container-map .acf-map {
-  height: auto;
-  width: 100%;
-}
-footer .widget-tel,
-footer .link-way {
-  font-family: "acumin-pro", sans-serif;
-  font-weight: 400;
-  padding: 5px 15px;
-  padding: 0.5rem 1.5rem;
-  font-size: 22px;
-  font-size: 2.2rem;
-}
-footer .widget-tel i,
-footer .link-way i {
+footer a {
   color: inherit;
-  margin-right: 5px;
-  margin-right: 0.5rem;
 }
-footer .widget-tel {
-  margin: 15px 0px;
-  margin: 1.5rem 0rem;
+footer a:hover,
+footer a:focus {
+  color: inherit;
 }
-footer .link-way {
-  color: #FFFFFF;
-  border: 1px solid #FFFFFF;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
+footer a:first-of-type {
+  padding-left: 0px;
+  padding-left: 0rem;
 }
-footer .widget-coyright {
-  margin-top: 25px;
-  margin-top: 2.5rem;
-}
-footer .container-button-top {
-  margin-top: 25px;
-  margin-top: 2.5rem;
-}
-@media screen and (min-width: 768px) {
-  footer {
-    text-align: left;
-  }
-  footer .menu-navigation-footer {
-    column-count: 2;
-    column-gap: 40px ;
-    column-width: 200px;
-  }
-  footer .items-copyright li {
-    display: inline-block;
-  }
-  footer .items-copyright li:first-of-type:after {
-    content: '|';
-    padding: 0px 5px;
-    padding: 0rem 0.5rem;
-  }
-  footer .footer-copyright {
-    text-align: right;
-  }
-  footer .container-button-top span {
-    direction: ltr;
-    display: block;
-    text-indent: -999em;
-    height: 0px;
-    height: 0rem;
-  }
-  footer .widget-tel i,
-  footer .link-way i {
-    margin-right: 10px;
-    margin-right: 1rem;
-  }
-  footer .widget-tel {
-    margin-top: 0px;
-    margin-top: 0rem;
-  }
-  footer .widget-coyright {
-    margin-top: 0px;
-    margin-top: 0rem;
-  }
-  footer .container-button-top {
-    margin-top: 0px;
-    margin-top: 0rem;
-  }
+footer a:last-of-type {
+  padding-right: 0px;
+  padding-right: 0rem;
 }
 @media screen and (min-width: 1200px) {
-  footer .footer-nav {
-    padding: 60px;
-    padding: 6rem;
-  }
-  footer .footer-copyright {
-    padding-right: 60px;
-    padding-right: 6rem;
-  }
-  footer .acf-container-map {
-    width: 100%;
-  }
-  footer .brand-footer {
-    width: 40%;
-  }
-  footer .infos-contact p.contact-open {
-    position: relative;
-  }
-  footer .infos-contact p.contact-open:after {
-    content: '';
-    display: block;
-    border-right: 1px solid #FF4E00;
-    height: 16px;
-    height: 1.6rem;
-    margin-top: -8px;
-    margin-top: -0.8rem;
-    position: absolute;
-    top: 50%;
-    right: 0;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .infos-horaires {
-    padding: 0 15%;
-  }
-  .infos-horaires p.contact-open {
-    padding-right: 35px;
-    padding-right: 3.5rem;
-  }
-  .infos-horaires p.contact-close {
-    margin-left: 15px;
-    margin-left: 1.5rem;
-  }
+  padding: 30px 0px;
+  padding: 3rem 0rem;
 }
 .wpcf7-form-control-wrap {
   width: 100%;
@@ -13560,7 +13414,7 @@ input[type="week"] {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 input[type="email"]:focus,
@@ -13649,7 +13503,7 @@ input[type="reset"][disabled] {
   border-radius: 0;
   color: #FFFFFF;
   text-align: center;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   height: 50px;
   height: 5rem;
@@ -13675,7 +13529,7 @@ input[type="reset"]:focus,
 input[type="reset"][disabled]:focus {
   background-color: #FF4E00;
   border: none;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   height: 50px;
   height: 5rem;
@@ -13717,7 +13571,7 @@ input[type="submit"][disabled] {
 .submit-content:focus {
   background-color: #FF4E00;
   border: none;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   height: 50px;
   height: 5rem;
@@ -13758,7 +13612,7 @@ textarea {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   width: 100%;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 textarea:focus,
@@ -13812,7 +13666,7 @@ span.wpcf7-not-valid-tip,
 div.wpcf7-mail-sent-ok {
   color: #FFFFFF !important;
   border: none !important;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 14px !important;
   font-size: 1.4000000000000001rem !important;
@@ -13838,7 +13692,7 @@ SELECT
   width: 100%;
 }
 .ui-selectmenu-button {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: #DBDBDB;
   background: transparent;
@@ -13962,7 +13816,7 @@ SELECT
   padding: 0;
 }
 .ui-menu > li .ui-menu-item-wrapper {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   border: none;
   color: #333333;
@@ -14302,7 +14156,7 @@ input[type="file"] {
   input[type="reset"][disabled]:focus {
     background-color: #FF4E00;
     border: none;
-    font-family: "acumin-pro", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     height: 50px;
     height: 5rem;
@@ -14322,7 +14176,7 @@ input[type="file"] {
   .submit-content:focus {
     background-color: #FF4E00;
     border: none;
-    font-family: "acumin-pro", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     height: 50px;
     height: 5rem;
@@ -14659,7 +14513,7 @@ img.mfp-img {
   color: #FFFFFF;
 }
 .hero-featured .container-hero-featured h1 {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 800;
   font-size: 28px;
   font-size: 2.8000000000000003rem;
@@ -14667,7 +14521,7 @@ img.mfp-img {
   line-height: 4rem;
 }
 .hero-featured .container-hero-featured p {
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   margin-top: 30px;
   margin-top: 3rem;
@@ -14804,6 +14658,16 @@ img.mfp-img {
   .item-activite-choice:hover {
     cursor: pointer;
   }
+}
+.container-page-single-tax {
+  padding-bottom: 200px;
+  padding-bottom: 20rem;
+  padding-top: 60px;
+  padding-top: 6rem;
+}
+.container-page-single-tax p {
+  margin-top: 45px;
+  margin-top: 4.5rem;
 }
 .grid-galerie {
   margin-top: 15px;
@@ -15179,7 +15043,7 @@ img.mfp-img {
 }
 .item-filter a {
   color: #333333;
-  font-family: "acumin-pro", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 .item-filter a:hover {
@@ -15205,6 +15069,10 @@ img.mfp-img {
 }
 .item-filter .item-filter-img img {
   height: 100%;
+}
+.header-article-activite {
+  margin-top: 30px;
+  margin-top: 3rem;
 }
 /*--------------------------------
 IMPORTS EXTERNES

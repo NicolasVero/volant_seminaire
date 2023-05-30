@@ -61,12 +61,12 @@ function cpt_allActivities(){
 								<?php }?>
 												<figure class="devis-item-image">
 													<img src="<?= esc_url( $activite_image_url ) ?>" alt="volant-seminaire-<?= $activite_title ?>"/>
-													<i class="ti-plus"></i>
+													<i class="icon-plus"></i>
 												</figure>
-												<div class="devis-item-content">
+												<header class="devis-item-content">
 													<h3><?= $activite_title ?></h3>
 													<p><?= $activite_description ?></p>
-												</div>
+												</header>
 								<?php if( is_front_page() ) { ?>
 								</a>
 								<?php } ?>

@@ -47,10 +47,10 @@ if (! defined('ABSPATH')) {
 $args = array(
 	'theme_location'  => 'menu-copyright',
 	'menu'            => '',
-	'container'       => 'div',
-	'container_class' => 'widget-coyright',
+	'container'       => 'nav',
+	'container_class' => 'navigation-copyright d-none d-lg-block',
 	'container_id'    => 'navigation-copyright',
-	'menu_class'      => 'items-copyright',
+	'menu_class'      => 'list-items-menu-copyright',
 	'menu_id'         => '',
 	'echo'            => true,
 	'fallback_cb'     => 'wp_page_menu',
