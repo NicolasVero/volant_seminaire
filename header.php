@@ -29,11 +29,11 @@ $urlTemplate = get_stylesheet_directory();
                 get_template_part('template-parts/navigation/nav', 'header');
             ?>
         </div>
-        
-        <!-- <div class="search-form-container container-fluid">
-            <?php //include 'inc/searchform.php';?>
-        </div> -->
-        <!-- <div class="overlay"></div> -->
+
+        <div class="search-form-container container-fluid">
+            <?php include 'inc/searchform.php';?>
+        </div>
+        <div class="overlay"></div>
     </header>
     <?php if (is_front_page()):?>
     <main id="main-site" class="main-site main-home">
