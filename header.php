@@ -34,18 +34,7 @@ $urlTemplate = get_stylesheet_directory();
             <?php get_search_form();?>
         </div>
         
-        <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var widgetSearch = document.getElementById('widget-search');
-  var searchFormContainer = document.getElementById('search-form-container');
-  
-  widgetSearch.addEventListener('click', function(event) {
-    event.preventDefault();
-    searchFormContainer.classList.toggle('search-form-visible');
-  });
-});
 
-        </script>
 
         <div class="overlay"></div>
     </header>

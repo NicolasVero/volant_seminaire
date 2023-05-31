@@ -104,15 +104,14 @@ $(function(){
 	}
 
 //OUVRIR RECHERCHE 
-// document.addEventListener('DOMContentLoaded', function() {
-// 	var widgetSearch = document.getElementById('widget-search');
-// 	var searchFormContainer = document.getElementById('search-form-container');
-	
-// 	widgetSearch.addEventListener('click', function(event) {
-// 	  event.preventDefault();
-// 	  searchFormContainer.classList.toggle('search-form-visible');
-// 	});
-//   });
+
+var widgetSearch = document.getElementById('widget-search');
+var searchFormContainer = document.getElementById('search-form-container');
+
+widgetSearch.addEventListener('click', function(event) {
+	event.preventDefault();
+	searchFormContainer.classList.toggle('search-form-visible');
+});
 
 
 //SÉCURISATION WIDGET TEL
