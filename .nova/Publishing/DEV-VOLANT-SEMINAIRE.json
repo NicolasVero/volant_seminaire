@@ -10,9 +10,13 @@
     "base-code-devis.php",
     "assets\/css\/devis-contact-form.css",
     "assets\/css\/devis-contact-form.css.map",
+<<<<<<< HEAD
     "inc\/base-form.php",
     "inc\/ADDTODEVIS-TESTS",
     "inc\/TESTS"
+=======
+    "template-pages\/template-devis copie.php"
+>>>>>>> master
   ],
   "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",
