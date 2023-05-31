@@ -4,7 +4,7 @@ if ( have_posts() ) :
 ?>
 
 <div id="container-page-article" class="container container-page-article">
-	<div class="row container-article-page">
+
 		<header class="article-header">
 		<h1 class="title-page col-12">Voici les résultats de votre recherche<br>
 		<?php printf( __( 'Pour le ou les mot(s) : %s' ), '<span class="words-results">"' . esc_html( get_search_query() ) . '"</span>' ); ?></h1>
@@ -19,7 +19,7 @@ if ( have_posts() ) :
 				}
 			endwhile;?>
 		</ul>
-	</div>
+
 
 
 
