@@ -15,10 +15,12 @@ function get_galerie() {
 	$is_random = get_field('mode_aleatoire');
 
 
-	if( ! $images ) return; 
+	if(!$images) return; 
 	
 	if($n_max > count($images)) $n_max = count($images);
-
+	if($n_min > count($images))
+		$n_min = ( count($images) > 1 ) ? $n_max - 1 : $n_max;
+		
 	if($n_min < 1 || $n_min > 8) $n_min = 4;
 	if($n_max < 1 || $n_max > 8) $n_max = 6;
 	
@@ -26,7 +28,7 @@ function get_galerie() {
 
 	$intervalle = $n_max - $n_min + 1;
 	$categorie = rand($n_min, $n_max);
-	
+
 	if(in_array($categorie, [1, 2, 8])) $max_slug = 1;
 	if(in_array($categorie, [3, 7]   )) $max_slug = 2;
 	if(in_array($categorie, [4, 5, 6])) $max_slug = 5;
