@@ -2107,14 +2107,6 @@
       "oAP" : "\/inc\/search.php",
       "oF" : 0
     },
-    "\/inc\/searchform.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/searchform.php",
-      "oF" : 0
-    },
     "\/inc\/security.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2218,6 +2210,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/search.php",
+      "oF" : 0
+    },
+    "\/searchform.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/searchform.php",
       "oF" : 0
     },
     "\/single.php" : {

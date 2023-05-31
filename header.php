@@ -31,7 +31,7 @@ $urlTemplate = get_stylesheet_directory();
         </div>
 
         <div class="search-form-container container-fluid">
-            <?php include 'inc/searchform.php';?>
+            <?php get_search_form();?>
         </div>
         <div class="overlay"></div>
     </header>

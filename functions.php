@@ -54,7 +54,7 @@ require_once('inc/activities.php');
 require_once('inc/services.php');
 
 // SEARCH
-require_once('inc/search.php');
+// require_once('inc/search.php');
 
 //BREADCRUMB
 //require_once('inc/breadcrumb.php');
