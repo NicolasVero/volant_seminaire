@@ -21,7 +21,7 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 						?>
 					</header>
 					<?php
-					echo get_galerie();
+					the_galerie();
 					the_content();
 					
 					?>

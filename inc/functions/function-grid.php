@@ -7,7 +7,6 @@ if (! defined('ABSPATH')) {
 $urlTemplate = get_stylesheet_directory();
 // include( $urlTemplate . '/inc/datas/);
 
-// function get_galerie($n_min = 4, $n_max = 6, $is_random = false) {
 function get_galerie() {
 
 	$images    = get_field('galerie'       );
@@ -15,7 +14,10 @@ function get_galerie() {
 	$n_max     = get_field('max_de_photo'  );
 	$is_random = get_field('mode_aleatoire');
 
+
 	if( ! $images ) return; 
+	
+	if($n_max > count($images)) $n_max = count($images);
 
 	if($n_min < 1 || $n_min > 8) $n_min = 4;
 	if($n_max < 1 || $n_max > 8) $n_max = 6;
@@ -38,17 +40,22 @@ function get_galerie() {
 
 	$galerie = "<ul id='galerie-medium' class='grid-galerie $class'>";
 	
-	for( $i = 1; $i <= $categorie; $i++ ){
+	for( $i = 1; $i <= $categorie; $i++ ) {
 		$size = 'full';
-		$image_id =  $images[$i]['id'];
+		$image_id = $images[$i - 1]['id'];
 		
 		$galerie .= "<li class='item-grid item-$i'>";
 		$galerie .= wp_get_attachment_image( $image_id, $size );
 		$galerie .= "</li>";
 	} 
 
-	$galerie .= "</ul>";
+	return $galerie .= "</ul>";
+}
 
-	return $galerie;
+function the_galerie() {
+	echo get_galerie();
+}
 
+function get_the_galerie() {
+	return get_galerie();
 }
