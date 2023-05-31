@@ -30,9 +30,23 @@ $urlTemplate = get_stylesheet_directory();
             ?>
         </div>
 
-        <div class="search-form-container container-fluid">
+        <div class="search-form-container search-form-hidden container-fluid" id="search-form-container">
             <?php get_search_form();?>
         </div>
+        
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+  var widgetSearch = document.getElementById('widget-search');
+  var searchFormContainer = document.getElementById('search-form-container');
+  
+  widgetSearch.addEventListener('click', function(event) {
+    event.preventDefault();
+    searchFormContainer.classList.toggle('search-form-visible');
+  });
+});
+
+        </script>
+
         <div class="overlay"></div>
     </header>
     <?php if (is_front_page()):?>

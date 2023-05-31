@@ -14358,6 +14358,12 @@ img.mfp-img {
   right: 15px;
   right: 1.5rem;
 }
+.search-form-hidden {
+  display: none;
+}
+.search-form-visible {
+  display: block;
+}
 .nav-widgets-container li {
   margin-bottom: 25px;
 }
@@ -15083,4 +15089,4 @@ IMPORT SPÉCIFICITÉ
 /*------------------------------
 PAGES
 --------------------------------*/
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=./app.css.map */
