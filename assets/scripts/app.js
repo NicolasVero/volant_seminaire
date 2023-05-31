@@ -40,13 +40,28 @@ $(function(){
 		});
 	}	
 //FENETRE AJOUT ACTIVITÉ
-	// if( $('#add-more-activity').length ){
-	// 	$('#container-list-items-activities').slideDown().hide();
-	// 	$('#add-more-activity').click( function(e){
-	// 		e.preventDefault()
-	// 		$('#container-list-items-activities').slideUp().show().addClass('open');
-	// 	});
-	// }
+	if( $('#add-more-activity').length ){
+		
+		var DivformHeight = $('#devis-items-container').height();		
+		$('#devis-form-container').css('height', DivformHeight);
+		
+		$('#add-more-activity').click( function(e){
+			e.preventDefault();
+			var DivformHeight = $('#container-article-page-devis').height();
+			var TotalHeight = DivformHeight + 180;
+			var DivnewTransform = '-' + DivformHeight + 'px';
+			
+			$('#container-list-items-activities').addClass('open').css( 'transform', 'translateY(' + DivnewTransform + ')');
+		});
+		$('#button-close').click( function(e){
+			e.preventDefault();
+			var DivformHeight = $('#container-article-page-devis').height();
+			var DivnewTransform = DivformHeight + 'px';
+			
+			$('#container-list-items-activities').css( 'transform', 'translateY(' + DivnewTransform + ')').removelass('open');
+			
+		});
+	}
 
 //FILTRE ACTIVITÉS
 	if( $('#filters').length ){

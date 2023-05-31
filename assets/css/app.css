@@ -11893,6 +11893,9 @@ button span {
   background-color: #333333;
   color: #FFFFFF;
 }
+.button-add-more-activity span {
+  text-indent: unset;
+}
 .navigation-activities {
   text-align: center;
 }
@@ -14554,22 +14557,6 @@ img.mfp-img {
   margin-bottom: 30px;
   margin-bottom: 3rem;
 }
-.container-list-items-activities {
-  margin: 0;
-  padding-top: 90px;
-  padding-top: 9rem;
-}
-.container-list-items-activities.open {
-  -webkit-transition: transform 0.8s ease-in-out;
-  -moz-transition: transform 0.8s ease-in-out;
-  -ms-transition: transform 0.8s ease-in-out;
-  -o-transition: transform 0.8s ease-in-out;
-  transition: transform 0.8s ease-in-out;
-  -webkit-transform: translateY(-117%);
-  -ms-transform: translateY(-117%);
-  -o-transform: translateY(-117%);
-  transform: translateY(-117%);
-}
 .link-Add_activite a {
   color: #333333;
 }
@@ -15021,9 +15008,29 @@ img.mfp-img {
     grid-area: 2 / 4 / 3 / 5;
   }
 }
+.main-page-56 {
+  position: relative;
+}
 .container-list-items-activities {
   background-color: #FFFFFF;
   height: 100vh;
+  padding: 90px 0px;
+  padding: 9rem 0rem;
+}
+.container-list-items-activities.open {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 10;
+}
+.devis-form-container {
+  overflow: hidden;
 }
 .container-filters {
   margin-bottom: 30px;
@@ -15089,4 +15096,4 @@ IMPORT SPÉCIFICITÉ
 /*------------------------------
 PAGES
 --------------------------------*/
-/*# sourceMappingURL=./app.css.map */
+/*# sourceMappingURL=app.css.map */

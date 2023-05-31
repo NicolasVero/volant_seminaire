@@ -172,8 +172,8 @@ function devis_form() {
 				
 		?>	
 	
-	<div class="devis-form-container">
-		<div class="devis-items-container">
+	<div id="devis-form-container" class="devis-form-container">
+		<div id="devis-items-container" class="devis-items-container">
 			<form id="form-devis" method="post" action="">
 
 			<?php 
@@ -219,7 +219,7 @@ function devis_form() {
 					
 				?> 
 				
-				<a href="#" id="add-more-activity" class="button add-more-activity d-inline-block"><span class="d-flex"><i class="button-circle-orange ti-plus d-block"></i><span class="d-block">Ajouter une autre activité</span></span></a>
+				<a href="#" id="add-more-activity" class="button button-add-more-activity d-inline-block"><span class="d-flex"><i class="button-circle-orange ti-plus d-block"></i><span class="d-block">Ajouter une autre activité</span></a>
 				
 				<div class="row">
 					<h3 class="col-12">Séminaire clé en main</h3>
@@ -279,11 +279,8 @@ function devis_form() {
 				
 			</form>
 		</div>
-		
+		<?php cpt_allActivities(); ?>
 	</div>
-			
-		<?php
-			 cpt_allActivities();
-			
+<?php			
 }		
 add_shortcode( 'devis_form', 'devis_form' );

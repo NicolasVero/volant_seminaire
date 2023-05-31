@@ -5,10 +5,10 @@ function cpt_allActivities(){
 			<div class="container">
 				<h2>Les activités</h2>
 	<?php else: ?>
-		<div id="container-list-items-activities" class="container-list-items-activities">
+		<div id="container-list-items-activities" class="container-list-items-activities container-fluid">
 			<div class="container">
 				<h2>Les activités</h2>
-					<button class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
+					<button id="button-close" class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
 		
 	<?php endif;
 				

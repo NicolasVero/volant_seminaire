@@ -44,12 +44,14 @@ $urlTemplate = get_stylesheet_directory();
     $ID = get_the_ID();
 ?>
         <main id="main-site" class="main-site main-page main-page-<?= $ID ?>">
-            <?php elseif (is_tax('types_de_vehicules') || is_singular('vehicules') ):?>
+            <?php elseif (is_tax('types_activites') || is_singular('activites') ):?>
             <main id="main-site" class="main-site main-tax">
                 <?php elseif (is_singular('post')) :?>
                 <main id="main-site" class="main-site main-single-post">
                     <?php elseif (is_search()) :?>
                     <main id="main-site" class="main-site main-page main-page-search">
-                        <?php else :?>
-                        <main id="main-site" class="main-site main-page">
+                        <?php else :
+                            $ID = get_the_ID();
+                            ?>
+                        <main id="main-site-<?= $ID ?>" class="main-site main-page-<?= $ID ?>">
                             <?php endif; ?>

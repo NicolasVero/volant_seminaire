@@ -1,11 +1,21 @@
+.main-page-56{
+	.relative();
+}
 .container-list-items-activities{
 		.bgWhite();
 		height: 100vh;
-		// top: 0;
-		// z-index: 3;
+		.Padding(90, 0);
 }
 .container-list-items-activities.open{
-	
+	.transition(@prop:all, @duration:0.3s, @ease:ease-in-out);
+	.absolute();
+	left: 0;
+	margin: 0;
+	width:100%;
+	z-index: 10;
+}
+.devis-form-container{
+	overflow: hidden;
 }
 .container-filters{
 	.MarginBottom(30);
