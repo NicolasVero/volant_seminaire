@@ -11,9 +11,13 @@ if ( have_posts() ) :
 
 		</header>
 		<ul>
-			<?php while ( have_posts() ) : the_post();?>
-				<?php get_template_part( 'template-parts/content', 'search' );?>
-			<?php endwhile;?>
+		<?php 
+		
+			while ( have_posts() ) : the_post();
+				if ( get_post_type() === 'activites' ) {
+					get_template_part( 'template-parts/content', 'search' );
+				}
+			endwhile;?>
 		</ul>
 	</div>
 
