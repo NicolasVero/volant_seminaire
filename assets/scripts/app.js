@@ -37,6 +37,11 @@ $(function(){
 			// SUPPRESSION
 			$(document).on('click', '.delete-activite', function() {
 				$(this).closest('.devis-item').remove();
+				
+				var DivformHeight = $('#container-article-page-devis').height();
+				var DivtotalHeight = DivformHeight + 63;		
+				$('.main-page-devis').css('height', DivtotalHeight);
+				
 			});
 		});
 	}
