@@ -5,10 +5,11 @@ function cpt_allActivities(){
 			<div class="container">
 				<h2>Les activités</h2>
 	<?php else: ?>
-		<div id="container-list-items-activities" class="container-list-items-activities container-fluid">
-			<div class="container">
+		<div id="container-list-items-activities" class="container-list-items-activities clearfix">
+			<div class="list-items-activities-add-devis">
+				<div class="container">
 				<h2>Les activités</h2>
-					<button id="button-close" class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
+					<button id="button-close" class="button-close d-flex align-items-center"><i class="icon-close d-flex justify-content-center align-items-center"></i><span>Fermer</span></button>
 		
 	<?php endif;
 				
@@ -30,7 +31,7 @@ function cpt_allActivities(){
 				$query = new WP_Query($args);
 					if( $query->have_posts() ) :			
 						 ?>
-							<ul id="list-items-activities" class="row">	
+							<ul id="list-items-activities" class="list-items-activities row">	
 							<?php 
 							while($query->have_posts()) : $query-> the_post();
 								
@@ -75,6 +76,7 @@ function cpt_allActivities(){
 								<?php endwhile; ?>
 							</ul>
 				</div>
+			</div>	
 			<?php endif; wp_reset_query();
 		?>
 		</div>

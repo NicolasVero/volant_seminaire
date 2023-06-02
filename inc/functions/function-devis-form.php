@@ -163,17 +163,17 @@ function devis_form() {
 		);
 		$query = new WP_Query($args);
 	
-		if($query->have_posts()) : while($query->have_posts()) : $query-> the_post();
+		if($query->have_posts()) :?>
+	<div id="container-article-page-devis" class="container-article-page container-article-page-devis">		
+		<div id="devis-form-container" class="container devis-form-container">
+		<?php while($query->have_posts()) : $query-> the_post();
 			the_title( '<h1 class="title-article-page">', '</h1>' );
 		endwhile; endif; wp_reset_query();
 			
 		$devis_items = isset( $_GET['activites'] ) ? sanitize_text_field( $_GET['activites'] ) : '';
 		$devis_items_array = explode( ',', $devis_items );		
 				
-		?>	
-	
-	<div id="devis-form-container" class="devis-form-container">
-		<div id="devis-items-container" class="devis-items-container">
+		?>
 			<form id="form-devis" method="post" action="">
 
 			<?php 
@@ -218,9 +218,9 @@ function devis_form() {
 					}
 					
 				?> 
-				
-				<a href="#" id="add-more-activity" class="button button-add-more-activity d-inline-block"><span class="d-flex"><i class="button-circle-orange ti-plus d-block"></i><span class="d-block">Ajouter une autre activité</span></a>
-				
+				<div class="add-seminaire">
+				<a href="#" id="add-more-activity" class="button button-add-more-activity d-inline-block"><span class="d-flex align-items-center"><i class="button-orange button-circle icon-plus d-flex justify-content-center align-items-center"></i><span class="d-block">Ajouter une autre activité</span></a>
+				</div>
 				<div class="row">
 					<h3 class="col-12">Séminaire clé en main</h3>
 					<p class="d-flex justify-content-center">Nous travaillons depuis plus de 10 ans avec<br/>des prestataires Hôteliers.</p>
@@ -279,8 +279,7 @@ function devis_form() {
 				
 			</form>
 		</div>
-		<?php cpt_allActivities(); ?>
 	</div>
-<?php			
+	<?php cpt_allActivities();			
 }		
 add_shortcode( 'devis_form', 'devis_form' );

@@ -1,24 +1,9 @@
 {
-  "identifier" : "E1A46575-2A6D-4865-ABF4-116161303E71",
+  "identifier" : "4C5E8C84-0EFA-4DE0-AE9A-E0DDF545A958",
   "ignoredFilePatterns" : [
-    "config.codekit3",
     "_src",
-    "node_modules",
-    "package-lock.json",
-    "package.json",
-    "inc\/base-formulaire.php",
-    "base-code-devis.php",
-    "assets\/css\/devis-contact-form.css",
-    "assets\/css\/devis-contact-form.css.map",
-<<<<<<< HEAD
-    "inc\/base-form.php",
-    "inc\/ADDTODEVIS-TESTS",
-    "inc\/TESTS"
-=======
-    "template-pages\/template-devis copie.php"
->>>>>>> master
+    "config.codekit3"
   ],
-  "localPath" : ".",
   "remotePath" : "\/wp-content\/themes\/volant-seminaire",
   "server" : "DEV-VOLANT-SEMINAIRE",
   "usesPublishing" : true
