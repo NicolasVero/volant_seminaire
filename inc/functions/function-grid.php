@@ -5,7 +5,6 @@ if (! defined('ABSPATH')) {
 }
 
 $urlTemplate = get_stylesheet_directory();
-// include( $urlTemplate . '/inc/datas/);
 
 function get_galerie() {
 

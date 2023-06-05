@@ -12,7 +12,7 @@ $(function(){
 			});
 	}
 	
-// AJOUT ACTIVITÉ AU FORMULAIRE
+	// AJOUT ACTIVITÉ AU FORMULAIRE
 	if ($('#list-items-activities').length) {
 		$('#list-items-activities li.item-activite-choice').each(function (index) {
 			let data_activiteID = $(this).attr('data-activiteID');
