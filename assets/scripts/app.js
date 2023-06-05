@@ -13,6 +13,15 @@ $(function(){
 	}
 	
 // AJOUT ACTIVITÉ AU FORMULAIRE
+	
+	function calcul_height(){
+		var DivformHeight = $('#container-article-page-devis').height();
+		var DivtotalHeight = DivformHeight + 63;
+		
+		return DivtotalHeight;
+		
+	}
+
 	if ($('#list-items-activities').length) {
 		$('#list-items-activities li.item-activite-choice').each(function (index) {
 			let data_activiteID = $(this).attr('data-activiteID');
@@ -28,9 +37,7 @@ $(function(){
 				var DivnewTransform = 0 + 'px';
 				$('#container-list-items-activities').css( 'transform', 'translateY(' + DivnewTransform + ')').removeClass('open');
 				
-				var DivformHeight = $('#container-article-page-devis').height();
-				var DivtotalHeight = DivformHeight + 63;		
-				$('.main-page-devis').css('height', DivtotalHeight);
+				$('.main-page-devis').css('height', calcul_height());
 				
 			});
 
@@ -38,9 +45,7 @@ $(function(){
 			$(document).on('click', '.delete-activite', function() {
 				$(this).closest('.devis-item').remove();
 				
-				var DivformHeight = $('#container-article-page-devis').height();
-				var DivtotalHeight = DivformHeight + 63;		
-				$('.main-page-devis').css('height', DivtotalHeight);
+				$('.main-page-devis').css('height', calcul_height());
 				
 			});
 		});
@@ -55,16 +60,12 @@ $(function(){
 //FENETRE AJOUT ACTIVITÉ
 	if( $('#add-more-activity').length ){
 		
-		var DivformHeight = $('#container-article-page-devis').height();
-		var DivtotalHeight = DivformHeight + 63;		
-		$('.main-page-devis').css('height', DivtotalHeight);
+		$('.main-page-devis').css('height', calcul_height());
 		
 		$('#add-more-activity').click( function(e){
 			e.preventDefault();
 			var DivnewTransform = $('#container-article-page-devis').height();
-			var DivnewTransform = '-' + DivformHeight + 'px';
-			// var TotalHeight = DivformHeight + 50;
-			// var DivnewTransform = '-' + DivformHeight + 'px';
+			var DivnewTransform = '-' + calcul_height() + 'px';
 			
 			$('#container-list-items-activities').addClass('open').css( 'transform', 'translateY(' + DivnewTransform + ')');
 		});
