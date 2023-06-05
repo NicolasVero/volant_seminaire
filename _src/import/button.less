@@ -1,3 +1,4 @@
+
 .button,
 button{
 	.bgWhite();
@@ -27,21 +28,51 @@ button{
 		}
 	}
 	span{
-		direction: ltr;
-		height: 0;
-		text-indent: -999em;
+		.FR();
+	}
+}
+.button-grey(){
+	.fGrey33();
+	border-color: @Grey-4;
+}
+.button-orange(){
+	.bgOrange();
+	border-color: @Orange;
+}
+.button-circle(){
+	border: 2px solid;
+	.border-radius(@rad:100%);
+	.Height(38);
+	.Width(38);
+	i{
+		color: inherit;
+
+		&:before{
+			color: inherit;	
+		}
 	}
 }
 .button-circle{
-	.border-radius(@rad:50%);
+	.button-circle();
 }
-.button-circle-grey{
-	border: 1px solid @Grey-1;
-	.border-radius(@rad:50%);
+.button-orange{
+	.button-orange();
 }
-.button-circle-orange{
-	.border-radius(@rad:50%);
-	.bgOrange();
+.button-close{
+	border: none;
+	.icon-close{
+		.MarginRight(10);
+		.button-grey();
+		.button-circle();
+	}
+	span{
+		height: initial;
+		text-transform: capitalize;
+		text-indent: initial;
+	}
+}
+.button-add-more-activity{
+	.Padding(5);
 }
 .button-file-to-upload{
 	&:hover,
@@ -52,6 +83,9 @@ button{
 	}
 }
 .button-add-more-activity{
+	i{
+		.MarginRight(10);
+	}
 	span{
 		text-indent: unset;
 	}

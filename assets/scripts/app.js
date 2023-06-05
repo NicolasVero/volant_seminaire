@@ -12,7 +12,16 @@ $(function(){
 			});
 	}
 	
-	// AJOUT ACTIVITÉ AU FORMULAIRE
+// AJOUT ACTIVITÉ AU FORMULAIRE
+	
+	function calcul_height(){
+		var DivformHeight = $('#container-article-page-devis').height();
+		var DivtotalHeight = DivformHeight + 63;
+		
+		return DivtotalHeight;
+		
+	}
+
 	if ($('#list-items-activities').length) {
 		$('#list-items-activities li.item-activite-choice').each(function (index) {
 			let data_activiteID = $(this).attr('data-activiteID');
@@ -24,11 +33,20 @@ $(function(){
 			$(this).click( function(){
 				$('#form-devis').prepend('<div id="titre_activite-' + data_activiteID + '" class="devis-item"><div class="row">' + html_item + '<button class="delete-activite"><i class="ti-trash"></i></button></div>' + form + '</div>');
 				$('#titre_activite-' + data_activiteID + ' .ti-plus').remove();
+				
+				var DivnewTransform = 0 + 'px';
+				$('#container-list-items-activities').css( 'transform', 'translateY(' + DivnewTransform + ')').removeClass('open');
+				
+				$('.main-page-devis').css('height', calcul_height());
+				
 			});
 
 			// SUPPRESSION
 			$(document).on('click', '.delete-activite', function() {
 				$(this).closest('.devis-item').remove();
+				
+				$('.main-page-devis').css('height', calcul_height());
+				
 			});
 		});
 	}
@@ -42,23 +60,20 @@ $(function(){
 //FENETRE AJOUT ACTIVITÉ
 	if( $('#add-more-activity').length ){
 		
-		var DivformHeight = $('#devis-items-container').height();		
-		$('#devis-form-container').css('height', DivformHeight);
+		$('.main-page-devis').css('height', calcul_height());
 		
 		$('#add-more-activity').click( function(e){
 			e.preventDefault();
-			var DivformHeight = $('#container-article-page-devis').height();
-			var TotalHeight = DivformHeight + 180;
-			var DivnewTransform = '-' + DivformHeight + 'px';
+			var DivnewTransform = $('#container-article-page-devis').height();
+			var DivnewTransform = '-' + calcul_height() + 'px';
 			
 			$('#container-list-items-activities').addClass('open').css( 'transform', 'translateY(' + DivnewTransform + ')');
 		});
 		$('#button-close').click( function(e){
 			e.preventDefault();
-			var DivformHeight = $('#container-article-page-devis').height();
-			var DivnewTransform = DivformHeight + 'px';
+			var DivnewTransform = 0 + 'px';
 			
-			$('#container-list-items-activities').css( 'transform', 'translateY(' + DivnewTransform + ')').removelass('open');
+			$('#container-list-items-activities').css( 'transform', 'translateY(' + DivnewTransform + ')').removeClass('open');
 			
 		});
 	}
