@@ -21,11 +21,20 @@ include( $urlTemplate . '/inc/datas/datas-activites.php');
 						?>
 					</header>
 					<?php
-					the_galerie();
-					the_content();
-					
+						the_galerie();
+						the_content();
 					?>
 					
 			</article>
+	</div>
+
+	<div>
+	<div>
+	<div>
+		<?php
+			the_full_galerie();
+		?>
+	</div>
+	</div>
 	</div>
 		

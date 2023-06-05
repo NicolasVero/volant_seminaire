@@ -87,7 +87,7 @@ if(isset($_POST['email'])) {
 	if(!$skip_verif) {
 		foreach($ids as $id) {
 			for($i = 0; $i < count($inputs); $i++) {
-				if(strlen($_POST[$inputs[$i] . '-' . $id]) < 1) {
+				if(strlen($_POST[$inputs[$i] . '-' . $id]) < 1 || ($i == 0 && $_POST['nombre_personnes'] < 0)) {
 					$errors_log[] = $errors[$i];
 					$inputs_errors_name[] = $inputs[$i] . '-' . $id;
 				}
