@@ -5,10 +5,11 @@ function cpt_allActivities(){
 			<div class="container">
 				<h2>Les activités</h2>
 	<?php else: ?>
-		<div id="container-list-items-activities" class="container-list-items-activities">
-			<div class="container">
+		<div id="container-list-items-activities" class="container-list-items-activities clearfix">
+			<div class="list-items-activities-add-devis">
+				<div class="container">
 				<h2>Les activités</h2>
-					<button class="button-close"><i class="ti-close"></i><span>Fermer</span></button>
+					<button id="button-close" class="button-close d-flex align-items-center"><i class="icon-close d-flex justify-content-center align-items-center"></i><span>Fermer</span></button>
 		
 	<?php endif;
 				
@@ -30,7 +31,7 @@ function cpt_allActivities(){
 				$query = new WP_Query($args);
 					if( $query->have_posts() ) :			
 						 ?>
-							<ul id="list-items-activities" class="row">	
+							<ul id="list-items-activities" class="list-items-activities row">	
 							<?php 
 							while($query->have_posts()) : $query-> the_post();
 								
@@ -46,7 +47,7 @@ function cpt_allActivities(){
 								
 								$taxos = [];
 								$classes = '';
-								for( $i = 0; $i< count( $activite_taxos ) -1; $i++ ){
+								for( $i = 0; $i< count( $activite_taxos ); $i++ ){
 									$taxos[] = $activite_taxos[$i]->slug;
 									$classes .= 'item-activite-' . $taxos[$i] . ' ';
 								}
@@ -61,12 +62,12 @@ function cpt_allActivities(){
 								<?php }?>
 												<figure class="devis-item-image">
 													<img src="<?= esc_url( $activite_image_url ) ?>" alt="volant-seminaire-<?= $activite_title ?>"/>
-													<i class="ti-plus"></i>
+													<i class="icon-plus"></i>
 												</figure>
-												<div class="devis-item-content">
+												<header class="devis-item-content">
 													<h3><?= $activite_title ?></h3>
 													<p><?= $activite_description ?></p>
-												</div>
+												</header>
 								<?php if( is_front_page() ) { ?>
 								</a>
 								<?php } ?>
@@ -75,6 +76,7 @@ function cpt_allActivities(){
 								<?php endwhile; ?>
 							</ul>
 				</div>
+			</div>	
 			<?php endif; wp_reset_query();
 		?>
 		</div>

@@ -193,7 +193,7 @@
 					<tbody>
 						<tr>
 							<td align="center">
-								<table style="background-color: #333333; height: 75px; min-width: 50%; max-width: 1000px;">
+								<table style="background-color: #333333; height: 75px; min-width: 800px; max-width: 1000px;">
 									<tbody>
 										<tr>
 											<td style="text-align: center">
@@ -202,7 +202,7 @@
 										</tr> 
 									</tbody>
 								</table>
-								<table style="background-color: white; min-width: 50%; max-width: 1000px;">
+								<table style="background-color: white; min-width: 800px; max-width: 1000px;">
 									<tbody>
 										<tr>
 											<td>';
@@ -232,7 +232,7 @@
 					</tr>
 						</tbody>
 								</table>
-								<table style="background-color: #FF4E00; height: 75px; min-width: 50%; max-width: 1000px;">
+								<table style="background-color: #FF4E00; height: 75px; min-width: 800px; max-width: 1000px;">
 									<tbody>
 										<tr style="text-align: center">
 											<td style="color: white; font-family: Arial, Helvetica, sans-serif">© ' . date("Y") . ' Volant Séminaire</td>

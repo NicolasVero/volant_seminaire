@@ -1,28 +1,35 @@
-<li id="post-<? the_ID(); ?>" class="container-resume container-resume-<? the_ID(); ?>">
-		<?php if (has_post_thumbnail() ) :?>
-			<a href="<? the_permalink()?>" rel="bookmark" title="Voir l'article : <?php the_title()?>">
-				<div class="d-flex">
-					<figure class="entry-featured col-12 col-md-4"><?php the_post_thumbnail(); ?></figure>
-					<div class="entry-resume col-12 col-md-8 pr-md-0">
-						<header class="entry-header-search">
-							<h2 class="title-post-search"><?php the_title(); ?></h2>
-						</header><!-- .entry-header -->
-						<div class="content-resume"><?php the_excerpt(); ?></div>
-						<button>Lire la suite<i class="ti-angle-right"></i></button>
-					</div>
-				</div>
-			</a>
-		<?php else :?>
-			<a href="<?php the_permalink()?>" rel="bookmark" title="Voir l'article : <?php the_title()?>">
-				<div class="d-flex">
-					<div class="entry-resume">
-						<header class="entry-header-search">
-							<h2 class="title-post-search"><?php the_title(); ?></h2>
-						</header><!-- .entry-header -->
-						<div class="content-resume"><?php the_excerpt(); ?></div>
-						<button>Lire la suite<i class="ti-angle-right"></i></button>
-					</div>
-				</div>
-			</a>
-		<?php endif;?>
+<?php
+
+$activiteID =  get_the_ID();
+$activite = get_post( $activiteID );
+$activite_title = esc_html($activite->post_title);
+$activite_slug = esc_html($activite->post_name);
+$activite_link = get_the_permalink( $activiteID );
+$activite_description = esc_html($activite->post_excerpt);
+$activite_image_url = get_the_post_thumbnail_url( $activiteID, 'medium' );
+$activite_taxonomy = 'types_d_activites';
+$activite_taxos = get_the_terms( $activiteID , $activite_taxonomy);
+
+$taxos = [];
+$classes = '';
+for( $i = 0; $i< count( $activite_taxos ); $i++ ){
+	$taxos[] = $activite_taxos[$i]->slug;
+	$classes .= 'item-activite-' . $taxos[$i] . ' ';
+}
+?>
+
+<li class="item-activite <?= $classes ?> col-6 col-md-3" data-activiteID="<?= $activiteID ?>" data-activiteTITLE="<?= $activite_title ?>">
+	<article id="Add_activite-<?= $activiteID ?>" class="link-Add_activite" >
+		<a href="<?= $activite_link ?>" title="En savoir plus sur l'activité : <?= $activite_title ?>">
+
+			<figure class="devis-item-image">
+				<img src="<?= esc_url( $activite_image_url ) ?>" alt="volant-seminaire-<?= $activite_title ?>"/>
+				<i class="icon-plus"></i>
+			</figure>
+			<header class="devis-item-content">
+				<h3><?= $activite_title ?></h3>
+				<p><?= $activite_description ?></p>
+			</header>
+		</a>
+	</article>
 </li>

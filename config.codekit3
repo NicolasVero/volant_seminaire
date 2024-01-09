@@ -54,7 +54,7 @@
       "iI" : 0,
       "ma" : 1,
       "mS" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/assets\/css\/add-activity.css",
       "oF" : 0,
       "oS" : 0,
@@ -296,6 +296,14 @@
       "rwU" : 0,
       "sI" : 0,
       "sU" : 0
+    },
+    "\/_src\/import\/fichier sans titre" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/_src\/import\/fichier sans titre",
+      "oF" : 0
     },
     "\/_src\/import\/fontawesome\/_animated.less" : {
       "aP" : 0,
@@ -1039,6 +1047,24 @@
       "sI" : 0,
       "sU" : 0
     },
+    "\/_src\/import\/search.less" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "eJ" : 0,
+      "ft" : 1,
+      "iI" : 0,
+      "ma" : 1,
+      "mS" : 0,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/search.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "rwU" : 0,
+      "sI" : 0,
+      "sU" : 0
+    },
     "\/_src\/import\/slick.less" : {
       "aP" : 0,
       "bl" : 0,
@@ -1629,6 +1655,17 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/scripts\/app-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scripts\/app-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/assets\/scripts\/app.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -1727,14 +1764,6 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
-    },
-    "\/base-code-devis.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/base-code-devis.php",
-      "oF" : 0
     },
     "\/footer.php" : {
       "cB" : 0,
@@ -2096,14 +2125,6 @@
       "oAP" : "\/inc\/search.php",
       "oF" : 0
     },
-    "\/inc\/searchform.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/inc\/searchform.php",
-      "oF" : 0
-    },
     "\/inc\/security.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2168,28 +2189,6 @@
       "oAP" : "\/index.php",
       "oF" : 0
     },
-    "\/node_modules" : {
-      "ft" : 65536,
-      "oA" : 2,
-      "oAP" : "\/node_modules",
-      "oF" : 0
-    },
-    "\/package-lock.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-lock-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/package.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -2229,6 +2228,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/search.php",
+      "oF" : 0
+    },
+    "\/searchform.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/searchform.php",
       "oF" : 0
     },
     "\/single.php" : {
@@ -2281,6 +2288,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/template-pages\/template-content.php",
+      "oF" : 0
+    },
+    "\/template-pages\/template-devis-php2.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-pages\/template-devis-php2.php",
       "oF" : 0
     },
     "\/template-pages\/template-devis.php" : {
