@@ -3,7 +3,7 @@
 		wp_register_script('jquery','https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', false, '');
 		wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAZLojBGDFbHBIPFV-yZkQ7ZDeuNigO5fk', array(), '3', true );
 		wp_register_script('jquery-ui','https://code.jquery.com/jquery-3.6.0.min.js', false, '');
-		//wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', false , '1.8.1');
+		wp_register_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', false , '1.8.1');
 		//wp_register_script( 'popup', 'https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js', false , '1.1');
 		
 		$js_directory = get_bloginfo( 'stylesheet_directory' ) . '/assets/scripts/';
@@ -18,7 +18,7 @@
 		//wp_enqueue_script( 'map' );
 		wp_enqueue_script( 'contact');
 		wp_enqueue_script( 'app');
-		//wp_enqueue_script( 'slick');
+		wp_enqueue_script( 'slick');
 		//wp_enqueue_script( 'popup');
 		//wp_enqueue_script( 'cookies');
 		wp_enqueue_script( 'easing' );

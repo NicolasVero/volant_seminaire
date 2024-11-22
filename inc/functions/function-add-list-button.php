@@ -7,7 +7,7 @@ function add_to_devis_list_button() {
 		$current_post_id = get_the_ID();
 		$current_post_slug = $post->post_name;
 		$current_post_title = $post->post_title;
-		echo '<a href="' . esc_url( add_query_arg( 'activites', $current_post_slug, site_url( '/demander-un-devis' ) ) ) . '" class="button">Ajouter</a>';
+		echo '<a href="' . esc_url( add_query_arg( 'activites', $current_post_slug, site_url( '/demander-un-devis' ) ) ) . '" class="button-add-to-estimate d-flex align-items-center"><i class="icon-plus"></i>Ajouter</a>';
 	}
 }
 add_action( 'genesis_entry_content', 'add_to_devis_list_button' );

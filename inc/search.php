@@ -3,7 +3,7 @@ function my_search_filter( $query )
 {
     if ( $query->is_search )
     {
-        $query->set( 'post_type', 'destinations' );
+        $query->set( 'post_type', 'activites' );
     }
     return $query;
 }

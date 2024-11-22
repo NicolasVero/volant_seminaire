@@ -29,24 +29,31 @@ $urlTemplate = get_stylesheet_directory();
                 get_template_part('template-parts/navigation/nav', 'header');
             ?>
         </div>
+
+        <div class="search-form-container search-form-hidden container-fluid" id="search-form-container">
+            <?php get_search_form();?>
+        </div>
         
-        <!-- <div class="search-form-container container-fluid">
-            <?php //include 'inc/searchform.php';?>
-        </div> -->
-        <!-- <div class="overlay"></div> -->
+
+
+        <div class="overlay"></div>
     </header>
     <?php if (is_front_page()):?>
     <main id="main-site" class="main-site main-home">
-        <?php elseif (is_page() || is_home()):
-    $ID = get_the_ID();
-?>
-        <main id="main-site" class="main-site main-page main-page-<?= $ID ?>">
-            <?php elseif (is_tax('types_de_vehicules') || is_singular('vehicules') ):?>
+        <?php elseif (is_home()):
+        $ID = get_the_ID();
+        ?>
+        <main id="main-site" class="main-site main-page-blog">
+            <?php elseif (is_tax('types_activites') || is_singular('activites') ):?>
             <main id="main-site" class="main-site main-tax">
                 <?php elseif (is_singular('post')) :?>
                 <main id="main-site" class="main-site main-single-post">
                     <?php elseif (is_search()) :?>
                     <main id="main-site" class="main-site main-page main-page-search">
-                        <?php else :?>
+                        <?php elseif ( is_single( 108 ) ) :?>
+                        <main id="main-site" class="main-site main-page main-page-devis">
+                        <?php else :
+                            $ID = get_the_ID();
+                            ?>
                         <main id="main-site" class="main-site main-page">
                             <?php endif; ?>
